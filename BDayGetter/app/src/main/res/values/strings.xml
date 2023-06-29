@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">B-DayGetter</string>
+    <string name="add_user">Add User</string>
+    <string name="list_users">List Users</string>
+    <string name="email">Email</string>
+    <string name="User_name">User name</string>
+    <string name="date">Date</string>
+    <string name="age_will_be">Age</string>
+    <string name="CountDown">DD:HH:MM:SS</string>
+    <string name="title_activity_input_data">InputDataActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="version">Dev-build-0.1v</string>
+    <string name="vardas_pavarde">Vardas Pavarde</string>
+    <string name="give_name">Give_Name</string>
+
+</resources>

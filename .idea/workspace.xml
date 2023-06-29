@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+>>>>>>> WokingOne
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="85595320-8e96-490b-9ead-c562869dc88f" name="Changes" comment="h" />
+=======
+    <list default="true" id="049af67b-5087-4c20-87fa-4242a234aec5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../2_NaujasLektorius/MyNotes/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_NaujasLektorius/MyNotes/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_NaujasLektorius/MyNotes/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_NaujasLektorius/MyNotes/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_NaujasLektorius/MyNotes/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_NaujasLektorius/MyNotes/app/src/main/java/lt/justinas/mynotes/Repository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_NaujasLektorius/My_Application/.idea/modules/My_Application.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_NaujasLektorius/My_Application/.idea/modules/app/My_Application.app.androidTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_NaujasLektorius/My_Application/.idea/modules/app/My_Application.app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_NaujasLektorius/My_Application/.idea/modules/app/My_Application.app.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2_NaujasLektorius/My_Application/.idea/modules/app/My_Application.app.unitTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
+>>>>>>> WokingOne
+=======
+  <component name="ChangeListManager">
+    <list default="true" id="faa0d327-f879-4a99-826e-d5ec2d921962" name="Changes" comment="" />
+>>>>>>> NewMainThisOneV2
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+<<<<<<< HEAD
+<<<<<<< HEAD
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="WokingOne" />
+=======
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+>>>>>>> WokingOne
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="AndriodStudio14Skaidre" />
+>>>>>>> NewMainThisOneV2
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+<<<<<<< HEAD
+<<<<<<< HEAD
+  <component name="ProjectId" id="2Rku1aGIqIjvlZpOGDswm1qHwmG" />
+  <component name="ProjectViewState">
+=======
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2RcGYHaHvdZ0AQBg5DQ1lENv7DK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+>>>>>>> NewMainThisOneV2
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+<<<<<<< HEAD
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+=======
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "detached2",
+    "last_opened_file_path": "/home/justpause/Programming/Java/Java_Vilnius_Conding_School/Finall_Work/BDayGetter"
+>>>>>>> NewMainThisOneV2
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="85595320-8e96-490b-9ead-c562869dc88f" name="Changes" comment="h" />
+      <created>1687806188006</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687806188006</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="h" />
+    <option name="LAST_COMMIT_MESSAGE" value="h" />
+  </component>
+=======
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="7e21004c-fb01-4115-b732-4d7a4437165b" />
+        <option name="url" value="https://github.com/JustPause/Java_Vilnius_Coding_School.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectId" id="2RZ1jp0yRjb0Xhp42vPQhiqwQyr" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;NewMainThisOne&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/justinas/Programming/Java_Vilnius_Coding/Finall_Work&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/example/bdaygetterv2" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="BDayGetterV2.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Java />
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="049af67b-5087-4c20-87fa-4242a234aec5" name="Changes" comment="" />
+      <created>1687442926312</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687442926312</updated>
+    </task>
+    <servers />
+  </component>
+>>>>>>> WokingOne
+=======
+      <changelist id="faa0d327-f879-4a99-826e-d5ec2d921962" name="Changes" comment="" />
+      <created>1687542002074</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687542002074</updated>
+    </task>
+    <servers />
+  </component>
+>>>>>>> NewMainThisOneV2
+</project>

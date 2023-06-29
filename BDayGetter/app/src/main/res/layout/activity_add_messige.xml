@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddUsers.AddMessige">
+
+    <Button
+            android:text="submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/submitButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="24dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="24dp"
+            android:onClick="submitButton"/>
+    <TextView
+            android:text="Users Message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/Message"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.307"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="64dp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="124dp"
+            android:inputType="textPersonName"
+<<<<<<< HEAD
+            android:text="Optinal Palace for Users emal"
+
+=======
+            android:text="Message"
+>>>>>>> NewMainThisOneV2
+            android:ems="10"
+            android:id="@+id/editTextTextPersonName2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
+    <androidx.constraintlayout.widget.Group android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                            app:constraint_referenced_ids="Message,editTextTextPersonName2"
+                                            android:id="@+id/group" app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.constraintlayout.widget.Group android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                            android:id="@+id/group2"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

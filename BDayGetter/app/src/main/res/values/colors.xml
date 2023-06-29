@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="orage_300">#FFFFDC7A</color>
+    <color name="orage_400">#FFFFD35C</color>
+    <color name="orage_500">#FFFFC933</color>
+    <color name="teal_200">#FFE71D36</color>
+    <color name="teal_700">#FFA61123</color>
+    <color name="black">#FF1A0E03</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
