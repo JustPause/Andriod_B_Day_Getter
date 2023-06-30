@@ -16,5 +16,7 @@
     <string name="version">Dev-build-0.1v</string>
     <string name="vardas_pavarde">Vardas Pavarde</string>
     <string name="give_name">Give_Name</string>
+    <string name="submit">submit</string>
+    <string name="duok_data_gimtadienio">Duok data gimtadienio\nyyyy mm dd</string>
 
 </resources>
