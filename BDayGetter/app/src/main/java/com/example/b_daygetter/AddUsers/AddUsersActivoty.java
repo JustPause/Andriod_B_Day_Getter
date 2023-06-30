@@ -36,11 +36,17 @@ public class AddUsersActivoty extends AppCompatActivity
     //    Log.d("getText", personDate.getText().toString().substring(0,
     //        4) + "_" + personDate.getText().toString().substring(5,
     //        7) + "_" + personDate.getText().toString().substring(8, 10));
-    String userName = personName.getText().toString();
+
+    String[] words = personName.getText().toString().split(" ");
+
+    String userName = words[0];
+    String userSureName = words[1];
     LocalDate bLocalDate = LocalDate.parse(personDate.getText());
 
-    User user = new User(userName, userName, bLocalDate.getYear(), bLocalDate.getMonthValue(),
+    User user = new User(userName, userSureName, bLocalDate.getYear(), bLocalDate.getMonthValue(),
         bLocalDate.getDayOfMonth());
     userDao.insert(user);
+    Log.d("getText",
+        userName + " " + userSureName + " " + bLocalDate.getYear() + " " + bLocalDate.getMonthValue() + " " + bLocalDate.getDayOfMonth());
   }
 }

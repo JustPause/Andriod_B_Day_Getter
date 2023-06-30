@@ -17,7 +17,7 @@
     <string name="vardas_pavarde">Vardas Pavarde</string>
     <string name="give_name">Give_Name</string>
     <string name="submit">submit</string>
-    <string name="duok_data_gimtadienio">Duok data gimtadienio\nyyyy mm dd</string>
+    <string name="duok_data_gimtadienio">Duok data gimtadienio\nyyyy-mm-dd</string>
     <string name="give_date">Give_Date</string>
 
 </resources>
