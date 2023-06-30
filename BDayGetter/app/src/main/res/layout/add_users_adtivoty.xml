@@ -47,7 +47,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="24dp"
         android:ems="10"
-        android:hint="@string/give_name"
+        android:hint="@string/give_date"
         android:inputType="datetime"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
