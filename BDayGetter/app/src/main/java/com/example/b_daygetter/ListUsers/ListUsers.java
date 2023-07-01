@@ -2,7 +2,10 @@ package com.example.b_daygetter.ListUsers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.GridView;
 
 import com.example.b_daygetter.R;
@@ -33,5 +36,11 @@ public class ListUsers extends AppCompatActivity {
 		
 		CourseGVAdapter adapter = new CourseGVAdapter(this, courseModelArrayList);
 		coursesGV.setAdapter(adapter);
+	}
+	
+	//TODO idekti error atlaikimo systema
+	public void runOnClic(View view) {
+		view.setBackgroundColor(0xFF00FF00);
+		//Pasirinkta informacija butu nusiunciama i main tenais putu pakeiciama i duota klacia
 	}
 }

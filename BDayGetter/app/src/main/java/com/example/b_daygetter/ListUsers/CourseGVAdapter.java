@@ -33,10 +33,16 @@ public class CourseGVAdapter extends ArrayAdapter<CourseModel> {
 		
 		CourseModel courseModel = getItem(position);
 		TextView courseTV = listitemView.findViewById(R.id.idTVCourse);
-		ImageView courseIV = listitemView.findViewById(R.id.idIVcourse);
+		TextView NameAndSureName = listitemView.findViewById(R.id.Name_SureName);
+		TextView CoundDown = listitemView.findViewById(R.id.Coundown);
+		TextView Age = listitemView.findViewById(R.id.Age);
+		
 		
 		courseTV.setText(courseModel.getCourse_name());
-		courseIV.setImageResource(courseModel.getImgid());
+		NameAndSureName.setText(courseModel.getCourse_name());
+		CoundDown.setText(courseModel.getCourse_name());
+		Age.setText(courseModel.getCourse_name());
+		
 		return listitemView;
 	}
 }
