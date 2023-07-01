@@ -15,12 +15,9 @@ import com.example.b_daygetter.R;
 
 import java.util.ArrayList;
 
-public class ListAdapterClass extends ArrayAdapter<ListStoringData> {
-
-
-//public class CourseGVAdapter
+public class CourseGVAdapter extends ArrayAdapter<CourseModel> {
 	
-	public ListAdapterClass(@NonNull Context context, ArrayList<ListStoringData> courseModelArrayList) {
+	public CourseGVAdapter(@NonNull Context context, ArrayList<CourseModel> courseModelArrayList) {
 		super(context, 0, courseModelArrayList);
 	}
 	
@@ -31,12 +28,12 @@ public class ListAdapterClass extends ArrayAdapter<ListStoringData> {
 		View listitemView = convertView;
 		if (listitemView == null) {
 			// Layout Inflater inflates each item to be displayed in GridView.
-			listitemView = LayoutInflater.from(getContext()).inflate(R.layout.activity_list_items, parent, false);
+			listitemView = LayoutInflater.from(getContext()).inflate(R.layout.card_item, parent, false);
 		}
 		
-		ListStoringData courseModel = getItem(position);
-		TextView courseTV = listitemView.findViewById(R.id.TitleImgList);
-		ImageView courseIV = listitemView.findViewById(R.id.TitleTextList);
+		CourseModel courseModel = getItem(position);
+		TextView courseTV = listitemView.findViewById(R.id.idTVCourse);
+		ImageView courseIV = listitemView.findViewById(R.id.idIVcourse);
 		
 		courseTV.setText(courseModel.getCourse_name());
 		courseIV.setImageResource(courseModel.getImgid());
