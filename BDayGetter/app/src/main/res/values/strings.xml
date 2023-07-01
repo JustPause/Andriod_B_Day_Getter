@@ -19,5 +19,8 @@
     <string name="submit">submit</string>
     <string name="duok_data_gimtadienio">Duok data gimtadienio\nyyyy-mm-dd</string>
     <string name="give_date">Give_Date</string>
+    <string name="naudotojo_emailas">Naudotojo Emailas</string>
+    <string name="give_message">Give_Message</string>
+    <string name="message">Message</string>
 
 </resources>

@@ -9,19 +9,21 @@ import androidx.room.Query;
 import java.util.List;
 
 @Dao
-public interface UserDao {
+public interface MessageDao {
+	
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
-	void insert(User user);
+	void insert(Message message);
 	
 	@Delete
-	void delete(User user);
+	void delete(Message message);
 	
-	@Query("DELETE FROM users")
+	@Query("DELETE FROM messages")
 	void deleteAllUsers();
 	
-	@Query("SELECT * FROM users ORDER BY b_day_month DESC")
+	@Query("SELECT * FROM messages ORDER BY Email DESC")
 	List<User> getAllUser();
 	
-	@Query("SELECT * FROM users WHERE id =:id")
+	@Query("SELECT * FROM messages WHERE id =:id")
 	User getUser(int id);
+	
 }

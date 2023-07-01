@@ -3,7 +3,6 @@ package com.example.b_daygetter.Main;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -19,8 +18,9 @@ public class MainActivity extends AppCompatActivity
 
   // TODO Add an feture that lets the youser get his one color, of core the data will be collected in the data base. On craision the user can have a random color and at any time he can chage it
 
-  // Link sureName
-  // Link
+  // Link https://stackoverflow.com/questions/20715503/get-result-from-activity-called-wi>
+  // Link https://developer.android.com/training/basics/intents/result
+
   String dataBaseUserName = "Justinas";
   String dataBaseUserSurName = "Stankunas";
   String dataBaseUserYear = "2003";
@@ -32,7 +32,9 @@ public class MainActivity extends AppCompatActivity
   int nowTimeDay = java.time.LocalDate.now().getDayOfMonth();
 
   int bDayOf = java.time.LocalDate.of(Integer.parseInt(dataBaseUserYear),
-      Integer.parseInt(dataBaseUserMonth), Integer.parseInt(dataBaseUserDay)).getDayOfYear();
+                                      Integer.parseInt(dataBaseUserMonth),
+                                      Integer.parseInt(dataBaseUserDay)
+                                     ).getDayOfYear();
   // TODO Pakeisti java.time.LocalDate.now()
   int todayDay = java.time.LocalDate.now().getDayOfYear();
   int todayTimeH = java.time.LocalDateTime.now().getHour();
@@ -45,7 +47,9 @@ public class MainActivity extends AppCompatActivity
     nowTimeMonth = java.time.LocalDate.now().getMonthValue();
     nowTimeDay = java.time.LocalDate.now().getDayOfMonth();
     bDayOf = java.time.LocalDate.of(Integer.parseInt(dataBaseUserYear),
-        Integer.parseInt(dataBaseUserMonth), Integer.parseInt(dataBaseUserDay)).getDayOfYear();
+                                    Integer.parseInt(dataBaseUserMonth),
+                                    Integer.parseInt(dataBaseUserDay)
+                                   ).getDayOfYear();
     todayDay = java.time.LocalDate.now().getDayOfYear();
     todayTimeH = java.time.LocalDateTime.now().getHour();
     todayTimeM = java.time.LocalDateTime.now().getMinute();
