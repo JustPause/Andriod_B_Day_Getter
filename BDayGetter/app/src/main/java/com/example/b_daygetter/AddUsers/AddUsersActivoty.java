@@ -44,8 +44,8 @@ public class AddUsersActivoty extends AppCompatActivity {
 				user.getName() + " " + user.getSureName() + " " + user.getDateMonth() + " " +
 				user.getDateMonth() + " " + user.getDateDay()
 		);
-
-//		userDao.insert(user);
+		
+		userDao.insert(user);
 		
 		Intent intent = new Intent(this, AddMessige.class);
 		startActivity(intent);
