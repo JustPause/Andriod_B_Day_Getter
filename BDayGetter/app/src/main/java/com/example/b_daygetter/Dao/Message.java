@@ -14,6 +14,10 @@ public class Message {
 	@PrimaryKey(autoGenerate = true)
 	@ColumnInfo(name = "id")
 	private int id;
+	
+	//	@ColumnInfo(name = "user_id")
+//	private int user_id;
+	// cia turetu buti naudotoja id kuris prisi viska
 	@ColumnInfo(name = "email")
 	private String email;
 	@ColumnInfo(name = "message")
