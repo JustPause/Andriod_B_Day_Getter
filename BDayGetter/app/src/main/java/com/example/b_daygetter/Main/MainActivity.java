@@ -65,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
 	
 	@SuppressLint("SetTextI18n")
 	
+	public String geter_init_Data_B_day_countdown() {
+		//TODO Make it static
+		return bDayOf + 365 - todayDay + " Days " + (24 - todayTimeH) + " Hour\n " +
+			   (60 - todayTimeM) + " Minute " + (60 - todayTimeS) + " Second ";
+	}
+	
 	private void init_Data_B_day_countdown() {
 		TextView textView = findViewById(R.id.B_day_countdown);
 		
@@ -72,12 +78,10 @@ public class MainActivity extends AppCompatActivity {
 		//		Log.d("Debug1", dataBaseUserYear + " " + dataBaseUserMonth + " " + dataBaseUserDay);
 		
 		if (bDayOf - todayDay < 0) {
-			textView.setText(String.valueOf(
-					bDayOf + 365 - todayDay) + " Days " + (24 - todayTimeH) + " Hour\n " +
+			textView.setText(bDayOf + 365 - todayDay + " Days " + (24 - todayTimeH) + " Hour\n " +
 							 (60 - todayTimeM) + " Minute " + (60 - todayTimeS) + " Second ");
 		} else {
-			textView.setText(String.valueOf(
-					bDayOf - todayDay) + " Days " + (24 - todayTimeH) + " Hour\n " +
+			textView.setText(bDayOf - todayDay + " Days " + (24 - todayTimeH) + " Hour\n " +
 							 (60 - todayTimeM) + " Minute " + (60 - todayTimeS) + " Second ");
 		}
 		

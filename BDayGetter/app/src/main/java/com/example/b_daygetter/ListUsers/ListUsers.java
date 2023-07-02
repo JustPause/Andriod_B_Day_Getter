@@ -2,12 +2,11 @@ package com.example.b_daygetter.ListUsers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
 
+import com.example.b_daygetter.Main.Users;
 import com.example.b_daygetter.R;
 
 import java.util.ArrayList;
@@ -19,22 +18,54 @@ public class ListUsers extends AppCompatActivity {
 	
 	GridView coursesGV;
 	
+	Users users1 = new Users("Justinas", "Stankunas", "2003", "6", "6");
+	Users users2 = new Users("Adomas", "Akmenukas", "1922", "8", "9");
+	Users users3 = new Users("Vytautas", "Mazasis", "2022", "5", "12");
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list_users);
 		
 		coursesGV = findViewById(R.id.idGVcourses);
-		ArrayList<CourseModel> courseModelArrayList = new ArrayList<CourseModel>();
+		ArrayList<ListUsersModel> listUsersModelArrayList = new ArrayList<ListUsersModel>();
 		
-		courseModelArrayList.add(new CourseModel("DSA", R.drawable.ic_launcher_foreground));
-		courseModelArrayList.add(new CourseModel("JAVA", R.drawable.ic_launcher_foreground));
-		courseModelArrayList.add(new CourseModel("C++", R.drawable.ic_launcher_foreground));
-		courseModelArrayList.add(new CourseModel("Python", R.drawable.ic_launcher_foreground));
-		courseModelArrayList.add(new CourseModel("Javascript", R.drawable.ic_launcher_foreground));
-		courseModelArrayList.add(new CourseModel("DSA", R.drawable.ic_launcher_foreground));
+		listUsersModelArrayList.add(new ListUsersModel(
+				(users1.UserName + " " + users1.UserSurName),
+				String.valueOf
+						(
+								java.time.LocalDate.now().getYear() -
+								Integer.parseInt(users1.UserYear)
+						),
+				String.valueOf(java.time.LocalDate.now().getYear() -
+							   Integer.parseInt(users1.UserYear)
+				)
+		));
 		
-		CourseGVAdapter adapter = new CourseGVAdapter(this, courseModelArrayList);
+		listUsersModelArrayList.add(new ListUsersModel((users2.UserName + " " + users2.UserSurName),
+				String.valueOf
+						(
+								java.time.LocalDate.now().getYear() -
+								Integer.parseInt(users2.UserYear)
+						),
+				String.valueOf(java.time.LocalDate.now().getYear() -
+							   Integer.parseInt(users2.UserYear)
+				)
+		));
+		
+		listUsersModelArrayList.add(new ListUsersModel((users3.UserName + " " + users3.UserSurName),
+				String.valueOf
+						(
+								java.time.LocalDate.now().getYear() -
+								Integer.parseInt(users3.UserYear)
+						),
+				String.valueOf(java.time.LocalDate.now().getYear() -
+							   Integer.parseInt(users3.UserYear)
+				)
+		));
+		
+		ListUsersAdapter adapter = new ListUsersAdapter(this, listUsersModelArrayList);
 		coursesGV.setAdapter(adapter);
 	}
 	

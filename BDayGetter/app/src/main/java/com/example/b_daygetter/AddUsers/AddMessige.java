@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.b_daygetter.Dao.MainDataBase;
 import com.example.b_daygetter.Dao.Message;
 import com.example.b_daygetter.Dao.MessageDao;
 import com.example.b_daygetter.Dao.User;
@@ -24,6 +25,8 @@ public class AddMessige extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_messige);
+
+//		messageDao = MainDataBase.getInstance(getApplicationContext()).messageDao();
 	}
 	
 	public void submit_Button_Return_To_Main(View view) {

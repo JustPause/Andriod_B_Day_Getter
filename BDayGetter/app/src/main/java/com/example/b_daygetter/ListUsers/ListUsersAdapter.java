@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,10 +14,10 @@ import com.example.b_daygetter.R;
 
 import java.util.ArrayList;
 
-public class CourseGVAdapter extends ArrayAdapter<CourseModel> {
+public class ListUsersAdapter extends ArrayAdapter<ListUsersModel> {
 	
-	public CourseGVAdapter(@NonNull Context context, ArrayList<CourseModel> courseModelArrayList) {
-		super(context, 0, courseModelArrayList);
+	public ListUsersAdapter(@NonNull Context context, ArrayList<ListUsersModel> listUsersModelArrayList) {
+		super(context, 0, listUsersModelArrayList);
 	}
 	
 	@NonNull
@@ -31,17 +30,20 @@ public class CourseGVAdapter extends ArrayAdapter<CourseModel> {
 			listitemView = LayoutInflater.from(getContext()).inflate(R.layout.card_item, parent, false);
 		}
 		
-		CourseModel courseModel = getItem(position);
+		ListUsersModel listUsersModel = getItem(position);
+		
 		TextView courseTV = listitemView.findViewById(R.id.idTVCourse);
+		
+		courseTV.setText(listUsersModel.getCourse_name());
+		
+		
 		TextView NameAndSureName = listitemView.findViewById(R.id.Name_SureName);
 		TextView CoundDown = listitemView.findViewById(R.id.Coundown);
 		TextView Age = listitemView.findViewById(R.id.Age);
 		
-		
-		courseTV.setText(courseModel.getCourse_name());
-		NameAndSureName.setText(courseModel.getCourse_name());
-		CoundDown.setText(courseModel.getCourse_name());
-		Age.setText(courseModel.getCourse_name());
+		NameAndSureName.setText(listUsersModel.getNameAndSureName());
+		CoundDown.setText(listUsersModel.getCoundDown());
+		Age.setText(listUsersModel.getAge());
 		
 		return listitemView;
 	}
