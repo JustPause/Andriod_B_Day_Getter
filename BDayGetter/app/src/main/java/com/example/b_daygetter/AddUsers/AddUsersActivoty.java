@@ -30,11 +30,6 @@ public class AddUsersActivoty extends AppCompatActivity {
 		EditText personName = (EditText) findViewById(R.id.Person_Name);
 		EditText personDate = (EditText) findViewById(R.id.Person_Date);
 		
-		//    Log.d("getText", String.valueOf(personName.getText()));
-		//    Log.d("getText", personDate.getText().toString().substring(0,
-		//        4) + "_" + personDate.getText().toString().substring(5,
-		//        7) + "_" + personDate.getText().toString().substring(8, 10));
-		
 		String[] words = personName.getText().toString().split(" ");
 		
 		String userName = words[0];
@@ -44,17 +39,13 @@ public class AddUsersActivoty extends AppCompatActivity {
 		User user = new User(userName, userSureName, bLocalDate.getYear(), bLocalDate.getMonthValue(),
 				bLocalDate.getDayOfMonth()
 		);
-
-//		Log.d("getText",
-//				userName + " " + userSureName + " " + bLocalDate.getYear() + " " +
-//				bLocalDate.getMonthValue() + " " + bLocalDate.getDayOfMonth()
-//		);
+		
 		Log.d("getText",
 				user.getName() + " " + user.getSureName() + " " + user.getDateMonth() + " " +
 				user.getDateMonth() + " " + user.getDateDay()
 		);
-		
-		userDao.insert(user);
+
+//		userDao.insert(user);
 		
 		Intent intent = new Intent(this, AddMessige.class);
 		startActivity(intent);
