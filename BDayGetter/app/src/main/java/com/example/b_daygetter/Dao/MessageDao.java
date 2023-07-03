@@ -11,7 +11,7 @@ import java.util.List;
 @Dao
 public interface MessageDao {
 	
-	@Insert(onConflict = OnConflictStrategy.REPLACE)
+	@Insert
 	void insert(Message message);
 	
 	@Delete

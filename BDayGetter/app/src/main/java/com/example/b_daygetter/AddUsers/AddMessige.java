@@ -35,9 +35,9 @@ public class AddMessige extends AppCompatActivity {
 		EditText personMessage = (EditText) findViewById(R.id.Person_Message);
 		
 		Message message = new Message(
-//				personEmail.getText().toString(),
-//				personMessage.getText().toString()
-				"A", "B"
+				personEmail.getText().toString(),
+				personMessage.getText().toString()
+		
 		);
 		
 		Log.d("getText",
