@@ -18,8 +18,6 @@ import com.example.b_daygetter.SendEmailToTheUser.SendEmailToTheUser;
 
 public class MainActivity extends AppCompatActivity {
 	
-	public int nowTimeYear = java.time.LocalDate.now().getYear();
-	public int nowTimeMonth = java.time.LocalDate.now().getMonthValue();
 	// TODO Add an feture that lets the youser get his one color, of core the data will be collected in the data base. On craision the user can have a random color and at any time he can chage it
 	
 	// Link https://stackoverflow.com/questions/20715503/get-result-from-activity-called-wi>
@@ -28,30 +26,25 @@ public class MainActivity extends AppCompatActivity {
 	// TODO pakeisti dataBaseUserYear, dataBaseUserMonth, dataBaseUserDay i int
 	
 	// Form Data Base i get one objcet Users
-	public int nowTimeDay = java.time.LocalDate.now().getDayOfMonth();
-	// TODO Pakeisti java.time.LocalDate.now()
-	public int todayDay = java.time.LocalDate.now().getDayOfYear();
-	public int todayTimeH = java.time.LocalDateTime.now().getHour();
-	public int todayTimeM = java.time.LocalDateTime.now().getMinute();
-	public int todayTimeS = java.time.LocalDateTime.now().getSecond();
+	
 	UserDao userDao;
-	Users user = new Users("Justinas", "Stankunas", 2003, 6, 6);
-	public int bDayOf = java.time.LocalDate.of(user.UserYear, user.UserMonth, user.UserDay).getDayOfYear();
+	User user = new User("Justinas", "Stankunas", 2003, 6, 6);
+	Var var = new Var();
 	
 	void UpdateInt() {
 		
 		
-		nowTimeYear = java.time.LocalDate.now().getYear();
-		nowTimeMonth = java.time.LocalDate.now().getMonthValue();
-		nowTimeDay = java.time.LocalDate.now().getDayOfMonth();
-		bDayOf = java.time.LocalDate.of(user.UserYear,
-						user.UserMonth,
-						user.UserDay)
+		var.nowTimeYear = java.time.LocalDate.now().getYear();
+		var.nowTimeMonth = java.time.LocalDate.now().getMonthValue();
+		var.nowTimeDay = java.time.LocalDate.now().getDayOfMonth();
+		var.bDayOf = java.time.LocalDate.of(user.getDateYear(),
+						user.getDateMonth(),
+						user.getDateDay())
 				.getDayOfYear();
-		todayDay = java.time.LocalDate.now().getDayOfYear();
-		todayTimeH = java.time.LocalDateTime.now().getHour();
-		todayTimeM = java.time.LocalDateTime.now().getMinute();
-		todayTimeS = java.time.LocalDateTime.now().getSecond();
+		var.todayDay = java.time.LocalDate.now().getDayOfYear();
+		var.todayTimeH = java.time.LocalDateTime.now().getHour();
+		var.todayTimeM = java.time.LocalDateTime.now().getMinute();
+		var.todayTimeS = java.time.LocalDateTime.now().getSecond();
 	}
 	
 	@Override
@@ -73,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
 	
 	public String geter_init_Data_B_day_countdown() {
 		//TODO Make it static
-		return bDayOf + 365 - todayDay + " Days " + (24 - todayTimeH) + " Hour\n " +
-			   (60 - todayTimeM) + " Minute " + (60 - todayTimeS) + " Second ";
+		return var.bDayOf + 365 - var.todayDay + " Days " + (24 - var.todayTimeH) + " Hour\n " +
+			   (60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) + " Second ";
 	}
 	
 	@SuppressLint("SetTextI18n")
@@ -84,12 +77,15 @@ public class MainActivity extends AppCompatActivity {
 		//		Log.d("Debug1", nowTimeYear + " " + nowTimeMonth + " " + nowTimeDay);
 		//		Log.d("Debug1", dataBaseUserYear + " " + dataBaseUserMonth + " " + dataBaseUserDay);
 		
-		if (bDayOf - todayDay < 0) {
-			textView.setText(bDayOf + 365 - todayDay + " Days " + (24 - todayTimeH) + " Hour\n " +
-							 (60 - todayTimeM) + " Minute " + (60 - todayTimeS) + " Second ");
+		if (var.bDayOf - var.todayDay < 0) {
+			textView.setText(var.bDayOf + 365 - var.todayDay + " Days " + (24 - var.todayTimeH) +
+							 " Hour\n " +
+							 (60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) +
+							 " Second ");
 		} else {
-			textView.setText(bDayOf - todayDay + " Days " + (24 - todayTimeH) + " Hour\n " +
-							 (60 - todayTimeM) + " Minute " + (60 - todayTimeS) + " Second ");
+			textView.setText(
+					var.bDayOf - var.todayDay + " Days " + (24 - var.todayTimeH) + " Hour\n " +
+					(60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) + " Second ");
 		}
 		
 		Thread thread = new Thread() {
@@ -117,13 +113,13 @@ public class MainActivity extends AppCompatActivity {
 	@SuppressLint("SetTextI18n")
 	protected void User_name() {
 		TextView textView = findViewById(R.id.User_name);
-		textView.setText(user.UserName + " " + user.UserSurName);
+		textView.setText(user.getName() + " " + user.getSureName());
 	}
 	
 	@SuppressLint("SetTextI18n")
 	protected void date() {
 		TextView textView = findViewById(R.id.Date);
-		textView.setText(user.UserYear + " " + user.UserMonth + " " + user.UserDay);
+		textView.setText(user.getDateYear() + " " + user.getDateMonth() + " " + user.getDateDay());
 	}
 	
 	@SuppressLint("SetTextI18n")
@@ -131,13 +127,13 @@ public class MainActivity extends AppCompatActivity {
 		TextView textView = findViewById(R.id.Age_will_be);
 		textView.setText("21");
 	}
-	//////////////////////////////
 	
 	public void add_users_button(View view) {
 		
 		Intent intent = new Intent(this, AddUsersActivoty.class);
 		startActivity(intent);
 	}
+	//////////////////////////////
 	
 	public void list_users_button(View view) {
 		
@@ -149,6 +145,17 @@ public class MainActivity extends AppCompatActivity {
 		
 		Intent intent = new Intent(this, SendEmailToTheUser.class);
 		startActivity(intent);
+	}
+	
+	class Var {
+		public int nowTimeYear = java.time.LocalDate.now().getYear();
+		public int nowTimeMonth = java.time.LocalDate.now().getMonthValue();
+		public int nowTimeDay = java.time.LocalDate.now().getDayOfMonth();
+		public int todayDay = java.time.LocalDate.now().getDayOfYear();
+		public int todayTimeH = java.time.LocalDateTime.now().getHour();
+		public int todayTimeM = java.time.LocalDateTime.now().getMinute();
+		public int todayTimeS = java.time.LocalDateTime.now().getSecond();
+		public int bDayOf = java.time.LocalDate.of(user.getDateYear(), user.getDateMonth(), user.getDateDay()).getDayOfYear();
 	}
 	
 	//////////////////////////////

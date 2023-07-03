@@ -28,8 +28,6 @@ public class ListUsers extends AppCompatActivity {
 	
 	GridView coursesGV;
 	
-	Users users1 = new Users("Justinas", "Stankunas", 2003, 6, 6);
-	
 	UserDao userDao;
 	
 	@Override
