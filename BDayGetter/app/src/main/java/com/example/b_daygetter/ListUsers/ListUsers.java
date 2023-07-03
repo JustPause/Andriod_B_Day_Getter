@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.GridView;
 
+import com.example.b_daygetter.Dao.UserDao;
 import com.example.b_daygetter.Main.Users;
 import com.example.b_daygetter.R;
 
@@ -17,6 +18,9 @@ public class ListUsers extends AppCompatActivity {
 	//TODO Tie langeliai galetu veikti kaip miktukai
 	
 	GridView coursesGV;
+	
+	UserDao userDao;
+	
 	
 	Users users1 = new Users("Justinas", "Stankunas", "2003", "6", "6");
 	Users users2 = new Users("Adomas", "Akmenukas", "1922", "8", "9");

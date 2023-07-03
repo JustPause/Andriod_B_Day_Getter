@@ -16,19 +16,12 @@ public class Message {
 	private int id;
 	
 	//	@ColumnInfo(name = "user_id")
-//	private int user_id;
+	//	private int user_id;
 	// cia turetu buti naudotoja id kuris prisi viska
 	@ColumnInfo(name = "email")
 	private String email;
 	@ColumnInfo(name = "message")
 	private String message;
-	
-	@Ignore
-	public Message(int id, String email, String message) {
-		this.id = id;
-		this.email = email;
-		this.message = message;
-	}
 	
 	public Message(String email, String message) {
 		this.email = email;

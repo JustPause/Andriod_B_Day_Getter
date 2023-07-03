@@ -25,5 +25,4 @@ public interface MessageDao {
 	
 	@Query("SELECT * FROM messages WHERE id =:id")
 	User getUser(int id);
-	
 }

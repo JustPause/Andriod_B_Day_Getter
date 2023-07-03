@@ -22,6 +22,7 @@ public class User {
 	@ColumnInfo(name = "b_day_day")
 	private Integer dateDay;
 	
+	
 	public User(String name, String sureName, Integer dateYear, Integer dateMonth, Integer dateDay) {
 		this.name = name;
 		this.sureName = sureName;
