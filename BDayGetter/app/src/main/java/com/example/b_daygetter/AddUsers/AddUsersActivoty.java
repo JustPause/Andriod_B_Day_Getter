@@ -48,6 +48,7 @@ public class AddUsersActivoty extends AppCompatActivity {
 		userDao.insert(user);
 		
 		Intent intent = new Intent(this, AddMessige.class);
+		finish();
 		startActivity(intent);
 	}
 }

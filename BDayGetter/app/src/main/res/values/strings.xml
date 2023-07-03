@@ -22,5 +22,6 @@
     <string name="naudotojo_emailas">Naudotojo Emailas</string>
     <string name="give_message">Give_Message</string>
     <string name="message">Message</string>
+    <string name="delete">Delete</string>
 
 </resources>

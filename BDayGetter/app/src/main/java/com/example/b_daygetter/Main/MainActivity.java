@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.b_daygetter.AddUsers.AddUsersActivoty;
+import com.example.b_daygetter.Dao.MainDataBase;
+import com.example.b_daygetter.Dao.User;
+import com.example.b_daygetter.Dao.UserDao;
 import com.example.b_daygetter.ListUsers.ListUsers;
 import com.example.b_daygetter.R;
 import com.example.b_daygetter.SendEmailToTheUser.SendEmailToTheUser;
@@ -21,14 +24,12 @@ public class MainActivity extends AppCompatActivity {
 	// Link https://developer.android.com/training/basics/intents/result
 	
 	// TODO pakeisti dataBaseUserYear, dataBaseUserMonth, dataBaseUserDay i int
-	Users users = new Users("Justinas", "Stankunas", "2003", "6", "6");
+	
+	Users user = new Users("Justinas", "Stankunas", "2003", "6", "6");
 	
 	// Form Data Base i get one objcet Users
 	
-	int bDayOf = java.time.LocalDate.of(Integer.parseInt(users.UserYear),
-			Integer.parseInt(users.UserMonth),
-			Integer.parseInt(users.UserDay)
-	).getDayOfYear();
+	int bDayOf = java.time.LocalDate.of(Integer.parseInt(user.UserYear), Integer.parseInt(user.UserMonth), Integer.parseInt(user.UserDay)).getDayOfYear();
 	int nowTimeYear = java.time.LocalDate.now().getYear();
 	int nowTimeMonth = java.time.LocalDate.now().getMonthValue();
 	int nowTimeDay = java.time.LocalDate.now().getDayOfMonth();
@@ -42,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
 		nowTimeYear = java.time.LocalDate.now().getYear();
 		nowTimeMonth = java.time.LocalDate.now().getMonthValue();
 		nowTimeDay = java.time.LocalDate.now().getDayOfMonth();
-		bDayOf = java.time.LocalDate.of(Integer.parseInt(users.UserYear),
-				Integer.parseInt(users.UserMonth),
-				Integer.parseInt(users.UserDay)
+		bDayOf = java.time.LocalDate.of(Integer.parseInt(user.UserYear),
+				Integer.parseInt(user.UserMonth),
+				Integer.parseInt(user.UserDay)
 		).getDayOfYear();
 		todayDay = java.time.LocalDate.now().getDayOfYear();
 		todayTimeH = java.time.LocalDateTime.now().getHour();
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
 			   (60 - todayTimeM) + " Minute " + (60 - todayTimeS) + " Second ";
 	}
 	
+	@SuppressLint("SetTextI18n")
 	private void init_Data_B_day_countdown() {
 		TextView textView = findViewById(R.id.B_day_countdown);
 		
@@ -110,13 +112,13 @@ public class MainActivity extends AppCompatActivity {
 	@SuppressLint("SetTextI18n")
 	protected void User_name() {
 		TextView textView = findViewById(R.id.User_name);
-		textView.setText(users.UserName + " " + users.UserSurName);
+		textView.setText(user.UserName + " " + user.UserSurName);
 	}
 	
 	@SuppressLint("SetTextI18n")
 	protected void date() {
 		TextView textView = findViewById(R.id.Date);
-		textView.setText(users.UserYear + " " + users.UserMonth + " " + users.UserDay);
+		textView.setText(user.UserYear + " " + user.UserMonth + " " + user.UserDay);
 	}
 	
 	@SuppressLint("SetTextI18n")

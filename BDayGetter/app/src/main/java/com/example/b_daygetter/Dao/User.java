@@ -61,17 +61,31 @@ public class User {
 		return sureName;
 	}
 	
+	public void setSureName(String sureName) {
+		this.sureName = sureName;
+	}
+	
 	public Integer getDateYear() {
 		return dateYear;
+	}
+	
+	public void setDateYear(Integer dateYear) {
+		this.dateYear = dateYear;
 	}
 	
 	public Integer getDateMonth() {
 		return dateMonth;
 	}
 	
+	public void setDateMonth(Integer dateMonth) {
+		this.dateMonth = dateMonth;
+	}
+	
 	public Integer getDateDay() {
 		return dateDay;
 	}
 	
-	
+	public void setDateDay(Integer dateDay) {
+		this.dateDay = dateDay;
+	}
 }

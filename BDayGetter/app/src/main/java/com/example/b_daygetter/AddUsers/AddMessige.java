@@ -46,6 +46,7 @@ public class AddMessige extends AppCompatActivity {
 		messageDao.insert(message);
 		
 		Intent intent = new Intent(this, MainActivity.class);
+		finish();
 		startActivity(intent);
 	}
 }
