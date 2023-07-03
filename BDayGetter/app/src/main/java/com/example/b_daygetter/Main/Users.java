@@ -3,11 +3,11 @@ package com.example.b_daygetter.Main;
 public class Users {
 	public String UserName;
 	public String UserSurName;
-	public String UserYear;
-	public String UserMonth;
-	public String UserDay;
+	public int UserYear;
+	public int UserMonth;
+	public int UserDay;
 	
-	public Users(String userName, String userSurName, String userYear, String userMonth, String userDay) {
+	public Users(String userName, String userSurName, int userYear, int userMonth, int userDay) {
 		UserName = userName;
 		UserSurName = userSurName;
 		UserYear = userYear;
@@ -29,29 +29,5 @@ public class Users {
 	
 	public void setUserSurName(String userSurName) {
 		UserSurName = userSurName;
-	}
-	
-	public String getUserYear() {
-		return UserYear;
-	}
-	
-	public void setUserYear(String userYear) {
-		UserYear = userYear;
-	}
-	
-	public String getUserMonth() {
-		return UserMonth;
-	}
-	
-	public void setUserMonth(String userMonth) {
-		UserMonth = userMonth;
-	}
-	
-	public String getUserDay() {
-		return UserDay;
-	}
-	
-	public void setUserDay(String userDay) {
-		UserDay = userDay;
 	}
 }
