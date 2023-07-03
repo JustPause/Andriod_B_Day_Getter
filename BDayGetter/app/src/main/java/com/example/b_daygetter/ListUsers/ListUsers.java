@@ -106,7 +106,7 @@ public class ListUsers extends AppCompatActivity {
 		//TODO Pasirinkta informacija butu nusiunciama i main tenais putu pakeiciama i duota klacia
 		
 		
-		Intent intent = new Intent(this, AddMessige.class);
+		Intent intent = new Intent(this, MainActivity.class);
 		finish();
 		startActivity(intent);
 	}
