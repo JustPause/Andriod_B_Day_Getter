@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.b_daygetter.AddUsers.AddUsersActivoty;
 import com.example.b_daygetter.Dao.MainDataBase;
+import com.example.b_daygetter.Dao.Message;
+import com.example.b_daygetter.Dao.SecondDataBase;
 import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Dao.UserDao;
 import com.example.b_daygetter.ListUsers.ListUsers;
@@ -42,6 +44,13 @@ public class MainActivity extends AppCompatActivity {
 		if (userDao.getAllUser().isEmpty()) {
 			userDao.insert(new User("Justinas", "Stankunas", 2003, 6, 6));
 		}
+		if (SecondDataBase.getInstance(getApplicationContext()).messageDao().getAllMessage().isEmpty()) {
+			SecondDataBase.getInstance(getApplicationContext()).messageDao().insert(
+					new Message(
+							"IamJustStan@hotmail.com",
+							"Happy birthday! Wishing you a day full of love, joy, and all your favorite things."
+					));
+		}
 
 //		User user1 = new User("Justinas", "Stankunas", 2003, 6, 6);
 		user = userDao.getUser(1);
@@ -53,7 +62,15 @@ public class MainActivity extends AppCompatActivity {
 		date();
 		init_Data_B_day_countdown();
 		age_will_be();
+//
+//		String S = getString(R.string.version);
+//		S = S.replace(S.substring(10, 13), String.valueOf(Integer.parseInt(
+//				S.substring(10, 13) + 0.1)));
+//		getString(R.string.version) = S.replace(S.substring(10, 13), String.valueOf(Integer.parseInt(
+//				S.substring(10, 13) + 0.1)));
+//		Log.d("ASDAWDWDAD", S.substring(10, 13));
 	}
+	
 	
 	public void UpdateInt() {
 		

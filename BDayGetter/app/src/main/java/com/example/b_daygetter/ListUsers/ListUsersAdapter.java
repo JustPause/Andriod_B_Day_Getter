@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.b_daygetter.Dao.Message;
 import com.example.b_daygetter.R;
 
 import java.util.ArrayList;

@@ -39,17 +39,9 @@ public class ListUsers extends AppCompatActivity {
 		ArrayList<ListUsersModel> listUsersModelArrayList = new ArrayList<ListUsersModel>();
 		
 		for (int i = 0; i < AllUser.size(); i++) {
-			Log.d("Log", String.valueOf(AllUser.size()));
 			
-			listUsersModelArrayList.add(
-					new ListUsersModel(
-							(AllUser.get(i).getName() + " " +
-							 AllUser.get(i).getSureName()),
-							mainActivity.B_day_countdown(),
-							"Amžius bus " + String.valueOf(
-									java.time.LocalDate.now().getYear() -
-									AllUser.get(i).getDateYear()),
-							String.valueOf(AllUser.get(i).getId())));
+			addUserMetod(AllUser, listUsersModelArrayList, i);
+			
 		}
 		
 		ListUsersAdapter adapter = new ListUsersAdapter(this, listUsersModelArrayList);
@@ -60,11 +52,28 @@ public class ListUsers extends AppCompatActivity {
 	public void runOnClic(View view) {
 //		view.setBackgroundColor(0xFF00FF00);
 		//TODO Pasirinkta informacija butu nusiunciama i main tenais putu pakeiciama i duota klacia
-		Log.d("12345", String.valueOf(view.getId()));
+		
+		//TODO as tureciau gauti data base id
+		Log.d("TheIdProblemSolving", String.valueOf("IDK"));
 		
 		Intent intent = new Intent(this, MainActivity.class);
 		finish();
 		startActivity(intent);
+	}
+	
+	void addUserMetod(List<User> AllUser, ArrayList<ListUsersModel> listUsersModelArrayList, int i) {
+		Log.d("TheIdProblemSolving-AllUser.size()", String.valueOf(AllUser.size()));
+		
+		Log.d("TheIdProblemSolving-i", String.valueOf(i));
+		listUsersModelArrayList.add(
+				new ListUsersModel(
+						(AllUser.get(i).getName() + " " +
+						 AllUser.get(i).getSureName()),
+						mainActivity.B_day_countdown(),
+						"Amžius bus " + String.valueOf(
+								java.time.LocalDate.now().getYear() -
+								AllUser.get(i).getDateYear()),
+						String.valueOf(AllUser.get(i).getId())));
 	}
 	
 	public void delete_Button_ListUsers(View view) {

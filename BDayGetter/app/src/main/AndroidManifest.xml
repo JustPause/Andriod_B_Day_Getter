@@ -11,6 +11,11 @@
         android:theme="@style/Theme.BDayGetter"
         tools:targetApi="31">
         <activity
+            android:name=".Email.Email"
+            android:exported="false"
+            android:label="@string/title_activity_email"
+            android:theme="@style/Theme.BDayGetter" />
+        <activity
             android:name=".AddUsers.AddMessige"
             android:exported="false"
             android:label="AddMessige"

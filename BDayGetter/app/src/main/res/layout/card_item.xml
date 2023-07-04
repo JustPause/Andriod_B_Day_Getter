@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_margin="5dp"
     android:onClick="runOnClic"
@@ -18,21 +18,18 @@
             android:id="@+id/Name_SureName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="_"
             android:textAlignment="center" />
 
         <TextView
             android:id="@+id/Coundown"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="_"
             android:textAlignment="center" />
 
         <TextView
             android:id="@+id/Age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="_"
             android:textAlignment="center" />
 
     </LinearLayout>

@@ -37,7 +37,6 @@ public class AddMessige extends AppCompatActivity {
 		Message message = new Message(
 				personEmail.getText().toString(),
 				personMessage.getText().toString()
-		
 		);
 		
 		Log.d("getText",

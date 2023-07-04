@@ -21,8 +21,8 @@ public interface MessageDao {
 	void deleteAllUsers();
 	
 	@Query("SELECT * FROM messages ORDER BY Email DESC")
-	List<User> getAllUser();
+	List<Message> getAllMessage();
 	
 	@Query("SELECT * FROM messages WHERE :id")
-	User getUser(int id);
+	Message getMessage(int id);
 }

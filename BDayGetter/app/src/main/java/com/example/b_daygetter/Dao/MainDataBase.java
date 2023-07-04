@@ -6,7 +6,6 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-//, Message.class
 @Database(entities = {User.class}, version = 1)
 public abstract class MainDataBase extends RoomDatabase {
 	private static MainDataBase instance;
@@ -20,6 +19,4 @@ public abstract class MainDataBase extends RoomDatabase {
 	}
 	
 	public abstract UserDao userDao();
-
-//	public abstract MessageDao messageDao();
 }
