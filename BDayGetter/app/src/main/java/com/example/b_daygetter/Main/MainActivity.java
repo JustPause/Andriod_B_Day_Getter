@@ -3,6 +3,7 @@ package com.example.b_daygetter.Main;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -29,10 +30,32 @@ public class MainActivity extends AppCompatActivity {
 	
 	UserDao userDao;
 	User user = new User("Justinas", "Stankunas", 2003, 6, 6);
-	Var var = new Var();
+	Var var = new Var(user);
 	
-	void UpdateInt() {
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
 		
+		userDao = MainDataBase.getInstance(getApplicationContext()).userDao();
+		if (userDao.getAllUser().isEmpty()) {
+			userDao.insert(new User("Justinas", "Stankunas", 2003, 6, 6));
+		}
+
+//		User user1 = new User("Justinas", "Stankunas", 2003, 6, 6);
+		user = userDao.getUser(1);
+		var = new Var(user);
+		
+		Log.d("12345", String.valueOf(user.getDateDay()));
+		
+		User_name();
+		date();
+		init_Data_B_day_countdown();
+		age_will_be();
+	}
+	
+	public void UpdateInt() {
 		
 		var.nowTimeYear = java.time.LocalDate.now().getYear();
 		var.nowTimeMonth = java.time.LocalDate.now().getMonthValue();
@@ -47,27 +70,24 @@ public class MainActivity extends AppCompatActivity {
 		var.todayTimeS = java.time.LocalDateTime.now().getSecond();
 	}
 	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		
-		userDao = MainDataBase.getInstance(getApplicationContext()).userDao();
-//		if (userDao.getAllUser().isEmpty()) {
-//			userDao.insert(new User("Justinas", "Stankunas", 2003, 6, 6));
-//		}
-		User_name();
-		date();
-		init_Data_B_day_countdown();
-		age_will_be();
-	}
-	
 	@SuppressLint("SetTextI18n")
 	
 	public String geter_init_Data_B_day_countdown() {
 		//TODO Make it static
 		return var.bDayOf + 365 - var.todayDay + " Days " + (24 - var.todayTimeH) + " Hour\n " +
 			   (60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) + " Second ";
+	}
+	
+	public String B_day_countdown() {
+		if (var.bDayOf - var.todayDay < 0) {
+			return var.bDayOf + 365 - var.todayDay + " Days " + (24 - var.todayTimeH) +
+				   " Hour\n " +
+				   (60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) +
+				   " Second ";
+		} else {
+			return var.bDayOf - var.todayDay + " Days " + (24 - var.todayTimeH) + " Hour\n " +
+				   (60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) + " Second ";
+		}
 	}
 	
 	@SuppressLint("SetTextI18n")
@@ -77,16 +97,9 @@ public class MainActivity extends AppCompatActivity {
 		//		Log.d("Debug1", nowTimeYear + " " + nowTimeMonth + " " + nowTimeDay);
 		//		Log.d("Debug1", dataBaseUserYear + " " + dataBaseUserMonth + " " + dataBaseUserDay);
 		
-		if (var.bDayOf - var.todayDay < 0) {
-			textView.setText(var.bDayOf + 365 - var.todayDay + " Days " + (24 - var.todayTimeH) +
-							 " Hour\n " +
-							 (60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) +
-							 " Second ");
-		} else {
-			textView.setText(
-					var.bDayOf - var.todayDay + " Days " + (24 - var.todayTimeH) + " Hour\n " +
-					(60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) + " Second ");
-		}
+		
+		textView.setText(B_day_countdown());
+		
 		
 		Thread thread = new Thread() {
 			
@@ -145,17 +158,6 @@ public class MainActivity extends AppCompatActivity {
 		
 		Intent intent = new Intent(this, SendEmailToTheUser.class);
 		startActivity(intent);
-	}
-	
-	class Var {
-		public int nowTimeYear = java.time.LocalDate.now().getYear();
-		public int nowTimeMonth = java.time.LocalDate.now().getMonthValue();
-		public int nowTimeDay = java.time.LocalDate.now().getDayOfMonth();
-		public int todayDay = java.time.LocalDate.now().getDayOfYear();
-		public int todayTimeH = java.time.LocalDateTime.now().getHour();
-		public int todayTimeM = java.time.LocalDateTime.now().getMinute();
-		public int todayTimeS = java.time.LocalDateTime.now().getSecond();
-		public int bDayOf = java.time.LocalDate.of(user.getDateYear(), user.getDateMonth(), user.getDateDay()).getDayOfYear();
 	}
 	
 	//////////////////////////////

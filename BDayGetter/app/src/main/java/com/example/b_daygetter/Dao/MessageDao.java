@@ -23,6 +23,6 @@ public interface MessageDao {
 	@Query("SELECT * FROM messages ORDER BY Email DESC")
 	List<User> getAllUser();
 	
-	@Query("SELECT * FROM messages WHERE id =:id")
+	@Query("SELECT * FROM messages WHERE :id")
 	User getUser(int id);
 }

@@ -32,11 +32,6 @@ public class ListUsersAdapter extends ArrayAdapter<ListUsersModel> {
 		
 		ListUsersModel listUsersModel = getItem(position);
 		
-		TextView courseTV = listitemView.findViewById(R.id.idTVCourse);
-		
-		courseTV.setText(listUsersModel.getCourse_name());
-		
-		
 		TextView NameAndSureName = listitemView.findViewById(R.id.Name_SureName);
 		TextView CoundDown = listitemView.findViewById(R.id.Coundown);
 		TextView Age = listitemView.findViewById(R.id.Age);
