@@ -74,7 +74,7 @@ public class ListUsers extends AppCompatActivity {
 				new ListUsersModel(
 						(AllUser.get(i).getName() + " " +
 						 AllUser.get(i).getSureName()),
-						mainActivity.B_day_countdown(),
+						mainActivity.B_day_countdown(1),
 						"Amžius bus " +
 						(java.time.LocalDate.now().getYear() - AllUser.get(i).getDateYear()),
 						String.valueOf(AllUser.get(i).getId())));

@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 	// Form Data Base i get one objcet Users
 	
 	UserDao userDao;
-	User user = new User("Justinas", "Stankunas", 2003, 6, 6);
+	User user = new User("", "", 0, 0, 0);
 	Var var = new Var(user);
 	int id = 1;
 	
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 		
 		userDao = MainDataBase.getInstance(getApplicationContext()).userDao();
 		if (userDao.getAllUser().isEmpty()) {
-			userDao.insert(new User("Justinas", "Stankunas", 1899, 3, 1));
+			userDao.insert(new User("Justinas", "Stankunas", 2003, 6, 6));
 			userDao.insert(new User("Adomas", "Tankas", 1980, 7, 3));
 			userDao.insert(new User("Vytautas", "Stalas", 2007, 3, 1));
 			userDao.insert(new User("Mindaugas", "Varna", 2014, 6, 6));
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 		var.todayTimeS = java.time.LocalDateTime.now().getSecond();
 	}
 	
-	public String B_day_countdown() {
+	public String B_day_countdown(int i) {
 		if (var.bDayOf - var.todayDay < 0) {
 			return var.bDayOf + 365 - var.todayDay + " Days " + (24 - var.todayTimeH) +
 				   " Hour\n " +
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 	private void init_Data_B_day_countdown() {
 		TextView textView = findViewById(R.id.B_day_countdown);
 		
-		textView.setText(B_day_countdown());
+		textView.setText(B_day_countdown(1));
 		
 		
 		Thread thread = new Thread(() -> {

@@ -3,6 +3,8 @@ package com.example.b_daygetter.Main;
 import com.example.b_daygetter.Dao.User;
 
 public class Var {
+	
+	
 	public int nowTimeYear = java.time.LocalDate.now().getYear();
 	public int nowTimeMonth = java.time.LocalDate.now().getMonthValue();
 	public int nowTimeDay = java.time.LocalDate.now().getDayOfMonth();
@@ -16,6 +18,4 @@ public class Var {
 	public Var(User user) {
 		this.user = user;
 	}
-	
-	
 }
