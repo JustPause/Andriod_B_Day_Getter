@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.b_daygetter.Dao.Message;
 import com.example.b_daygetter.R;
 
 import java.util.ArrayList;
@@ -36,10 +35,12 @@ public class ListUsersAdapter extends ArrayAdapter<ListUsersModel> {
 		TextView NameAndSureName = listitemView.findViewById(R.id.Name_SureName);
 		TextView CoundDown = listitemView.findViewById(R.id.Coundown);
 		TextView Age = listitemView.findViewById(R.id.Age);
+		TextView Id = listitemView.findViewById(R.id.Id);
 		
 		NameAndSureName.setText(listUsersModel.getNameAndSureName());
 		CoundDown.setText(listUsersModel.getCoundDown());
 		Age.setText(listUsersModel.getAge());
+		Id.setText(listUsersModel.getId());
 		
 		return listitemView;
 	}

@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 	UserDao userDao;
 	User user = new User("Justinas", "Stankunas", 2003, 6, 6);
 	Var var = new Var(user);
-	
+	int id = 1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,11 @@ public class MainActivity extends AppCompatActivity {
 		
 		userDao = MainDataBase.getInstance(getApplicationContext()).userDao();
 		if (userDao.getAllUser().isEmpty()) {
-			userDao.insert(new User("Justinas", "Stankunas", 2003, 6, 6));
+			userDao.insert(new User("Justinas", "Stankunas", 1899, 3, 1));
+			userDao.insert(new User("Adomas", "Tankas", 1980, 7, 3));
+			userDao.insert(new User("Vytautas", "Stalas", 2007, 3, 1));
+			userDao.insert(new User("Mindaugas", "Varna", 2014, 6, 6));
+			userDao.insert(new User("Armandas", "Robotas", 2000, 8, 9));
 		}
 		if (SecondDataBase.getInstance(getApplicationContext()).messageDao().getAllMessage().isEmpty()) {
 			SecondDataBase.getInstance(getApplicationContext()).messageDao().insert(
@@ -53,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 		}
 
 //		User user1 = new User("Justinas", "Stankunas", 2003, 6, 6);
-		user = userDao.getUser(1);
+		user = userDao.getUser(id);
 		var = new Var(user);
 		
 		Log.d("12345", String.valueOf(user.getDateDay()));
@@ -62,13 +66,6 @@ public class MainActivity extends AppCompatActivity {
 		date();
 		init_Data_B_day_countdown();
 		age_will_be();
-//
-//		String S = getString(R.string.version);
-//		S = S.replace(S.substring(10, 13), String.valueOf(Integer.parseInt(
-//				S.substring(10, 13) + 0.1)));
-//		getString(R.string.version) = S.replace(S.substring(10, 13), String.valueOf(Integer.parseInt(
-//				S.substring(10, 13) + 0.1)));
-//		Log.d("ASDAWDWDAD", S.substring(10, 13));
 	}
 	
 	
@@ -87,14 +84,6 @@ public class MainActivity extends AppCompatActivity {
 		var.todayTimeS = java.time.LocalDateTime.now().getSecond();
 	}
 	
-	@SuppressLint("SetTextI18n")
-	
-	public String geter_init_Data_B_day_countdown() {
-		//TODO Make it static
-		return var.bDayOf + 365 - var.todayDay + " Days " + (24 - var.todayTimeH) + " Hour\n " +
-			   (60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) + " Second ";
-	}
-	
 	public String B_day_countdown() {
 		if (var.bDayOf - var.todayDay < 0) {
 			return var.bDayOf + 365 - var.todayDay + " Days " + (24 - var.todayTimeH) +
@@ -111,30 +100,19 @@ public class MainActivity extends AppCompatActivity {
 	private void init_Data_B_day_countdown() {
 		TextView textView = findViewById(R.id.B_day_countdown);
 		
-		//		Log.d("Debug1", nowTimeYear + " " + nowTimeMonth + " " + nowTimeDay);
-		//		Log.d("Debug1", dataBaseUserYear + " " + dataBaseUserMonth + " " + dataBaseUserDay);
-		
-		
 		textView.setText(B_day_countdown());
 		
 		
-		Thread thread = new Thread() {
-			
-			@Override
-			public void run() {
-				try {
-					Thread.sleep(1000);
-					runOnUiThread(new Runnable() {
-						@Override
-						public void run() {
-							UpdateInt();
-							init_Data_B_day_countdown();
-						}
-					});
-				} catch (InterruptedException e) {
-				}
+		Thread thread = new Thread(() -> {
+			try {
+				Thread.sleep(1000);
+				runOnUiThread(() -> {
+					UpdateInt();
+					init_Data_B_day_countdown();
+				});
+			} catch (InterruptedException ignored) {
 			}
-		};
+		});
 		
 		thread.start();
 		

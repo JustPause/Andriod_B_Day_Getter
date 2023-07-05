@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.example.b_daygetter.Dao.MainDataBase;
 import com.example.b_daygetter.Dao.User;
@@ -36,7 +37,7 @@ public class ListUsers extends AppCompatActivity {
 		List<User> AllUser = userDao.getAllUser();
 		
 		coursesGV = findViewById(R.id.idGVcourses);
-		ArrayList<ListUsersModel> listUsersModelArrayList = new ArrayList<ListUsersModel>();
+		ArrayList<ListUsersModel> listUsersModelArrayList = new ArrayList<>();
 		
 		for (int i = 0; i < AllUser.size(); i++) {
 			
@@ -50,11 +51,18 @@ public class ListUsers extends AppCompatActivity {
 	
 	//TODO idekti error atlaikimo systema
 	public void runOnClic(View view) {
-//		view.setBackgroundColor(0xFF00FF00);
+		view.setBackgroundColor(0xffff8c00);
 		//TODO Pasirinkta informacija butu nusiunciama i main tenais putu pakeiciama i duota klacia
+
+//		view.getId();
+//
+		TextView textView = findViewById(R.id.Id);
+		textView.getText();
+		
+		// as noriu kad parasytas id butu israsomas i main lapa
 		
 		//TODO as tureciau gauti data base id
-		Log.d("TheIdProblemSolving", String.valueOf("IDK"));
+		Log.d("TheIdProblemSolving-getTexxt", String.valueOf(textView.getText()));
 		
 		Intent intent = new Intent(this, MainActivity.class);
 		finish();
@@ -62,17 +70,13 @@ public class ListUsers extends AppCompatActivity {
 	}
 	
 	void addUserMetod(List<User> AllUser, ArrayList<ListUsersModel> listUsersModelArrayList, int i) {
-		Log.d("TheIdProblemSolving-AllUser.size()", String.valueOf(AllUser.size()));
-		
-		Log.d("TheIdProblemSolving-i", String.valueOf(i));
 		listUsersModelArrayList.add(
 				new ListUsersModel(
 						(AllUser.get(i).getName() + " " +
 						 AllUser.get(i).getSureName()),
 						mainActivity.B_day_countdown(),
-						"Amžius bus " + String.valueOf(
-								java.time.LocalDate.now().getYear() -
-								AllUser.get(i).getDateYear()),
+						"Amžius bus " +
+						(java.time.LocalDate.now().getYear() - AllUser.get(i).getDateYear()),
 						String.valueOf(AllUser.get(i).getId())));
 	}
 	

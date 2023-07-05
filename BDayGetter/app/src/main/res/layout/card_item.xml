@@ -32,5 +32,11 @@
             android:layout_height="wrap_content"
             android:textAlignment="center" />
 
+        <TextView
+            android:id="@+id/Id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center" />
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>
