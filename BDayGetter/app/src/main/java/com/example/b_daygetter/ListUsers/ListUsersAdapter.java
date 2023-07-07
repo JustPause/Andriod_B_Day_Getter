@@ -10,13 +10,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.R;
 
-import java.util.ArrayList;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.List;
 
-public class ListUsersAdapter extends ArrayAdapter<ListUsersModel> {
+public class ListUsersAdapter extends ArrayAdapter<User> {
 	
-	public ListUsersAdapter(@NonNull Context context, ArrayList<ListUsersModel> listUsersModelArrayList) {
+	public ListUsersAdapter(@NonNull Context context, List<User> listUsersModelArrayList) {
 		super(context, 0, listUsersModelArrayList);
 	}
 	
@@ -30,18 +33,26 @@ public class ListUsersAdapter extends ArrayAdapter<ListUsersModel> {
 			listitemView = LayoutInflater.from(getContext()).inflate(R.layout.card_item, parent, false);
 		}
 		
-		ListUsersModel listUsersModel = getItem(position);
+		User user = getItem(position);
 		
 		TextView NameAndSureName = listitemView.findViewById(R.id.Name_SureName);
 		TextView CoundDown = listitemView.findViewById(R.id.Coundown);
 		TextView Age = listitemView.findViewById(R.id.Age);
 		TextView Id = listitemView.findViewById(R.id.Id);
 		
-		NameAndSureName.setText(listUsersModel.getNameAndSureName());
-		CoundDown.setText(listUsersModel.getCoundDown());
-		Age.setText(listUsersModel.getAge());
-		Id.setText(listUsersModel.getId());
+		NameAndSureName.setText(user.getName() + " " + user.getSureName());
+//		CoundDown.setText(user.getCoundDown());
+		Age.setText(countAge(user.getDateYear(), user.getDateMonth(), user.getDateDay()).toString());
+		Id.setText(String.valueOf(user.getId()));
 		
 		return listitemView;
+	}
+	
+	private Integer countAge(int year, int month, int day) {
+		
+		return Period.between(
+				LocalDate.of(year, month, day),
+				LocalDate.now()
+		).getYears();
 	}
 }

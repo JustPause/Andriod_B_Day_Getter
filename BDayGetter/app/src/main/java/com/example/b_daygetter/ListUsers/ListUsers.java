@@ -34,18 +34,21 @@ public class ListUsers extends AppCompatActivity {
 		
 		userDao = MainDataBase.getInstance(getApplicationContext()).userDao();
 		
-		List<User> AllUser = userDao.getAllUser();
+		List<User> allUser = userDao.getAllUser();
 		
 		coursesGV = findViewById(R.id.idGVcourses);
-		ArrayList<ListUsersModel> listUsersModelArrayList = new ArrayList<>();
+//		ArrayList<ListUsersModel> listUsersModelArrayList = new ArrayList<>();
+
+//		listUsersModelArrayList.addAll(allUser);
+//		for (int i = 0; i < AllUser.size(); i++) {
+//
+//			addUserMetod(AllUser, listUsersModelArrayList, i);
+//
+//		}
+
+//		ListUsersAdapter adapter = new ListUsersAdapter(this, listUsersModelArrayList);
+		ListUsersAdapter adapter = new ListUsersAdapter(this, allUser);
 		
-		for (int i = 0; i < AllUser.size(); i++) {
-			
-			addUserMetod(AllUser, listUsersModelArrayList, i);
-			
-		}
-		
-		ListUsersAdapter adapter = new ListUsersAdapter(this, listUsersModelArrayList);
 		coursesGV.setAdapter(adapter);
 	}
 	
