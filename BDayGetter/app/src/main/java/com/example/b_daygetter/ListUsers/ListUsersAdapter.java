@@ -1,5 +1,6 @@
 package com.example.b_daygetter.ListUsers;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,13 +12,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.b_daygetter.Dao.User;
+import com.example.b_daygetter.Main.Var;
 import com.example.b_daygetter.R;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ListUsersAdapter extends ArrayAdapter<User> {
+	
+	Var var;
 	
 	public ListUsersAdapter(@NonNull Context context, List<User> listUsersModelArrayList) {
 		super(context, 0, listUsersModelArrayList);
@@ -32,8 +37,9 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 			// Layout Inflater inflates each item to be displayed in GridView.
 			listitemView = LayoutInflater.from(getContext()).inflate(R.layout.card_item, parent, false);
 		}
-		
+		//https://stackoverflow.com/questions/13327571/in-a-simple-to-understand-explanation-what-is-runnable-in-java
 		User user = getItem(position);
+		var = new Var(user);
 		
 		TextView NameAndSureName = listitemView.findViewById(R.id.Name_SureName);
 		TextView CoundDown = listitemView.findViewById(R.id.Coundown);
@@ -42,17 +48,57 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 		
 		NameAndSureName.setText(user.getName() + " " + user.getSureName());
 //		CoundDown.setText(user.getCoundDown());
-		Age.setText(countAge(user.getDateYear(), user.getDateMonth(), user.getDateDay()).toString());
+		init_Data_B_day_countdown(CoundDown, user);
+		Age.setText(
+				String.valueOf(countAge(user.getDateYear(), user.getDateMonth(), user.getDateDay()).getYears())
+		);
 		Id.setText(String.valueOf(user.getId()));
 		
 		return listitemView;
 	}
 	
-	private Integer countAge(int year, int month, int day) {
+	private Period countAge(int year, int month, int day) {
 		
 		return Period.between(
 				LocalDate.of(year, month, day),
 				LocalDate.now()
-		).getYears();
+		);
 	}
+	
+	private void init_Data_B_day_countdown(TextView textView, User user) {
+		
+		Activity curentActivity = (Activity) super.getContext();
+		
+		AtomicReference<Integer> day = new AtomicReference<>(user.getDateDay());
+		
+		
+		Thread thread = new Thread(() -> {
+			try {
+				for (int i = 0; i < 100; i++) {
+					Thread.sleep(1000);
+					day.getAndSet(day.get() + 1);
+					curentActivity.runOnUiThread(() -> {
+						textView.setText(
+								day.toString()
+						);
+					});
+				}
+			} catch (InterruptedException ignored) {
+			}
+		});
+		
+		thread.start();
+	}
+
+//	public String B_day_countdown(int i) {
+//		if (var.bDayOf - var.todayDay < 0) {
+//			return var.bDayOf + 365 - var.todayDay + " Days " + (24 - var.todayTimeH) +
+//				   " Hour\n " +
+//				   (60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) +
+//				   " Second ";
+//		} else {
+//			return var.bDayOf - var.todayDay + " Days " + (24 - var.todayTimeH) + " Hour\n " +
+//				   (60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) + " Second ";
+//		}
+//	}
 }
