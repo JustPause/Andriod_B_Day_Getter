@@ -15,7 +15,6 @@ import com.example.b_daygetter.Dao.UserDao;
 import com.example.b_daygetter.Main.MainActivity;
 import com.example.b_daygetter.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListUsers extends AppCompatActivity {
@@ -25,7 +24,6 @@ public class ListUsers extends AppCompatActivity {
 	
 	GridView coursesGV;
 	UserDao userDao;
-	MainActivity mainActivity = new MainActivity();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,16 +35,6 @@ public class ListUsers extends AppCompatActivity {
 		List<User> allUser = userDao.getAllUser();
 		
 		coursesGV = findViewById(R.id.idGVcourses);
-//		ArrayList<ListUsersModel> listUsersModelArrayList = new ArrayList<>();
-
-//		listUsersModelArrayList.addAll(allUser);
-//		for (int i = 0; i < AllUser.size(); i++) {
-//
-//			addUserMetod(AllUser, listUsersModelArrayList, i);
-//
-//		}
-
-//		ListUsersAdapter adapter = new ListUsersAdapter(this, listUsersModelArrayList);
 		ListUsersAdapter adapter = new ListUsersAdapter(this, allUser);
 		
 		coursesGV.setAdapter(adapter);
@@ -70,17 +58,6 @@ public class ListUsers extends AppCompatActivity {
 		Intent intent = new Intent(this, MainActivity.class);
 		finish();
 		startActivity(intent);
-	}
-	
-	void addUserMetod(List<User> AllUser, ArrayList<ListUsersModel> listUsersModelArrayList, int i) {
-		listUsersModelArrayList.add(
-				new ListUsersModel(
-						(AllUser.get(i).getName() + " " +
-						 AllUser.get(i).getSureName()),
-						mainActivity.B_day_countdown(1),
-						"Amžius bus " +
-						(java.time.LocalDate.now().getYear() - AllUser.get(i).getDateYear()),
-						String.valueOf(AllUser.get(i).getId())));
 	}
 	
 	public void delete_Button_ListUsers(View view) {
