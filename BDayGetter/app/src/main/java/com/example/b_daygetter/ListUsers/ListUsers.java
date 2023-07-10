@@ -19,9 +19,6 @@ import java.util.List;
 
 public class ListUsers extends AppCompatActivity {
 	
-	//TODO Padaryti dinamiskai didejaenti arba mazejenti langeliu skaiciu
-	//TODO Tie langeliai galetu veikti kaip miktukai
-	
 	GridView coursesGV;
 	UserDao userDao;
 	
@@ -32,7 +29,7 @@ public class ListUsers extends AppCompatActivity {
 		
 		userDao = MainDataBase.getInstance(getApplicationContext()).userDao();
 		
-		List<User> allUser = userDao.getAllUser();
+		List<User> allUser = userDao.getAllUsers();
 		
 		coursesGV = findViewById(R.id.idGVcourses);
 		ListUsersAdapter adapter = new ListUsersAdapter(this, allUser);
@@ -44,16 +41,11 @@ public class ListUsers extends AppCompatActivity {
 	public void runOnClic(View view) {
 		view.setBackgroundColor(0xffff8c00);
 		//TODO Pasirinkta informacija butu nusiunciama i main tenais putu pakeiciama i duota klacia
-
-//		view.getId();
-//
+		
 		TextView textView = findViewById(R.id.Id);
 		textView.getText();
 		
-		// as noriu kad parasytas id butu israsomas i main lapa
-		
 		//TODO as tureciau gauti data base id
-		Log.d("TheIdProblemSolving-getTexxt", String.valueOf(textView.getText()));
 		
 		Intent intent = new Intent(this, MainActivity.class);
 		finish();

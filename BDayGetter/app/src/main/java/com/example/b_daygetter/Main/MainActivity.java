@@ -35,34 +35,17 @@ public class MainActivity extends AppCompatActivity {
 	UserDao userDao;
 	User user = new User("", "", 0, 0, 0);
 	Var var = new Var(user);
-	int id = 1;
+	int id = 2;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		userDao = MainDataBase.getInstance(getApplicationContext()).userDao();
-		if (userDao.getAllUser().isEmpty()) {
-			userDao.insert(new User("Justinas", "Stankunas", 2003, 6, 6));
-			userDao.insert(new User("Adomas", "Tankas", 1980, 7, 3));
-			userDao.insert(new User("Vytautas", "Stalas", 2007, 3, 1));
-			userDao.insert(new User("Mindaugas", "Varna", 2014, 6, 6));
-			userDao.insert(new User("Armandas", "Robotas", 2000, 8, 9));
-		}
-		if (SecondDataBase.getInstance(getApplicationContext()).messageDao().getAllMessage().isEmpty()) {
-			SecondDataBase.getInstance(getApplicationContext()).messageDao().insert(
-					new Message(
-							"IamJustStan@hotmail.com",
-							"Happy birthday! Wishing you a day full of love, joy, and all your favorite things."
-					));
-		}
-
-//		User user1 = new User("Justinas", "Stankunas", 2003, 6, 6);
+		MainActivityAddingTempUser();
+		
 		user = userDao.getUser(id);
 		var = new Var(user);
-		
-		Log.d("12345", String.valueOf(user.getDateDay()));
 		
 		User_name();
 		date();
@@ -98,7 +81,26 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 	
-	@SuppressLint("SetTextI18n")
+	public void MainActivityAddingTempUser() {
+		userDao = MainDataBase.getInstance(getApplicationContext()).userDao();
+		if (userDao.getAllUsers().isEmpty()) {
+			userDao.insert(new User("Justinas", "Stankunas", 2003, 6, 6));
+			userDao.insert(new User("Adomas", "Tankas", 1980, 7, 3));
+			userDao.insert(new User("Vytautas", "Stalas", 2007, 3, 1));
+			userDao.insert(new User("Mindaugas", "Varna", 2014, 6, 6));
+			userDao.insert(new User("Armandas", "Robotas", 2000, 8, 9));
+		}
+		if (SecondDataBase.getInstance(getApplicationContext()).messageDao().getAllMessages().isEmpty()) {
+			SecondDataBase.getInstance(getApplicationContext()).messageDao().insert(
+					new Message(
+							"IamJustStan@hotmail.com",
+							"Happy birthday! Wishing you a day full of love, joy, and all your favorite things."
+					)
+			);
+			
+		}
+	}
+	
 	private void init_Data_B_day_countdown() {
 		TextView textView = findViewById(R.id.B_day_countdown);
 		
@@ -119,30 +121,27 @@ public class MainActivity extends AppCompatActivity {
 		thread.start();
 	}
 	
-	@SuppressLint("SetTextI18n")
 	protected void User_name() {
 		TextView textView = findViewById(R.id.User_name);
 		textView.setText(user.getName() + " " + user.getSureName());
 	}
 	
-	@SuppressLint("SetTextI18n")
 	protected void date() {
 		TextView textView = findViewById(R.id.Date);
 		textView.setText(user.getDateYear() + " " + user.getDateMonth() + " " + user.getDateDay());
 	}
 	
-	@SuppressLint("SetTextI18n")
 	protected void age_will_be() {
 		TextView textView = findViewById(R.id.Age_will_be);
-		textView.setText("21");
+		textView.setText(var.nowTimeYear - user.getDateYear());
 	}
+	
 	
 	public void add_users_button(View view) {
 		
 		Intent intent = new Intent(this, AddUsersActivoty.class);
 		startActivity(intent);
 	}
-	//////////////////////////////
 	
 	public void list_users_button(View view) {
 		
@@ -155,8 +154,6 @@ public class MainActivity extends AppCompatActivity {
 		Intent intent = new Intent(this, SendEmailToTheUser.class);
 		startActivity(intent);
 	}
-	
-	//////////////////////////////
 }
 
 
