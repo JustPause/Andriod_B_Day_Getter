@@ -8,15 +8,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.b_daygetter.Dao.MainDataBase;
 import com.example.b_daygetter.Dao.Message;
 import com.example.b_daygetter.Dao.MessageDao;
 import com.example.b_daygetter.Dao.SecondDataBase;
-import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Main.MainActivity;
 import com.example.b_daygetter.R;
-
-import java.time.LocalDate;
 
 public class AddMessige extends AppCompatActivity {
 	
@@ -31,8 +27,8 @@ public class AddMessige extends AppCompatActivity {
 	}
 	
 	public void submit_Button_Return_To_Main(View view) {
-		EditText personEmail = (EditText) findViewById(R.id.Person_Email);
-		EditText personMessage = (EditText) findViewById(R.id.Person_Message);
+		EditText personEmail = findViewById(R.id.Person_Email);
+		EditText personMessage = findViewById(R.id.Person_Message);
 		
 		Message message = new Message(
 				personEmail.getText().toString(),
@@ -40,7 +36,7 @@ public class AddMessige extends AppCompatActivity {
 		);
 		
 		Log.d("getText",
-				message.getEmail().toString() + " | " + message.getMessage().toString());
+				message.getEmail() + " | " + message.getMessage());
 		
 		messageDao.insert(message);
 		

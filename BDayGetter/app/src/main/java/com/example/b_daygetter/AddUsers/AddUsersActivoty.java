@@ -27,8 +27,8 @@ public class AddUsersActivoty extends AppCompatActivity {
 	}
 	
 	public void submit_Button_Add_Users_Adtivoty(View view) {
-		EditText personName = (EditText) findViewById(R.id.Person_Name);
-		EditText personDate = (EditText) findViewById(R.id.Person_Date);
+		EditText personName = findViewById(R.id.Person_Name);
+		EditText personDate = findViewById(R.id.Person_Date);
 		
 		String[] words = personName.getText().toString().split(" ");
 		

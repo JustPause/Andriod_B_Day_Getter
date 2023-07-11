@@ -1,9 +1,7 @@
 package com.example.b_daygetter.Main;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -23,14 +21,9 @@ public class MainActivity extends AppCompatActivity {
 	
 	// TODO Add an feture that lets the youser get his one color, of core the data will be collected in the data base. On craision the user can have a random color and at any time he can chage it
 	
-	// Link https://stackoverflow.com/questions/20715503/get-result-from-activity-called-wi>
-	// Link https://developer.android.com/training/basics/intents/result
-	
-	// Link https://www.youtube.com/watch?v=7EmboKQH8lM&list=PLmmYSbUCWJ4x1GO839azG_BBw8rkh-zOj Clean Code - Uncle Bob
 	
 	// TODO pakeisti dataBaseUserYear, dataBaseUserMonth, dataBaseUserDay i int
 	
-	// Form Data Base i get one objcet Users
 	
 	UserDao userDao;
 	User user = new User("", "", 0, 0, 0);
@@ -70,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	public String B_day_countdown(int i) {
+		user = userDao.getUser(i);
+		Var var = new Var(user);
 		if (var.bDayOf - var.todayDay < 0) {
 			return var.bDayOf + 365 - var.todayDay + " Days " + (24 - var.todayTimeH) +
 				   " Hour\n " +
@@ -123,12 +118,15 @@ public class MainActivity extends AppCompatActivity {
 	
 	protected void User_name() {
 		TextView textView = findViewById(R.id.User_name);
-		textView.setText(user.getName() + " " + user.getSureName());
+		String outputString = user.getName() + " " + user.getSureName();
+		textView.setText(outputString);
 	}
 	
 	protected void date() {
 		TextView textView = findViewById(R.id.Date);
-		textView.setText(user.getDateYear() + " " + user.getDateMonth() + " " + user.getDateDay());
+		String outputString =
+				user.getDateYear() + " " + user.getDateMonth() + " " + user.getDateDay();
+		textView.setText(outputString);
 	}
 	
 	protected void age_will_be() {
