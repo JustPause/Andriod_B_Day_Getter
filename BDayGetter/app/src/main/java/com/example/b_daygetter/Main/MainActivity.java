@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
 		user = userDao.getUser(id);
 		var = new Var(user);
 		
-		Log.d("GettingUserName", user.getName());
-		
 		User_name();
 		date();
 		init_Data_B_day_countdown();
@@ -99,6 +97,22 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 	
+	public void MainActivityAddingJustinas() {
+		userDao = MainDataBase.getInstance(getApplicationContext()).userDao();
+		if (userDao.getAllUsers().isEmpty()) {
+			userDao.insert(new User("Justinas", "Stankunas", 2003, 6, 6));
+		}
+		if (SecondDataBase.getInstance(getApplicationContext()).messageDao().getAllMessages().isEmpty()) {
+			SecondDataBase.getInstance(getApplicationContext()).messageDao().insert(
+					new Message(
+							"IamJustStan@hotmail.com",
+							"Happy birthday! Wishing you a day full of love, joy, and all your favorite things."
+					)
+			);
+			
+		}
+	}
+	
 	private void init_Data_B_day_countdown() {
 		TextView textView = findViewById(R.id.B_day_countdown);
 		
@@ -141,20 +155,24 @@ public class MainActivity extends AppCompatActivity {
 	public void add_users_button(View view) {
 		
 		Intent intent = new Intent(this, AddUsersActivoty.class);
+		finish();
 		startActivity(intent);
 	}
 	
 	public void list_users_button(View view) {
 		
 		Intent intent = new Intent(this, ListUsers.class);
+		finish();
 		startActivity(intent);
 	}
 	
 	public void send_email_to_the_user_button(View view) {
 		
 		Intent intent = new Intent(this, SendEmailToTheUser.class);
+		finish();
 		startActivity(intent);
 	}
+	
 }
 
 
