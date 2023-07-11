@@ -2,6 +2,7 @@ package com.example.b_daygetter.Main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
 		
 		user = userDao.getUser(id);
 		var = new Var(user);
+		
+		Log.d("GettingUserName", user.getName());
 		
 		User_name();
 		date();
@@ -131,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 	
 	protected void age_will_be() {
 		TextView textView = findViewById(R.id.Age_will_be);
-		textView.setText(var.nowTimeYear - user.getDateYear());
+		textView.setText(String.valueOf(var.nowTimeYear - user.getDateYear()));
 	}
 	
 	
