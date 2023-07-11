@@ -2,7 +2,6 @@ package com.example.b_daygetter.Main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 	
 	// TODO pakeisti dataBaseUserYear, dataBaseUserMonth, dataBaseUserDay i int
 	
-	
+	User_data user_data = new User_data();
 	UserDao userDao;
 	User user = new User("", "", 0, 0, 0);
 	Var var = new Var(user);
@@ -41,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
 		user = userDao.getUser(id);
 		var = new Var(user);
 		
-		User_name();
-		date();
+		user_data.user_name(this);
+		user_data.date(this);
 		init_Data_B_day_countdown();
-		age_will_be();
+		user_data.age_will_be(this);
 	}
 	
 	
@@ -132,25 +131,6 @@ public class MainActivity extends AppCompatActivity {
 		
 		thread.start();
 	}
-	
-	protected void User_name() {
-		TextView textView = findViewById(R.id.User_name);
-		String outputString = user.getName() + " " + user.getSureName();
-		textView.setText(outputString);
-	}
-	
-	protected void date() {
-		TextView textView = findViewById(R.id.Date);
-		String outputString =
-				user.getDateYear() + " " + user.getDateMonth() + " " + user.getDateDay();
-		textView.setText(outputString);
-	}
-	
-	protected void age_will_be() {
-		TextView textView = findViewById(R.id.Age_will_be);
-		textView.setText(String.valueOf(var.nowTimeYear - user.getDateYear()));
-	}
-	
 	
 	public void add_users_button(View view) {
 		
