@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 	
 	UserDao userDao;
 	User user;
-	int id = 1;
+	int id = 2;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 		
 		user_name();
 		date();
-		countdown();
+		countdown(id);
 		age_will_be();
 	}
 	
@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
 	}
 	
 	
-	private void countdown() {
-		countdown.countdown();
+	private void countdown(int id) {
+		countdown.countdown(id);
 	}
 	
 	public void MainActivityAddingTempUser() {

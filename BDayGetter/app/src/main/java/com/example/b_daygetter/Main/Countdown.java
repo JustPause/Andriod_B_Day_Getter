@@ -9,11 +9,11 @@ public class Countdown {
 	
 	public Countdown(MainActivity mainActivity) { this.mainActivity = mainActivity; }
 	
-	void countdown() {
+	void countdown(int id) {
 		TextView textView = mainActivity.findViewById(R.id.B_day_countdown);
 		
 		String result;
-		mainActivity.setUser(mainActivity.getUserDao().getUser(1));
+		mainActivity.setUser(mainActivity.getUserDao().getUser(id));
 		Var.GenBDayOf(mainActivity.getUser());
 		if (Var.bDayOf - Var.todayDay < 0) {
 			result = Var.bDayOf + 365 - Var.todayDay + " Days " + (24 - Var.todayTimeH) +
@@ -35,7 +35,7 @@ public class Countdown {
 					
 					Var.Updater();
 					
-					countdown();
+					countdown(id);
 				});
 			} catch (InterruptedException ignored) {
 			}

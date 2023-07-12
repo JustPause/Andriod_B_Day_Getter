@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -38,19 +37,18 @@ public class ListUsers extends AppCompatActivity {
 	}
 	
 	//TODO idekti error atlaikimo systema
-	public void runOnClic(View view) {
-		view.setBackgroundColor(0xffff8c00);
-		//TODO Pasirinkta informacija butu nusiunciama i main tenais putu pakeiciama i duota klacia
+	public void runOnClick(View view) {
+		
+		Debugeris.SetColorAfterPress(view);
 		
 		TextView textView = findViewById(R.id.Id);
 		textView.getText();
-		
-		//TODO as tureciau gauti data base id
 		
 		Intent intent = new Intent(this, MainActivity.class);
 		finish();
 		startActivity(intent);
 	}
+	
 	
 	public void delete_Button_ListUsers(View view) {
 		userDao.deleteAllUsers();
@@ -58,5 +56,11 @@ public class ListUsers extends AppCompatActivity {
 		Intent intent = getIntent();
 		finish();
 		startActivity(intent);
+	}
+}
+
+class Debugeris {
+	public static void SetColorAfterPress(View view) {
+		view.setBackgroundColor(0xffff8c00);
 	}
 }
