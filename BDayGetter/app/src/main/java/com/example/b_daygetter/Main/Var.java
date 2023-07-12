@@ -4,18 +4,27 @@ import com.example.b_daygetter.Dao.User;
 
 public class Var {
 	
+	public static int nowTimeYear;
+	public static int nowTimeMonth;
+	public static int nowTimeDay;
+	public static int todayDay;
+	public static int todayTimeH;
+	public static int todayTimeM;
+	public static int todayTimeS;
+	public static int bDayOf;
 	
-	public int nowTimeYear = java.time.LocalDate.now().getYear();
-	public int nowTimeMonth = java.time.LocalDate.now().getMonthValue();
-	public int nowTimeDay = java.time.LocalDate.now().getDayOfMonth();
-	public int todayDay = java.time.LocalDate.now().getDayOfYear();
-	public int todayTimeH = java.time.LocalDateTime.now().getHour();
-	public int todayTimeM = java.time.LocalDateTime.now().getMinute();
-	public int todayTimeS = java.time.LocalDateTime.now().getSecond();
-	User user = new User("Justinas", "Stankunas", 2003, 6, 6);
-	public int bDayOf = java.time.LocalDate.of(user.getDateYear(), user.getDateMonth(), user.getDateDay()).getDayOfYear();
+	public static void Updater() {
+		nowTimeYear = java.time.LocalDate.now().getYear();
+		nowTimeMonth = java.time.LocalDate.now().getMonthValue();
+		nowTimeDay = java.time.LocalDate.now().getDayOfMonth();
+		todayDay = java.time.LocalDate.now().getDayOfYear();
+		todayTimeH = java.time.LocalDateTime.now().getHour();
+		todayTimeM = java.time.LocalDateTime.now().getMinute();
+		todayTimeS = java.time.LocalDateTime.now().getSecond();
+	}
 	
-	public Var(User user) {
-		this.user = user;
+	public static void GenBDayOf(User user) {
+		Updater();
+		bDayOf = java.time.LocalDate.of(user.getDateYear(), user.getDateMonth(), user.getDateDay()).getDayOfYear();
 	}
 }

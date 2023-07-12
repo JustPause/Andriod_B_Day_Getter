@@ -22,10 +22,13 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class ListUsersAdapter extends ArrayAdapter<User> {
 	
-	Var var;
-	
 	public ListUsersAdapter(@NonNull Context context, List<User> listUsersModelArrayList) {
 		super(context, 0, listUsersModelArrayList);
+	}
+	
+	@NonNull
+	private static String getText(User user) {
+		return user.getName() + " " + user.getSureName();
 	}
 	
 	@NonNull
@@ -39,14 +42,14 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 		}
 		//https://stackoverflow.com/questions/13327571/in-a-simple-to-understand-explanation-what-is-runnable-in-java
 		User user = getItem(position);
-		var = new Var(user);
+		Var.GenBDayOf(user);
 		
 		TextView NameAndSureName = listitemView.findViewById(R.id.Name_SureName);
 		TextView CoundDown = listitemView.findViewById(R.id.Coundown);
 		TextView Age = listitemView.findViewById(R.id.Age);
 		TextView Id = listitemView.findViewById(R.id.Id);
 		
-		NameAndSureName.setText(user.getName() + " " + user.getSureName());
+		NameAndSureName.setText(getText(user));
 //		CoundDown.setText(user.getCoundDown());
 		init_Data_B_day_countdown(CoundDown, user);
 		Age.setText(
@@ -77,11 +80,9 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 				for (int i = 0; i < 100; i++) {
 					Thread.sleep(1000);
 					day.getAndSet(day.get() + 1);
-					curentActivity.runOnUiThread(() -> {
-						textView.setText(
-								day.toString()
-						);
-					});
+					curentActivity.runOnUiThread(() -> textView.setText(
+							day.toString()
+					));
 				}
 			} catch (InterruptedException ignored) {
 			}
