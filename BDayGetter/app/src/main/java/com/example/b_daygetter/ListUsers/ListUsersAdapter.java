@@ -18,7 +18,6 @@ import com.example.b_daygetter.R;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class ListUsersAdapter extends ArrayAdapter<User> {
 	
@@ -50,11 +49,13 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 		TextView Id = listitemView.findViewById(R.id.Id);
 		
 		NameAndSureName.setText(getText(user));
-//		CoundDown.setText(user.getCoundDown());
+		
 		init_Data_B_day_countdown(CoundDown, user);
+		
 		Age.setText(
 				String.valueOf(countAge(user.getDateYear(), user.getDateMonth(), user.getDateDay()).getYears())
 		);
+		
 		Id.setText(String.valueOf(user.getId()));
 		
 		return listitemView;
@@ -72,16 +73,28 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 		
 		Activity curentActivity = (Activity) super.getContext();
 		
-		AtomicReference<Integer> day = new AtomicReference<>(user.getDateDay());
-		
-		
 		Thread thread = new Thread(() -> {
 			try {
 				for (int i = 0; i < 100; i++) {
 					Thread.sleep(1000);
-					day.getAndSet(day.get() + 1);
+					
+					String result;
+					Var.GenBDayOf(user);
+					if (Var.bDayOf - Var.todayDay < 0) {
+						result =
+								Var.bDayOf + 365 - Var.todayDay + " Days " + (24 - Var.todayTimeH) +
+								" Hour\n " +
+								(60 - Var.todayTimeM) + " Minute " + (60 - Var.todayTimeS) +
+								" Second ";
+					} else {
+						result = Var.bDayOf - Var.todayDay + " Days " + (24 - Var.todayTimeH) +
+								 " Hour\n " +
+								 (60 - Var.todayTimeM) + " Minute " + (60 - Var.todayTimeS) +
+								 " Second ";
+					}
+					
 					curentActivity.runOnUiThread(() -> textView.setText(
-							day.toString()
+							result
 					));
 				}
 			} catch (InterruptedException ignored) {
