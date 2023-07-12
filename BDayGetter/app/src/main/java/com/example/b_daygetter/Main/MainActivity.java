@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
 	
 	// TODO pakeisti dataBaseUserYear, dataBaseUserMonth, dataBaseUserDay i int
 	
-	User_data user_data = new User_data();
 	UserDao userDao;
 	User user = new User("", "", 0, 0, 0);
 	Var var = new Var(user);
@@ -40,13 +39,31 @@ public class MainActivity extends AppCompatActivity {
 		user = userDao.getUser(id);
 		var = new Var(user);
 		
-		user_data.user_name(this);
-		user_data.date(this);
+		user_name();
+		date();
 		init_Data_B_day_countdown();
-		user_data.age_will_be(this);
+		age_will_be();
 	}
 	
+	void user_name() {
+		TextView textView = findViewById(R.id.User_name);
+		String outputString = user.getName() + " " + user.getSureName();
+		textView.setText(outputString);
+	}
 	
+	void date() {
+		TextView textView = findViewById(R.id.Date);
+		String outputString =
+				user.getDateYear() + " " + user.getDateMonth() + " " + user.getDateDay();
+		textView.setText(outputString);
+	}
+	
+	void age_will_be() {
+		TextView textView = findViewById(R.id.Age_will_be);
+		textView.setText(String.valueOf(var.nowTimeYear - user.getDateYear()));
+	}
+	
+	//////////////////////
 	public void UpdateInt() {
 		
 		var.nowTimeYear = java.time.LocalDate.now().getYear();
@@ -75,6 +92,28 @@ public class MainActivity extends AppCompatActivity {
 				   (60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) + " Second ";
 		}
 	}
+	
+	private void init_Data_B_day_countdown() {
+		TextView textView = findViewById(R.id.B_day_countdown);
+		
+		textView.setText(B_day_countdown(1));
+		
+		
+		Thread thread = new Thread(() -> {
+			try {
+				Thread.sleep(1000);
+				runOnUiThread(() -> {
+					UpdateInt();
+					init_Data_B_day_countdown();
+				});
+			} catch (InterruptedException ignored) {
+			}
+		});
+		
+		thread.start();
+	}
+	
+	//////////////////////
 	
 	public void MainActivityAddingTempUser() {
 		userDao = MainDataBase.getInstance(getApplicationContext()).userDao();
@@ -112,25 +151,6 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 	
-	private void init_Data_B_day_countdown() {
-		TextView textView = findViewById(R.id.B_day_countdown);
-		
-		textView.setText(B_day_countdown(1));
-		
-		
-		Thread thread = new Thread(() -> {
-			try {
-				Thread.sleep(1000);
-				runOnUiThread(() -> {
-					UpdateInt();
-					init_Data_B_day_countdown();
-				});
-			} catch (InterruptedException ignored) {
-			}
-		});
-		
-		thread.start();
-	}
 	
 	public void add_users_button(View view) {
 		
