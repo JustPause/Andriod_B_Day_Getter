@@ -20,7 +20,7 @@ public interface UserDao {
 	@Query("DELETE FROM users")
 	void deleteAllUsers();
 	
-	@Query("SELECT * FROM users")
+	@Query("SELECT * FROM users ORDER BY b_day_month, b_day_day")
 	List<User> getAllUsers();
 	
 	@Query("SELECT * FROM users WHERE id=:id")

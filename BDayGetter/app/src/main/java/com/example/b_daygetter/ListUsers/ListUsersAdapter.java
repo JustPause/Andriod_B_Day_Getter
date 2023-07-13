@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 
 import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Main.Var;
@@ -26,8 +27,60 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 	}
 	
 	@NonNull
-	private static String getText(User user) {
+	private static String NameSureName(User user) {
 		return user.getName() + " " + user.getSureName();
+	}
+	
+	private static void CountDownWindow(TextView textView, User user, Activity curentActivity) throws InterruptedException {
+		Thread.sleep(1000);
+		
+		String result;
+		Var.GenBDayOf(user);
+		
+		if (Var.bDayOf - Var.todayDay < 0) {
+			result =
+					Var.bDayOf + 365 - Var.todayDay + " Days " + (24 - Var.todayTimeH) +
+					" Hour\n " +
+					(60 - Var.todayTimeM) + " Minute " + (60 - Var.todayTimeS) +
+					" Second ";
+		} else {
+			result = Var.bDayOf - Var.todayDay + " Days " + (24 - Var.todayTimeH) +
+					 " Hour\n " +
+					 (60 - Var.todayTimeM) + " Minute " + (60 - Var.todayTimeS) +
+					 " Second ";
+		}
+		
+		curentActivity.runOnUiThread(
+				() -> textView.setText(
+						result
+				)
+		);
+	}
+	
+	@NonNull
+	private static String BbayDate(User user) {
+		return user.getDateYear() + " " + user.getDateMonth() + " " + user.getDateDay();
+	}
+	
+	@NonNull
+	private static String Countdown(User user) {
+		Var.GenBDayOf(user);
+		String result;
+		
+		if (Var.bDayOf - Var.todayDay < 0) {
+			result =
+					Var.bDayOf + 365 - Var.todayDay + " Days " + (24 - Var.todayTimeH) +
+					" Hour\n " +
+					(60 - Var.todayTimeM) + " Minute " + (60 - Var.todayTimeS) +
+					" Second ";
+		} else {
+			result = Var.bDayOf - Var.todayDay + " Days " + (24 - Var.todayTimeH) +
+					 " Hour\n " +
+					 (60 - Var.todayTimeM) + " Minute " + (60 - Var.todayTimeS) +
+					 " Second ";
+		}
+		
+		return result;
 	}
 	
 	@NonNull
@@ -35,84 +88,88 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 	public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 		
 		View listitemView = convertView;
+		
 		if (listitemView == null) {
 			// Layout Inflater inflates each item to be displayed in GridView.
 			listitemView = LayoutInflater.from(getContext()).inflate(R.layout.card_item, parent, false);
 		}
+		
 		//https://stackoverflow.com/questions/13327571/in-a-simple-to-understand-explanation-what-is-runnable-in-java
+		
 		User user = getItem(position);
 		Var.GenBDayOf(user);
 		
-		TextView NameAndSureName = listitemView.findViewById(R.id.Name_SureName);
+		TextView NameAndSureName = listitemView.findViewById(R.id.NameSureName);
+		TextView BDayDate = listitemView.findViewById(R.id.BDayDate);
 		TextView CoundDown = listitemView.findViewById(R.id.Coundown);
 		TextView Age = listitemView.findViewById(R.id.Age);
 		TextView Id = listitemView.findViewById(R.id.Id);
 		
-		NameAndSureName.setText(getText(user));
+		NameAndSureName.setText(NameSureName(user));
 		
-		init_Data_B_day_countdown(CoundDown, user);
+		BDayDate.setText(BbayDate(user));
 		
-		Age.setText(
-				String.valueOf(countAge(user.getDateYear(), user.getDateMonth(), user.getDateDay()).getYears())
-		);
+		CoundDown.setText(Countdown(user));
+		
+		SetCountDownWindow(CoundDown, user);
+		
+		Age.setText(AgeFing(user, listitemView));
 		
 		Id.setText(String.valueOf(user.getId()));
 		
 		return listitemView;
 	}
 	
-	private Period countAge(int year, int month, int day) {
+	@NonNull
+	private String AgeFing(User user, View convertView) {
+		String theReturn = "null";
 		
-		return Period.between(
-				LocalDate.of(year, month, day),
-				LocalDate.now()
-		);
+		if (Var.nowTimeMonth < user.getDateMonth()) {
+			convertView.setBackgroundColor(0xff7A7A7A);
+
+//			CardView cardView = (CardView) convertView;
+			
+			
+			return "Bus";
+		}
+		
+		if (Var.nowTimeMonth == user.getDateMonth()) {
+			if (Var.nowTimeDay < user.getDateDay()) {
+				convertView.setBackgroundColor(0xff525252);
+				return "Bus si menesi";
+			}
+			if (Var.nowTimeDay == user.getDateDay()) {
+				convertView.setBackgroundColor(0xffCC8F00);
+				return "Dabar yra";
+			}
+			if (Var.nowTimeDay > user.getDateDay()) {
+				convertView.setBackgroundColor(0xff292929);
+				return "Buvo si menesi";
+			}
+		}
+		
+		if (Var.nowTimeMonth > user.getDateMonth()) {
+			convertView.setBackgroundColor(0xff141414);
+			return "Buvo";
+		}
+		
+		return theReturn;
 	}
 	
-	private void init_Data_B_day_countdown(TextView textView, User user) {
+	private void SetCountDownWindow(TextView textView, User user) {
 		
 		Activity curentActivity = (Activity) super.getContext();
 		
 		Thread thread = new Thread(() -> {
 			try {
-				for (int i = 0; i < 100; i++) {
-					Thread.sleep(1000);
-					
-					String result;
-					Var.GenBDayOf(user);
-					if (Var.bDayOf - Var.todayDay < 0) {
-						result =
-								Var.bDayOf + 365 - Var.todayDay + " Days " + (24 - Var.todayTimeH) +
-								" Hour\n " +
-								(60 - Var.todayTimeM) + " Minute " + (60 - Var.todayTimeS) +
-								" Second ";
-					} else {
-						result = Var.bDayOf - Var.todayDay + " Days " + (24 - Var.todayTimeH) +
-								 " Hour\n " +
-								 (60 - Var.todayTimeM) + " Minute " + (60 - Var.todayTimeS) +
-								 " Second ";
-					}
-					
-					curentActivity.runOnUiThread(() -> textView.setText(
-							result
-					));
+				while (true) {
+					CountDownWindow(textView, user, curentActivity);
 				}
 			} catch (InterruptedException ignored) {
 			}
-		});
+		}
+		);
 		
 		thread.start();
 	}
-
-//	public String B_day_countdown(int i) {
-//		if (var.bDayOf - var.todayDay < 0) {
-//			return var.bDayOf + 365 - var.todayDay + " Days " + (24 - var.todayTimeH) +
-//				   " Hour\n " +
-//				   (60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) +
-//				   " Second ";
-//		} else {
-//			return var.bDayOf - var.todayDay + " Days " + (24 - var.todayTimeH) + " Hour\n " +
-//				   (60 - var.todayTimeM) + " Minute " + (60 - var.todayTimeS) + " Second ";
-//		}
-//	}
 }
