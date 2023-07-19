@@ -1,5 +1,7 @@
 package com.example.b_daygetter.Main;
 
+import static com.example.b_daygetter.ListUsers.GlobalVaribal.getIdGlobalVaribal;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,14 +30,14 @@ public class MainActivity extends AppCompatActivity {
 	
 	UserDao userDao;
 	User user;
-	int id = 2;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		Log.d("FingId", String.valueOf(id));
+		id = getIdGlobalVaribal();
+		Log.d("GettingId", String.valueOf(id));
 		
 		MainActivityAddingTempUser();
 		
@@ -49,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
 		countdown(id);
 		age_will_be();
 	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+	}	int id = getId();
 	
 	void user_name() {
 		userNameData.user_name();
@@ -114,6 +122,10 @@ public class MainActivity extends AppCompatActivity {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+
+	
+	
 }
 
 

@@ -1,5 +1,7 @@
 package com.example.b_daygetter.ListUsers;
 
+import static com.example.b_daygetter.ListUsers.GlobalVaribal.setIdGlobalVaribal;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,7 +24,6 @@ public class ListUsers extends AppCompatActivity {
 	GridView coursesGV;
 	UserDao userDao;
 	
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,15 +40,13 @@ public class ListUsers extends AppCompatActivity {
 		coursesGV.setAdapter(adapter);
 	}
 	
-	//TODO idekti error atlaikimo systema
 	public void runOnClick(View view) {
 		
 		Debugeris.SetColorAfterPress(view);
 		Debugeris.GetId(view);
 		
 		TextView textview = view.findViewById(R.id.Id);
-		
-		//setGlobalId(Integer.parseInt(String.valueOf(textview.getText())));
+		setIdGlobalVaribal(Integer.parseInt((String) textview.getText()));
 		
 		Intent intent = new Intent(this, MainActivity.class);
 		
