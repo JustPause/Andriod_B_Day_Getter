@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,25 +31,30 @@ public class AddUsersActivoty extends AppCompatActivity {
 		EditText personName = findViewById(R.id.Person_Name);
 		EditText personDate = findViewById(R.id.Person_Date);
 		
-		String[] words = personName.getText().toString().split(" ");
-		
-		String userName = words[0];
-		String userSureName = words[1];
-		LocalDate bLocalDate = LocalDate.parse(personDate.getText());
-		
-		User user = new User(userName, userSureName, bLocalDate.getYear(), bLocalDate.getMonthValue(),
-				bLocalDate.getDayOfMonth()
-		);
-		
-		Log.d("getText",
-				user.getName() + " " + user.getSureName() + " " + user.getDateMonth() + " " +
-				user.getDateMonth() + " " + user.getDateDay()
-		);
-		
-		userDao.insert(user);
-		
-		Intent intent = new Intent(this, AddMessige.class);
-		finish();
-		startActivity(intent);
+		try {
+			String[] words = personName.getText().toString().split(" ");
+			
+			String userName = words[0];
+			String userSureName = words[1];
+			LocalDate bLocalDate = LocalDate.parse(personDate.getText());
+			
+			User user = new User(userName, userSureName, bLocalDate.getYear(), bLocalDate.getMonthValue(),
+					bLocalDate.getDayOfMonth()
+			);
+			
+			Log.d("getText",
+					user.getName() + " " + user.getSureName() + " " + user.getDateMonth() + " " +
+					user.getDateMonth() + " " + user.getDateDay()
+			);
+			
+			userDao.insert(user);
+			
+			Intent intent = new Intent(this, AddMessige.class);
+			finish();
+			startActivity(intent);
+		} catch (Exception e) {
+			Toast.makeText(this, "Kaska Paraisei neteisingai", Toast.LENGTH_SHORT).show();
+		}
 	}
+	
 }

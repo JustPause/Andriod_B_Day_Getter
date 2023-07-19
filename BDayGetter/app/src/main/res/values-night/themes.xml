@@ -12,6 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="background">@color/Nyanza</item>
+        <item name="android:textColor">@color/black</item>
     </style>
     <!-- Base application theme. -->
     <style name="Base.Theme.BDayGetter" parent="Theme.Material3.DayNight.NoActionBar">

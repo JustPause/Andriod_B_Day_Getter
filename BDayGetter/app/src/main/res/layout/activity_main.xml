@@ -5,7 +5,10 @@
     android:id="@+id/Main_Window"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Nyanza"
+
     tools:context=".Main.MainActivity">
+
 
     <TextView
         android:id="@+id/User_name"
@@ -14,9 +17,11 @@
         android:layout_marginBottom="24dp"
         android:text="@string/User_name"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Date"
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -26,11 +31,13 @@
 
         android:text="@string/CountDown"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textColor="@color/black"
 
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/List_Users" />
 
     <TextView
@@ -40,10 +47,12 @@
         android:layout_marginBottom="24dp"
         android:text="@string/date"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/B_day_countdown"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
+        app:layout_constraintStart_toStartOf="parent" />/>
 
     <TextView
         android:id="@+id/Age_will_be"
@@ -52,11 +61,13 @@
         android:layout_marginTop="24dp"
         android:text="@string/age_will_be"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/B_day_countdown" />
+
+        app:layout_constraintTop_toBottomOf="@+id/B_day_countdown" />/>
 
     <Button
         android:id="@+id/Add_User"

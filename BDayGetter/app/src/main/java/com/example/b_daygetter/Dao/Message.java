@@ -10,9 +10,6 @@ public class Message {
 	//TODO Kartu jei zomgus parasota ta paty email - messige priskiria prie to email naudotoko
 	//TODO Jei meilo nera tai ir parasyti
 	
-	//	@ColumnInfo(name = "user_id")
-	//	private int user_id;
-	// cia turetu buti naudotoja id kuris prisi viska
 	@ColumnInfo(name = "email")
 	private final String email;
 	@ColumnInfo(name = "message")

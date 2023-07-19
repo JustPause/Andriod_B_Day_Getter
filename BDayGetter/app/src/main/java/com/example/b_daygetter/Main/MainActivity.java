@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		// TODO https://developer.android.com/develop/ui/views/graphics/palette-colors
+		// TODO Pirdeti galimybe kad progrmama pasimtu spavas is telefono paletes
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
@@ -56,11 +59,11 @@ public class MainActivity extends AppCompatActivity {
 	protected void onResume() {
 		super.onResume();
 		
-	}	int id = getId();
+	}
 	
 	void user_name() {
 		userNameData.user_name();
-	}
+	}	int id = getId();
 	
 	void date() {
 		dateData.date();
