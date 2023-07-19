@@ -2,6 +2,7 @@ package com.example.b_daygetter.Main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import com.example.b_daygetter.R;
 import com.example.b_daygetter.SendEmailToTheUser.SendEmailToTheUser;
 
 public class MainActivity extends AppCompatActivity {
+	
 	private final Countdown countdown = new Countdown(this);
 	private final AddingTempUsers addingTempUsers = new AddingTempUsers(this);
 	private final UserNameData userNameData = new UserNameData(this);
@@ -21,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
 	private final AgeWillBeData ageWillBeData = new AgeWillBeData(this);
 	
 	// TODO Add an feture that lets the youser get his one color, of core the data will be collected in the data base. On craision the user can have a random color and at any time he can chage it
-	
 	
 	// TODO pakeisti dataBaseUserYear, dataBaseUserMonth, dataBaseUserDay i int
 	
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		Log.d("FingId", String.valueOf(id));
 		
 		MainActivityAddingTempUser();
 		
@@ -59,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
 		ageWillBeData.age_will_be();
 	}
 	
-	
 	private void countdown(int id) {
 		countdown.countdown(id);
 	}
@@ -67,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
 	public void MainActivityAddingTempUser() {
 		addingTempUsers.MainActivityAddingTempUser();
 	}
-	
 	
 	public void add_users_button(View view) {
 		

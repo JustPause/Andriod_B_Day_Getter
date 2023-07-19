@@ -10,14 +10,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 
 import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Main.Var;
 import com.example.b_daygetter.R;
 
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.List;
 
 public class ListUsersAdapter extends ArrayAdapter<User> {
@@ -84,51 +81,13 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 	}
 	
 	@NonNull
-	@Override
-	public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-		
-		View listitemView = convertView;
-		
-		if (listitemView == null) {
-			// Layout Inflater inflates each item to be displayed in GridView.
-			listitemView = LayoutInflater.from(getContext()).inflate(R.layout.card_item, parent, false);
-		}
-		
-		//https://stackoverflow.com/questions/13327571/in-a-simple-to-understand-explanation-what-is-runnable-in-java
-		
-		User user = getItem(position);
-		Var.GenBDayOf(user);
-		
-		TextView NameAndSureName = listitemView.findViewById(R.id.NameSureName);
-		TextView BDayDate = listitemView.findViewById(R.id.BDayDate);
-		TextView CoundDown = listitemView.findViewById(R.id.Coundown);
-		TextView Age = listitemView.findViewById(R.id.Age);
-		TextView Id = listitemView.findViewById(R.id.Id);
-		
-		NameAndSureName.setText(NameSureName(user));
-		
-		BDayDate.setText(BbayDate(user));
-		
-		CoundDown.setText(Countdown(user));
-		
-		SetCountDownWindow(CoundDown, user);
-		
-		Age.setText(AgeFing(user, listitemView));
-		
-		Id.setText(String.valueOf(user.getId()));
-		
-		return listitemView;
-	}
-	
-	@NonNull
-	private String AgeFing(User user, View convertView) {
+	private String AgeFing(@NonNull User user, View convertView) {
 		String theReturn = "null";
 		
 		if (Var.nowTimeMonth < user.getDateMonth()) {
 			convertView.setBackgroundColor(0xff7A7A7A);
 
 //			CardView cardView = (CardView) convertView;
-			
 			
 			return "Bus";
 		}
@@ -172,4 +131,42 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 		
 		thread.start();
 	}
+	
+	@NonNull
+	@Override
+	public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+		
+		View listitemView = convertView;
+		
+		if (listitemView == null) {
+			// Layout Inflater inflates each item to be displayed in GridView.
+			listitemView = LayoutInflater.from(getContext()).inflate(R.layout.card_item, parent, false);
+		}
+		
+		//https://stackoverflow.com/questions/13327571/in-a-simple-to-understand-explanation-what-is-runnable-in-java
+		
+		User user = getItem(position);
+		Var.GenBDayOf(user);
+		
+		TextView NameAndSureName = listitemView.findViewById(R.id.NameSureName);
+		TextView BDayDate = listitemView.findViewById(R.id.BDayDate);
+		TextView CoundDown = listitemView.findViewById(R.id.Coundown);
+		TextView Age = listitemView.findViewById(R.id.Age);
+		TextView Id = listitemView.findViewById(R.id.Id);
+		
+		NameAndSureName.setText(NameSureName(user));
+		
+		BDayDate.setText(BbayDate(user));
+		
+		CoundDown.setText(Countdown(user));
+		
+		SetCountDownWindow(CoundDown, user);
+		
+		Age.setText(AgeFing(user, listitemView));
+		
+		Id.setText(String.valueOf(user.getId()));
+		
+		return listitemView;
+	}
+	
 }
