@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -56,12 +57,14 @@ public class ListUsers extends AppCompatActivity {
 	
 	
 	public void delete_Button_ListUsers(View view) {
-		userDao.deleteAllUsers();
+//		userDao.deleteAllUsers();
+//
+//		Intent intent = getIntent();
+//
+//		finishAffinity();
+//		startActivity(intent);
 		
-		Intent intent = getIntent();
-		
-		finishAffinity();
-		startActivity(intent);
+		Toast.makeText(this, "Puff sitas miktukas dar neveikia", Toast.LENGTH_SHORT).show();
 	}
 }
 

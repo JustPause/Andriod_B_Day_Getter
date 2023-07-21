@@ -18,6 +18,9 @@ import java.time.LocalDate;
 
 public class AddUsersActivoty extends AppCompatActivity {
 	UserDao userDao;
+	String userName;
+	String userSureName;
+	LocalDate bLocalDate;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,34 +34,44 @@ public class AddUsersActivoty extends AppCompatActivity {
 		EditText personName = findViewById(R.id.Person_Name);
 		EditText personDate = findViewById(R.id.Person_Date);
 		
+		Exception error = null;
+		
 		try {
-			
 			String[] words = personName.getText().toString().split(" ");
 			
-			String userName = words[0];
-			String userSureName = words[1];
-			LocalDate bLocalDate = LocalDate.parse(personDate.getText());
-			
-			User user = new User(userName, userSureName, bLocalDate.getYear(), bLocalDate.getMonthValue(),
-					bLocalDate.getDayOfMonth()
-			);
-			
-			Log.d("getText",
-					user.getName() + " " + user.getSureName() + " " + user.getDateMonth() + " " +
-					user.getDateMonth() + " " + user.getDateDay()
-			);
-			
-			userDao.insert(user);
+			userName = words[0];
+			userSureName = words[1];
+		} catch (Exception e) {
+			error = e;
+			Toast.makeText(this, "Kaska Pirmoje eiluteija negerai", Toast.LENGTH_SHORT).show();
+		}
+		try {
+			bLocalDate = LocalDate.parse(personDate.getText());
+		} catch (Exception e) {
+			error = e;
+			Toast.makeText(this, "Kaska Antroje eiluteija negerai", Toast.LENGTH_SHORT).show();
+		}
+		
+		if (error == null) {
+			AddingUser();
 			
 			Intent intent = new Intent(this, AddMessige.class);
-			finish();
+			finishAffinity();
 			startActivity(intent);
-			
-		} catch (Exception e) {
-			
-			Toast.makeText(this, "Kaska Paraisei neteisingai", Toast.LENGTH_SHORT).show();
-			
 		}
+	}
+	
+	private void AddingUser() {
+		User user = new User(userName, userSureName, bLocalDate.getYear(), bLocalDate.getMonthValue(),
+				bLocalDate.getDayOfMonth()
+		);
+		
+		Log.d("getText",
+				user.getName() + " " + user.getSureName() + " " + user.getDateMonth() + " " +
+				user.getDateMonth() + " " + user.getDateDay()
+		);
+		
+		userDao.insert(user);
 	}
 	
 }

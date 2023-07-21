@@ -18,6 +18,22 @@ public class AgeWillBeData {
 	
 	@NonNull
 	private String getText() {
+		if (Var.nowTimeMonth < mainActivity.getUser().getDateMonth()) {
+			return Var.nowTimeYear - mainActivity.getUser().getDateYear() + " metai bus";
+		}
+		
+		if (Var.nowTimeMonth == mainActivity.getUser().getDateMonth()) {
+			if (Var.nowTimeDay < mainActivity.getUser().getDateMonth()) {
+				return Var.nowTimeYear - mainActivity.getUser().getDateYear() + " metai bus";
+			}
+			if (Var.nowTimeDay == mainActivity.getUser().getDateMonth()) {
+				return Var.nowTimeYear - mainActivity.getUser().getDateYear() + " metai bus";
+			}
+			if (Var.nowTimeDay > mainActivity.getUser().getDateMonth()) {
+				return Var.nowTimeYear - mainActivity.getUser().getDateYear() + 1 + " metai bus";
+			}
+		}
+		
 		return Var.nowTimeYear - mainActivity.getUser().getDateYear() + 1 + " metai bus";
 	}
 }

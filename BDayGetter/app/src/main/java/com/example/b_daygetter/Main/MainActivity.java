@@ -53,14 +53,6 @@ public class MainActivity extends AppCompatActivity {
 		date();
 		countdown(id);
 		age_will_be();
-
-
-//		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				Log.d("cek", "home selected");
-//			}
-//		});
 		
 	}
 	
@@ -93,20 +85,12 @@ public class MainActivity extends AppCompatActivity {
 	public void add_users_button(View view) {
 		
 		Intent intent = new Intent(this, AddUsersActivoty.class);
-		finish();
 		startActivity(intent);
 	}
 	
 	public void list_users_button(View view) {
 		
 		Intent intent = new Intent(this, ListUsers.class);
-//		finish();
-//		finishActivity();
-//		finishAffinity();
-//		finishAfterTransition();
-//		finishAndRemoveTask();
-//		finishActivityFromChild();
-//		finishFromChild();
 		startActivity(intent);
 	}
 	
