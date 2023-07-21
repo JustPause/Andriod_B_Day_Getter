@@ -32,6 +32,7 @@ public class AddUsersActivoty extends AppCompatActivity {
 		EditText personDate = findViewById(R.id.Person_Date);
 		
 		try {
+			
 			String[] words = personName.getText().toString().split(" ");
 			
 			String userName = words[0];
@@ -52,8 +53,11 @@ public class AddUsersActivoty extends AppCompatActivity {
 			Intent intent = new Intent(this, AddMessige.class);
 			finish();
 			startActivity(intent);
+			
 		} catch (Exception e) {
+			
 			Toast.makeText(this, "Kaska Paraisei neteisingai", Toast.LENGTH_SHORT).show();
+			
 		}
 	}
 	

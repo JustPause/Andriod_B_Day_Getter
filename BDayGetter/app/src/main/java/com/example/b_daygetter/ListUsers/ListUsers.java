@@ -50,7 +50,7 @@ public class ListUsers extends AppCompatActivity {
 		
 		Intent intent = new Intent(this, MainActivity.class);
 		
-		finish();
+		finishAffinity();
 		startActivity(intent);
 	}
 	
@@ -59,7 +59,8 @@ public class ListUsers extends AppCompatActivity {
 		userDao.deleteAllUsers();
 		
 		Intent intent = getIntent();
-		finish();
+		
+		finishAffinity();
 		startActivity(intent);
 	}
 }
