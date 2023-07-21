@@ -4,7 +4,7 @@
     <color name="orage_500">#FFFFC933</color>
     <color name="teal_200">#FFE71D36</color>
     <color name="teal_700">#FFA61123</color>
-    <color name="black">#FF1A0E03</color>
+    <color name="black">#121212</color>
     <color name="white">#FFFFFFFF</color>
 
     <color name="Nyanza">#FFE9FFDB</color>
@@ -12,4 +12,6 @@
     <color name="Paynes_gray">#FF536878</color>
     <color name="Davys_gray">#FF555555</color>
     <color name="Icterine">#FFFCF75E</color>
+
+    <!--    <color name="background_color">@color/Nyanza</color>-->
 </resources>

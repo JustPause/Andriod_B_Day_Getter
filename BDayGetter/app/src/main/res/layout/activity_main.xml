@@ -5,7 +5,6 @@
     android:id="@+id/Main_Window"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Nyanza"
 
     tools:context=".Main.MainActivity">
 
@@ -52,7 +51,7 @@
         app:layout_constraintBottom_toTopOf="@+id/B_day_countdown"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintStart_toStartOf="parent" />/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/Age_will_be"
@@ -67,7 +66,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@+id/B_day_countdown" />/>
+        app:layout_constraintTop_toBottomOf="@+id/B_day_countdown" />
 
     <Button
         android:id="@+id/Add_User"
@@ -112,7 +111,7 @@
         android:ems="10"
         android:text="@string/version"
         android:textAlignment="textEnd"
-        android:textColor="#7F7F7F"
+        android:textColor="#737373"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

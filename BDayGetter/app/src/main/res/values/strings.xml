@@ -7,7 +7,9 @@
     <string name="date">Date</string>
     <string name="age_will_be">Age</string>
     <string name="CountDown">DD:HH:MM:SS</string>
+
     <!-- Strings used for fragments for navigation -->
+
     <string name="version">Dev-After-final-build-2.02v</string>
     <string name="vardas_pavarde">Vardas Pavarde</string>
     <string name="give_name">Give_Name</string>
@@ -19,5 +21,4 @@
     <string name="message">Message</string>
     <string name="delete">Delete</string>
     <string name="title_activity_email">Email</string>
-
 </resources>
