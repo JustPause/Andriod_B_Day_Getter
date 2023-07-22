@@ -24,6 +24,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+
         android:id="@+id/delete_Button_ListUsers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,6 +32,7 @@
         android:layout_marginBottom="24dp"
         android:onClick="delete_Button_ListUsers"
         android:text="@string/delete"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
