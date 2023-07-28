@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private final DateData dateData = new DateData(this);
     private final AgeWillBeData ageWillBeData = new AgeWillBeData(this);
     UserDao userDao;
-	
+
     int id = 0;
     // TODO pakeisti dataBaseUserYear, dataBaseUserMonth, dataBaseUserDay i int
     User user;
