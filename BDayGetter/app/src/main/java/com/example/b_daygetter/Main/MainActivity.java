@@ -9,7 +9,6 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.b_daygetter.AddUsers.AddUsersActivoty;
-import com.example.b_daygetter.Dao.MainDataBase;
 import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Dao.UserDao;
 import com.example.b_daygetter.ListUsers.ListUsers;

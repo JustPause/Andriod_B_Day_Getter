@@ -7,11 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
-import com.example.b_daygetter.Dao.MainDataBase;
-import com.example.b_daygetter.Dao.Message;
 import com.example.b_daygetter.Dao.MessageDao;
 import com.example.b_daygetter.Dao.SecondDataBase;
 import com.example.b_daygetter.R;
@@ -40,8 +37,6 @@ public class SendEmailToTheUser extends AppCompatActivity {
 		//String email = "Emial@email.com";
 		String message = "email email emal email";
 
-		Log.i("Send email", "Justinas");
-
 		String[] TO = {email};
 		String[] CC = {"xyz@gmail.com"};
 		Intent emailIntent = new Intent(Intent.ACTION_SEND);
@@ -53,12 +48,11 @@ public class SendEmailToTheUser extends AppCompatActivity {
 		emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Happy Birthday, \"User Name goes hare\"");
 		emailIntent.putExtra(Intent.EXTRA_TEXT,
 				"Happy Birthday to you\nand the message is " +
-				message);
+						message);
 
 		try {
 			startActivity(Intent.createChooser(emailIntent, "Send mail..."));
 			finish();
-			Log.i("Finished sending email...", "");
 		} catch (android.content.ActivityNotFoundException ex) {
 			Toast.makeText(SendEmailToTheUser.this,
 					"There is no email client installed.", Toast.LENGTH_SHORT).show();
