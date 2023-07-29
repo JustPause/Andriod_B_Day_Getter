@@ -16,7 +16,6 @@
         android:layout_marginBottom="24dp"
         android:text="@string/User_name"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/Date"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +29,6 @@
 
         android:text="@string/CountDown"
         android:textAlignment="center"
-        android:textColor="@color/black"
 
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,7 +44,6 @@
         android:layout_marginBottom="24dp"
         android:text="@string/date"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/B_day_countdown"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +57,6 @@
         android:layout_marginTop="24dp"
         android:text="@string/age_will_be"
         android:textAlignment="center"
-        android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -123,7 +119,7 @@
         android:ems="10"
         android:text="@string/version"
         android:textAlignment="textEnd"
-        android:textColor="#737373"
+        android:textColor="@color/versonText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0" />
