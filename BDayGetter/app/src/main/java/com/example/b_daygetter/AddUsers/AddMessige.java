@@ -22,6 +22,10 @@ public class AddMessige extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_messige);
 
+		Intent intent = new Intent(this, MainActivity.class);
+		finish();
+		startActivity(intent);
+
 		messageDao = SecondDataBase.getInstance(getApplicationContext()).messageDao();
 	}
 

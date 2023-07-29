@@ -5,10 +5,12 @@ import static com.example.b_daygetter.ListUsers.GlobalVaribal.getIdGlobalVaribal
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.b_daygetter.AddUsers.AddUsersActivoty;
+import com.example.b_daygetter.Dao.MainDataBase;
 import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Dao.UserDao;
 import com.example.b_daygetter.ListUsers.ListUsers;
@@ -91,13 +93,22 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void send_email_to_the_user_button(View view) {
+//    public void send_email_to_the_user_button(View view) {
+//
+//        Intent intent = new Intent(this, SendEmailToTheUser.class);
+//        finish();
+//        startActivity(intent);
+//    }
 
-        Intent intent = new Intent(this, SendEmailToTheUser.class);
-        finish();
-        startActivity(intent);
+    public void delete_this_user(View view) {
+
+        MainDataBase.getInstance(getApplicationContext()).userDao().delete(getUser());
+
+        view.setBackgroundColor(0xffff0000);
+        ((Button) findViewById(R.id.Delete_this_user)).setText("Successful");
+
+
     }
-
 
     public UserDao getUserDao() {
         return userDao;
@@ -122,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
     public void setId(int id) {
         this.id = id;
     }
-
 
 }
 

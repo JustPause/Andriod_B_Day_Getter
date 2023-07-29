@@ -1,8 +1,6 @@
 package com.example.b_daygetter.Main;
 
 import com.example.b_daygetter.Dao.MainDataBase;
-import com.example.b_daygetter.Dao.Message;
-import com.example.b_daygetter.Dao.SecondDataBase;
 import com.example.b_daygetter.PrivetData.PrivetDataAndUsers;
 
 public class AddingTempUsers {
@@ -15,7 +13,6 @@ public class AddingTempUsers {
 
         mainActivity.setUserDao(MainDataBase.getInstance(mainActivity.getApplicationContext()).userDao());
 
-        mainActivity.userDao.deleteAllUsers();
         if (
                 mainActivity.getUserDao().getAllUsers().isEmpty()
         ) {

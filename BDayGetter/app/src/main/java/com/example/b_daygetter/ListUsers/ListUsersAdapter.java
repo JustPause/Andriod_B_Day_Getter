@@ -2,7 +2,6 @@ package com.example.b_daygetter.ListUsers;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,28 +26,6 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
     @NonNull
     private static String NameSureName(User user) {
         return user.getName() + " " + user.getSureName();
-    }
-
-    private static void CountDownWindow(TextView textView, User user, Activity curentActivity) throws InterruptedException {
-
-        String result;
-        Var.GenBDayOf(user);
-
-        if (Var.bDayOf - Var.todayDay < 0) {
-            result = Var.bDayOf + 365 - Var.todayDay + " Days " + (24 - Var.todayTimeH) +
-                    " Hour\n " +
-                    (60 - Var.todayTimeM) + " Minute " + (60 - Var.todayTimeS) +
-                    " Second ";
-        } else {
-            result = Var.bDayOf - Var.todayDay + " Days " + (24 - Var.todayTimeH) +
-                    " Hour\n " +
-                    (60 - Var.todayTimeM) + " Minute " + (60 - Var.todayTimeS) +
-                    " Second ";
-        }
-
-        String finalResult = result;
-        curentActivity.runOnUiThread(() -> textView.setText(finalResult));
-        Thread.sleep(1000);
     }
 
     @NonNull
@@ -120,8 +97,10 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
         {
             try {
                 while (true) {
-                    CountDownWindow(textView, user, curentActivity);
-                    Log.d(user.getName(), (String) textView.getText());
+                    // ToDo Nesutrvrkiau, galimai problerma yra per Thread moduli kuris sikuiria dublikata Thread kai pakeiti vieta
+                    curentActivity.runOnUiThread(() -> textView.setText(Countdown(user)));
+
+                    Thread.sleep(1000);
                 }
             } catch (InterruptedException ignored) {
             }
@@ -156,8 +135,6 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
         NameAndSureName.setText(NameSureName(user));
 
         BDayDate.setText(BbayDate(user));
-
-        CoundDown.setText(Countdown(user));
 
         SetCountDownWindow(CoundDown, user);
 
