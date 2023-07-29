@@ -10,7 +10,7 @@
 
     <!-- Strings used for fragments for navigation -->
 
-    <string name="version">Dev-After-final-build-2.02v</string>
+    <string name="version">Dev-PreFinal-build-3.0v</string>
     <string name="vardas_pavarde">Vardas Pavarde</string>
     <string name="give_name">Give_Name</string>
     <string name="submit">submit</string>
