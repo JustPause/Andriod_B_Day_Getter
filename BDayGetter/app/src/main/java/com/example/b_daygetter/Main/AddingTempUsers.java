@@ -7,20 +7,19 @@ import com.example.b_daygetter.PrivetData.PrivetDataAndUsers;
 
 public class AddingTempUsers {
     private final MainActivity mainActivity;
-    private final PrivetDataAndUsers privetDataAndUsers = new PrivetDataAndUsers(this);
+    private final PrivetDataAndUsers privetDataAndUsers = new PrivetDataAndUsers();
 
     public AddingTempUsers(MainActivity mainActivity) { this.mainActivity = mainActivity; }
 
     public void MainActivityAddingTempUser() {
-        mainActivity.setUserDao(
-                MainDataBase.getInstance(
-                        mainActivity.getApplicationContext()
-                ).userDao()
-        );
+
+        mainActivity.setUserDao(MainDataBase.getInstance(mainActivity.getApplicationContext()).userDao());
+
+        mainActivity.userDao.deleteAllUsers();
         if (
                 mainActivity.getUserDao().getAllUsers().isEmpty()
         ) {
-            privetDataAndUsers.PrivetDataAndUsersAsData();
+            privetDataAndUsers.PrivetDataAndUsersAsData(MainDataBase.getInstance(getMainActivity().getApplicationContext()).userDao());
         }
 //		if (SecondDataBase.getInstance(mainActivity.getApplicationContext()).messageDao().getAllMessages().isEmpty()) {
 //			SecondDataBase.getInstance(mainActivity.getApplicationContext()).messageDao().insert(

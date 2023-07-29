@@ -9,6 +9,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.b_daygetter.AddUsers.AddUsersActivoty;
+import com.example.b_daygetter.Dao.MainDataBase;
 import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Dao.UserDao;
 import com.example.b_daygetter.ListUsers.ListUsers;
@@ -36,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Var.GenBDayOf(new User("", "", 2003, 6, 6));
         MainActivityAddingTempUser();
 
         id = getIdGlobalVaribal();
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void countdown(int id) {
-        countdown.countdown(id);
+        countdown.countdown();
     }
 
     public void MainActivityAddingTempUser() {
