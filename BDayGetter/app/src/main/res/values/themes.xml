@@ -1,20 +1,38 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="Base.Theme.BDayGetter" parent="Theme.Material3.Light.NoActionBar">
-        <!-- Primary brand color. -->
+    <style name="Themes.BDayGetter" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!--        Primary brand color.-->
+
         <item name="colorPrimary">@color/primaryLight</item>
-        <item name="colorPrimaryVariant">@color/primaryLight</item>
-        <item name="colorOnPrimary">@color/textDark</item>
+        <item name="colorPrimaryVariant">#01FFF7</item>
+        <item name="colorOnPrimary">@color/backgroundLight</item>
 
-        <!-- Secondary brand color. -->
+        <!--        Secondary brand color.-->
+
         <item name="colorSecondary">@color/secondaryLight</item>
-        <item name="colorSecondaryVariant">@color/secondaryLight</item>
-        <item name="colorOnSecondary">@color/textLight</item>
-        <!-- Status bar color. -->
-        <item name="colorPrimaryDark">@color/primaryLight</item>
+        <item name="colorSecondaryVariant">#FFFF0000</item>
+        <item name="colorOnSecondary">#FF00FF00</item>
 
-        <!-- Customize your theme here. -->
+        <!--        Status bar color.-->
+
+        <item name="android:statusBarColor">?/attr/colorPrimary</item>
+        <item name="android:background">@color/backgroundLight</item>
+
+    </style>
+
+    <style name="SCREEN">
+        <item name="android:background">@color/backgroundLight</item>
+    </style>
+
+    <style name="TEXT">
+        <item name="android:background">@color/textLight</item>
+    </style>
+
+    <style name="BUTTON">
+        <item name="android:background">@android:color/holo_blue_dark</item>
         <item name="android:textColor">@color/textLight</item>
     </style>
+
 </resources>

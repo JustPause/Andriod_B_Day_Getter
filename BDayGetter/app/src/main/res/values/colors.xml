@@ -16,7 +16,7 @@
     <color name="accentLight">#FF2e3838</color>
 
     <color name="textDark">#FFffffff</color>
-    <color name="backgroundDark">#FFffffff</color>
+    <color name="backgroundDark">#FF080708</color>
     <color name="primaryDark">#FFac9b9a</color>
     <color name="secondaryDark">#FF171c1a</color>
     <color name="accentDark">#FF738c8c</color>
