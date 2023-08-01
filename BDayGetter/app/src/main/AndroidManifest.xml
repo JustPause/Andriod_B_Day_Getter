@@ -33,6 +33,7 @@
             android:exported="false"
             android:label="ListUsers" />
         <!--            android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar" -->
+
         <activity
             android:name=".SendEmailToTheUser.SendEmailToTheUser"
             android:exported="false"
