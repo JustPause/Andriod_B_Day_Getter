@@ -124,6 +124,7 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
         //https://stackoverflow.com/questions/13327571/in-a-simple-to-understand-explanation-what-is-runnable-in-java
 
         User user = getItem(position);
+        assert user != null;
         Var.GenBDayOf(user);
 
         TextView NameAndSureName = listitemView.findViewById(R.id.NameSureName);
@@ -139,6 +140,8 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
         SetCountDownWindow(CoundDown, user);
 
         Age.setText(AgeFing(user, listitemView));
+
+        listitemView.setBackgroundColor(0x7FC5C6D0);
 
         Id.setText(String.valueOf(user.getId()));
 

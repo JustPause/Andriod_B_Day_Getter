@@ -15,7 +15,6 @@ import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Dao.UserDao;
 import com.example.b_daygetter.ListUsers.ListUsers;
 import com.example.b_daygetter.R;
-import com.example.b_daygetter.SendEmailToTheUser.SendEmailToTheUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,13 +26,16 @@ public class MainActivity extends AppCompatActivity {
     UserDao userDao;
 
     int id = 0;
-    // TODO pakeisti dataBaseUserYear, dataBaseUserMonth, dataBaseUserDay i int
     User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO https://developer.android.com/develop/ui/views/graphics/palette-colors
         // TODO Pirdeti galimybe kad progrmama pasimtu spavas is telefono paletes
+
+        // TODO Dar viena funcija leidzianti nuskaityti gimtadieniis is sheet tabal
+
+        // ToDo Sutvarkyti gimtadieniu datas :)
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         user_name();
         date();
-        countdown(id);
+        countdown();
         age_will_be();
 
     }
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         ageWillBeData.age_will_be();
     }
 
-    private void countdown(int id) {
+    private void countdown() {
         countdown.countdown();
     }
 
