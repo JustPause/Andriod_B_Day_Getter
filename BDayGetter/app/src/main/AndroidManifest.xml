@@ -4,37 +4,41 @@
 
     <application
         android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BDayGetter"
+        android:theme="@style/AppTheme"
         tools:targetApi="31">
-        <activity
-            android:name=".Email.Email"
-            android:exported="false"
-            android:label="@string/title_activity_email"
-            android:theme="@style/Theme.BDayGetter" />
+        <!--        <activity-->
+        <!--            android:name=".Email.Email"-->
+        <!--            android:exported="false"-->
+        <!--            android:label="@string/title_activity_email"-->
+        <!--            android:theme="@style/Theme.BDayGetter" />-->
         <activity
             android:name=".AddUsers.AddMessige"
             android:exported="false"
-            android:label="AddMessige"
-            android:theme="@style/Theme.BDayGetter.NoActionBar" />
+            android:label="AddMessige" />
+        <!--            android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar"-->
+
         <activity
             android:name=".AddUsers.AddUsersActivoty"
             android:exported="false"
-            android:label="AddUsersActivoty"
-            android:theme="@style/Theme.BDayGetter.NoActionBar" />
+            android:label="AddUsersActivoty" />
+        <!--            android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar"-->
+
         <activity
             android:name=".ListUsers.ListUsers"
             android:exported="false"
-            android:label="ListUsers"
-            android:theme="@style/Theme.BDayGetter.NoActionBar" />
+            android:label="ListUsers" />
+        <!--            android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar" -->
+
         <activity
             android:name=".SendEmailToTheUser.SendEmailToTheUser"
             android:exported="false"
-            android:label="SendEmailToTheUser"
-            android:theme="@style/Theme.BDayGetter.NoActionBar" />
+            android:label="SendEmailToTheUser" />
+        <!--            android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar"-->
         <activity
             android:name=".Main.MainActivity"
             android:exported="true">

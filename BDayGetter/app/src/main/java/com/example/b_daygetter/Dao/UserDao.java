@@ -10,20 +10,19 @@ import java.util.List;
 
 @Dao
 public interface UserDao {
-	
-	@Insert(onConflict = OnConflictStrategy.REPLACE)
-	void insert(User user);
-	
-	@Delete
-	void delete(User user);
-	
-	@Query("DELETE FROM users")
-	void deleteAllUsers();
-	
-	//	@Query("SELECT * FROM users ORDER BY b_day_month DESC")
-	@Query("SELECT * FROM users")
-	List<User> getAllUser();
-	
-	@Query("SELECT * FROM users WHERE :id")
-	User getUser(int id);
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insert(User user);
+
+    @Delete
+    void delete(User user);
+
+    @Query("DELETE FROM users")
+    void deleteAllUsers();
+
+    @Query("SELECT * FROM users ORDER BY b_day_month, b_day_day")
+    List<User> getAllUsers();
+
+    @Query("SELECT * FROM users WHERE id=:id")
+    User getUser(int id);
 }

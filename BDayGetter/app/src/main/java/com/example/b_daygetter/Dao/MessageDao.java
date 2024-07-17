@@ -3,7 +3,6 @@ package com.example.b_daygetter.Dao;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
-import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import java.util.List;
@@ -21,7 +20,7 @@ public interface MessageDao {
 	void deleteAllUsers();
 	
 	@Query("SELECT * FROM messages ORDER BY Email DESC")
-	List<Message> getAllMessage();
+	List<Message> getAllMessages();
 	
 	@Query("SELECT * FROM messages WHERE :id")
 	Message getMessage(int id);

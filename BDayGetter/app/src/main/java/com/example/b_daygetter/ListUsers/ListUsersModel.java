@@ -14,15 +14,21 @@ public class ListUsersModel {
 	private String NameAndSureName;
 	private String CoundDown;
 	private String Age;
+	private String GimimoData;
 	private String Id;
 	
 	
-	public ListUsersModel(String nameAndSureName, String coundDown, String age, String id) {
+	public ListUsersModel(String nameAndSureName, String gimimoData, String coundDown, String age, String id) {
 		NameAndSureName = nameAndSureName;
+		GimimoData = gimimoData;
 		CoundDown = coundDown;
 		Age = age;
 		Id = id;
 	}
+	
+	public String getGimimoData() { return GimimoData; }
+	
+	public void setGimimoData(String gimimoData) { GimimoData = gimimoData; }
 	
 	public String getNameAndSureName() {
 		return NameAndSureName;

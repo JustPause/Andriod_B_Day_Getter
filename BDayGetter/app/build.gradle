@@ -4,16 +4,22 @@ plugins {
 
 android {
     namespace 'com.example.b_daygetter'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.b_daygetter"
         minSdk 27
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
     }
 
     buildTypes {
@@ -36,7 +42,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.room:room-common:2.4.2'
+    implementation 'androidx.room:room-common:2.5.2'
     implementation 'androidx.navigation:navigation-fragment:2.6.0'
     implementation 'androidx.navigation:navigation-ui:2.6.0'
     testImplementation 'junit:junit:4.13.2'
