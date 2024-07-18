@@ -1,0 +1,195 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.b_daygetter"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="27"
+9        android:targetSdkVersion="34" />
+10
+11    <permission
+11-->[androidx.core:core:1.9.0] /home/justinas/.gradle/caches/transforms-3/5bed316c9c43a8bc7d9832f0735edfcf/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+12        android:name="com.example.b_daygetter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.9.0] /home/justinas/.gradle/caches/transforms-3/5bed316c9c43a8bc7d9832f0735edfcf/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.9.0] /home/justinas/.gradle/caches/transforms-3/5bed316c9c43a8bc7d9832f0735edfcf/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="com.example.b_daygetter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.9.0] /home/justinas/.gradle/caches/transforms-3/5bed316c9c43a8bc7d9832f0735edfcf/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.9.0] /home/justinas/.gradle/caches/transforms-3/5bed316c9c43a8bc7d9832f0735edfcf/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+16
+17    <application
+17-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:5:5-51:19
+18        android:allowBackup="true"
+18-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:6:9-35
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.9.0] /home/justinas/.gradle/caches/transforms-3/5bed316c9c43a8bc7d9832f0735edfcf/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+20        android:dataExtractionRules="@xml/data_extraction_rules"
+20-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:7:9-65
+21        android:debuggable="true"
+22        android:extractNativeLibs="false"
+23        android:fullBackupContent="@xml/backup_rules"
+23-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:8:9-54
+24        android:icon="@mipmap/ic_launcher"
+24-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:9:9-43
+25        android:label="@string/app_name"
+25-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:10:9-41
+26        android:supportsRtl="true"
+26-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:11:9-35
+27        android:testOnly="true"
+28        android:theme="@style/AppTheme" >
+28-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:12:9-40
+29
+30        <!-- <activity -->
+31        <!-- android:name=".Email.Email" -->
+32        <!-- android:exported="false" -->
+33        <!-- android:label="@string/title_activity_email" -->
+34        <!-- android:theme="@style/Theme.BDayGetter" /> -->
+35        <activity
+35-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:19:9-22:42
+36            android:name="com.example.b_daygetter.AddUsers.AddMessige"
+36-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:20:13-48
+37            android:exported="false"
+37-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:21:13-37
+38            android:label="AddMessige" />
+38-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:22:13-39
+39        <!-- android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar" -->
+40
+41        <activity
+41-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:25:9-28:48
+42            android:name="com.example.b_daygetter.AddUsers.AddUsersActivoty"
+42-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:26:13-54
+43            android:exported="false"
+43-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:27:13-37
+44            android:label="AddUsersActivoty" />
+44-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:28:13-45
+45        <!-- android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar" -->
+46
+47        <activity
+47-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:31:9-34:41
+48            android:name="com.example.b_daygetter.ListUsers.ListUsers"
+48-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:32:13-48
+49            android:exported="false"
+49-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:33:13-37
+50            android:label="ListUsers" />
+50-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:34:13-38
+51        <!-- android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar" -->
+52
+53        <activity
+53-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:37:9-40:50
+54            android:name="com.example.b_daygetter.SendEmailToTheUser.SendEmailToTheUser"
+54-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:38:13-66
+55            android:exported="false"
+55-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:39:13-37
+56            android:label="SendEmailToTheUser" />
+56-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:40:13-47
+57        <!-- android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar" -->
+58        <activity
+58-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:42:9-50:20
+59            android:name="com.example.b_daygetter.Main.MainActivity"
+59-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:43:13-46
+60            android:exported="true" >
+60-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:44:13-36
+61            <intent-filter>
+61-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:45:13-49:29
+62                <action android:name="android.intent.action.MAIN" />
+62-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:46:17-69
+62-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:46:25-66
+63
+64                <category android:name="android.intent.category.LAUNCHER" />
+64-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:48:17-77
+64-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:48:27-74
+65            </intent-filter>
+66        </activity>
+67
+68        <service
+68-->[androidx.room:room-runtime:2.5.2] /home/justinas/.gradle/caches/transforms-3/37bc88fa3413613b8f6df264ea2c8a82/transformed/room-runtime-2.5.2/AndroidManifest.xml:24:9-28:63
+69            android:name="androidx.room.MultiInstanceInvalidationService"
+69-->[androidx.room:room-runtime:2.5.2] /home/justinas/.gradle/caches/transforms-3/37bc88fa3413613b8f6df264ea2c8a82/transformed/room-runtime-2.5.2/AndroidManifest.xml:25:13-74
+70            android:directBootAware="true"
+70-->[androidx.room:room-runtime:2.5.2] /home/justinas/.gradle/caches/transforms-3/37bc88fa3413613b8f6df264ea2c8a82/transformed/room-runtime-2.5.2/AndroidManifest.xml:26:13-43
+71            android:exported="false" />
+71-->[androidx.room:room-runtime:2.5.2] /home/justinas/.gradle/caches/transforms-3/37bc88fa3413613b8f6df264ea2c8a82/transformed/room-runtime-2.5.2/AndroidManifest.xml:27:13-37
+72
+73        <provider
+73-->[androidx.emoji2:emoji2:1.2.0] /home/justinas/.gradle/caches/transforms-3/9d13f2821db83ff8741569fc495dc1fe/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+74            android:name="androidx.startup.InitializationProvider"
+74-->[androidx.emoji2:emoji2:1.2.0] /home/justinas/.gradle/caches/transforms-3/9d13f2821db83ff8741569fc495dc1fe/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+75            android:authorities="com.example.b_daygetter.androidx-startup"
+75-->[androidx.emoji2:emoji2:1.2.0] /home/justinas/.gradle/caches/transforms-3/9d13f2821db83ff8741569fc495dc1fe/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+76            android:exported="false" >
+76-->[androidx.emoji2:emoji2:1.2.0] /home/justinas/.gradle/caches/transforms-3/9d13f2821db83ff8741569fc495dc1fe/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+77            <meta-data
+77-->[androidx.emoji2:emoji2:1.2.0] /home/justinas/.gradle/caches/transforms-3/9d13f2821db83ff8741569fc495dc1fe/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+78                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+78-->[androidx.emoji2:emoji2:1.2.0] /home/justinas/.gradle/caches/transforms-3/9d13f2821db83ff8741569fc495dc1fe/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+79                android:value="androidx.startup" />
+79-->[androidx.emoji2:emoji2:1.2.0] /home/justinas/.gradle/caches/transforms-3/9d13f2821db83ff8741569fc495dc1fe/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+80            <meta-data
+80-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/justinas/.gradle/caches/transforms-3/f02b453ef5be71686d0e62efd0793368/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+81                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+81-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/justinas/.gradle/caches/transforms-3/f02b453ef5be71686d0e62efd0793368/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+82                android:value="androidx.startup" />
+82-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/justinas/.gradle/caches/transforms-3/f02b453ef5be71686d0e62efd0793368/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+83            <meta-data
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+84                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+85                android:value="androidx.startup" />
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+86        </provider>
+87
+88        <uses-library
+88-->[androidx.window:window:1.0.0] /home/justinas/.gradle/caches/transforms-3/31ee499fee11c241a13c727afa0449f3/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+89            android:name="androidx.window.extensions"
+89-->[androidx.window:window:1.0.0] /home/justinas/.gradle/caches/transforms-3/31ee499fee11c241a13c727afa0449f3/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+90            android:required="false" />
+90-->[androidx.window:window:1.0.0] /home/justinas/.gradle/caches/transforms-3/31ee499fee11c241a13c727afa0449f3/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+91        <uses-library
+91-->[androidx.window:window:1.0.0] /home/justinas/.gradle/caches/transforms-3/31ee499fee11c241a13c727afa0449f3/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+92            android:name="androidx.window.sidecar"
+92-->[androidx.window:window:1.0.0] /home/justinas/.gradle/caches/transforms-3/31ee499fee11c241a13c727afa0449f3/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+93            android:required="false" />
+93-->[androidx.window:window:1.0.0] /home/justinas/.gradle/caches/transforms-3/31ee499fee11c241a13c727afa0449f3/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+94
+95        <receiver
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+96            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+97            android:directBootAware="false"
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+98            android:enabled="true"
+98-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+99            android:exported="true"
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+100            android:permission="android.permission.DUMP" >
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+101            <intent-filter>
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+102                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+103            </intent-filter>
+104            <intent-filter>
+104-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+105                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+106            </intent-filter>
+107            <intent-filter>
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+108                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+109            </intent-filter>
+110            <intent-filter>
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+111                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.gradle/caches/transforms-3/8a800750bab64c6d8e8a81dda96e57ec/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+112            </intent-filter>
+113        </receiver>
+114    </application>
+115
+116</manifest>
