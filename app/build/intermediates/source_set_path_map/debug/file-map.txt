@@ -40,10 +40,10 @@ com.example.b_daygetter.app-lifecycle-process-2.6.1-38 /home/justinas/.gradle/ca
 com.example.b_daygetter.app-lifecycle-viewmodel-savedstate-2.6.1-39 /home/justinas/.gradle/caches/transforms-3/f050673d21b2e59228eff6e47da1b98c/transformed/lifecycle-viewmodel-savedstate-2.6.1/res
 com.example.b_daygetter.app-sqlite-framework-2.3.1-40 /home/justinas/.gradle/caches/transforms-3/f4f232356a64b2c8b8ddf3ab41886bcf/transformed/sqlite-framework-2.3.1/res
 com.example.b_daygetter.app-lifecycle-runtime-2.6.1-41 /home/justinas/.gradle/caches/transforms-3/f681b11c9eec4851813a34065a9016df/transformed/lifecycle-runtime-2.6.1/res
-com.example.b_daygetter.app-pngs-42 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/build/generated/res/pngs/debug
-com.example.b_daygetter.app-resValues-43 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/build/generated/res/resValues/debug
-com.example.b_daygetter.app-packageDebugResources-44 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.example.b_daygetter.app-packageDebugResources-45 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.example.b_daygetter.app-merged_res-46 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/build/intermediates/merged_res/debug
-com.example.b_daygetter.app-debug-47 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/debug/res
-com.example.b_daygetter.app-main-48 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/res
+com.example.b_daygetter.app-pngs-42 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/build/generated/res/pngs/debug
+com.example.b_daygetter.app-resValues-43 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/build/generated/res/resValues/debug
+com.example.b_daygetter.app-packageDebugResources-44 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.b_daygetter.app-packageDebugResources-45 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.b_daygetter.app-merged_res-46 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/build/intermediates/merged_res/debug
+com.example.b_daygetter.app-debug-47 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/debug/res
+com.example.b_daygetter.app-main-48 /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/res

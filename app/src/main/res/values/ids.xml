@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="Add_User" type="id"/>
+    <item name="List_Users" type="id"/>
+    <item name="Send_email_to_the_user" type="id"/>
+</resources>

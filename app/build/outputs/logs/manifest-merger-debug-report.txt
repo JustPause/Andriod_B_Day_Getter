@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:2:1-53:12
-INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:2:1-53:12
-INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:2:1-53:12
-INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:2:1-53:12
+ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:2:1-53:12
+INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:2:1-53:12
 MERGED from [androidx.databinding:viewbinding:8.1.2] /home/justinas/.gradle/caches/transforms-3/5526180025450aac6fc239120afa0929/transformed/viewbinding-8.1.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-common:2.6.0] /home/justinas/.gradle/caches/transforms-3/6b6fbd58832de9abd7c10ede598d93fd/transformed/navigation-common-2.6.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.6.0] /home/justinas/.gradle/caches/transforms-3/234e272bec1e61222756883d3d15405e/transformed/navigation-runtime-2.6.0/AndroidManifest.xml:17:1-22:12
@@ -62,18 +62,18 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/justinas/.gradle/cache
 MERGED from [androidx.startup:startup-runtime:1.1.1] /home/justinas/.gradle/caches/transforms-3/238209a1a12c9009989d74bd36857b62/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] /home/justinas/.gradle/caches/transforms-3/a2145bc6362a41544590c4a4dac6ba3a/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
 	package
-		INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml
+		INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml
+		INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml
+		INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:5:5-51:19
-INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:5:5-51:19
+ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:5:5-51:19
+INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:5:5-51:19
 MERGED from [com.google.android.material:material:1.9.0] /home/justinas/.gradle/caches/transforms-3/c9a3b8b7f1c0ecf468775a7302064c58/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.9.0] /home/justinas/.gradle/caches/transforms-3/c9a3b8b7f1c0ecf468775a7302064c58/transformed/material-1.9.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/justinas/.gradle/caches/transforms-3/6c63bafc2a4237618f85a073f48b9cda/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -95,77 +95,77 @@ MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/justinas/.g
 MERGED from [androidx.startup:startup-runtime:1.1.1] /home/justinas/.gradle/caches/transforms-3/238209a1a12c9009989d74bd36857b62/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /home/justinas/.gradle/caches/transforms-3/238209a1a12c9009989d74bd36857b62/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
-		INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml
+		INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] /home/justinas/.gradle/caches/transforms-3/5bed316c9c43a8bc7d9832f0735edfcf/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:11:9-35
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:11:9-35
 	android:label
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:10:9-41
 	android:fullBackupContent
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:8:9-54
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:8:9-54
 	tools:targetApi
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:13:9-29
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:13:9-29
 	android:icon
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:9:9-43
 	android:allowBackup
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:12:9-40
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:12:9-40
 	android:dataExtractionRules
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:7:9-65
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:7:9-65
 activity#com.example.b_daygetter.AddUsers.AddMessige
-ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:19:9-22:42
+ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:19:9-22:42
 	android:label
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:22:13-39
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:22:13-39
 	android:exported
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:21:13-37
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:21:13-37
 	android:name
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:20:13-48
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:20:13-48
 activity#com.example.b_daygetter.AddUsers.AddUsersActivoty
-ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:25:9-28:48
+ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:25:9-28:48
 	android:label
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:28:13-45
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:28:13-45
 	android:exported
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:27:13-37
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:26:13-54
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:26:13-54
 activity#com.example.b_daygetter.ListUsers.ListUsers
-ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:31:9-34:41
+ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:31:9-34:41
 	android:label
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:34:13-38
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:34:13-38
 	android:exported
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:33:13-37
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:33:13-37
 	android:name
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:32:13-48
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:32:13-48
 activity#com.example.b_daygetter.SendEmailToTheUser.SendEmailToTheUser
-ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:37:9-40:50
+ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:37:9-40:50
 	android:label
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:40:13-47
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:40:13-47
 	android:exported
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:39:13-37
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:39:13-37
 	android:name
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:38:13-66
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:38:13-66
 activity#com.example.b_daygetter.Main.MainActivity
-ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:42:9-50:20
+ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:42:9-50:20
 	android:exported
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:44:13-36
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:44:13-36
 	android:name
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:43:13-46
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:43:13-46
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:45:13-49:29
+ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:45:13-49:29
 action#android.intent.action.MAIN
-ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:46:17-69
+ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:46:17-69
 	android:name
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:46:25-66
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:46:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:48:17-77
+ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:48:17-77
 	android:name
-		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:48:27-74
+		ADDED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:48:27-74
 uses-sdk
-INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml
-INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml
+INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml
+INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml
 MERGED from [androidx.databinding:viewbinding:8.1.2] /home/justinas/.gradle/caches/transforms-3/5526180025450aac6fc239120afa0929/transformed/viewbinding-8.1.2/AndroidManifest.xml:5:5-44
 MERGED from [androidx.databinding:viewbinding:8.1.2] /home/justinas/.gradle/caches/transforms-3/5526180025450aac6fc239120afa0929/transformed/viewbinding-8.1.2/AndroidManifest.xml:5:5-44
 MERGED from [androidx.navigation:navigation-common:2.6.0] /home/justinas/.gradle/caches/transforms-3/6b6fbd58832de9abd7c10ede598d93fd/transformed/navigation-common-2.6.0/AndroidManifest.xml:20:5-44
@@ -281,9 +281,9 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/justinas/.gradle/cach
 MERGED from [androidx.tracing:tracing:1.0.0] /home/justinas/.gradle/caches/transforms-3/a2145bc6362a41544590c4a4dac6ba3a/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] /home/justinas/.gradle/caches/transforms-3/a2145bc6362a41544590c4a4dac6ba3a/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 	android:targetSdkVersion
-		INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml
+		INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml
+		INJECTED from /home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml
 service#androidx.room.MultiInstanceInvalidationService
 ADDED from [androidx.room:room-runtime:2.5.2] /home/justinas/.gradle/caches/transforms-3/37bc88fa3413613b8f6df264ea2c8a82/transformed/room-runtime-2.5.2/AndroidManifest.xml:24:9-28:63
 	android:exported

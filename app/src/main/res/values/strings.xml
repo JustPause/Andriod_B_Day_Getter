@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">B-DayGetter</string>
+    <string name="add_user">Add User</string>
+    <string name="list_users">List Users</string>
+    <string name="email">Email</string>
+    <string name="User_name">User name</string>
+    <string name="date">Date</string>
+    <string name="age_will_be">Age</string>
+    <string name="CountDown">DD:HH:MM:SS</string>
+
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="version">Dev-PreFinal-build-3.0v</string>
+    <string name="vardas_pavarde">Vardas Pavarde</string>
+    <string name="give_name">Give_Name</string>
+    <string name="submit">submit</string>
+    <string name="duok_data_gimtadienio">Duok data gimtadienio\nyyyy-mm-dd</string>
+    <string name="give_date">Give_Date</string>
+    <string name="naudotojo_emailas">Naudotojo Emailas</string>
+    <string name="give_message">Give_Message</string>
+    <string name="message">Message</string>
+    <string name="delete">Delete</string>
+    <string name="title_activity_email">Email</string>
+    <string name="delete_this_user">Delete this user</string>
+</resources>

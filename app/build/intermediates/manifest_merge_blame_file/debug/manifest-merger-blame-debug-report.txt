@@ -20,26 +20,26 @@
 15-->[androidx.core:core:1.9.0] /home/justinas/.gradle/caches/transforms-3/5bed316c9c43a8bc7d9832f0735edfcf/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 16
 17    <application
-17-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:5:5-51:19
+17-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:5:5-51:19
 18        android:allowBackup="true"
-18-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:6:9-35
+18-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:6:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 19-->[androidx.core:core:1.9.0] /home/justinas/.gradle/caches/transforms-3/5bed316c9c43a8bc7d9832f0735edfcf/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 20        android:dataExtractionRules="@xml/data_extraction_rules"
-20-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:7:9-65
+20-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:7:9-65
 21        android:debuggable="true"
 22        android:extractNativeLibs="false"
 23        android:fullBackupContent="@xml/backup_rules"
-23-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:8:9-54
+23-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:8:9-54
 24        android:icon="@mipmap/ic_launcher"
-24-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:9:9-43
+24-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:9:9-43
 25        android:label="@string/app_name"
-25-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:10:9-41
+25-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:10:9-41
 26        android:supportsRtl="true"
-26-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:11:9-35
+26-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:11:9-35
 27        android:testOnly="true"
 28        android:theme="@style/AppTheme" >
-28-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:12:9-40
+28-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:12:9-40
 29
 30        <!-- <activity -->
 31        <!-- android:name=".Email.Email" -->
@@ -47,59 +47,59 @@
 33        <!-- android:label="@string/title_activity_email" -->
 34        <!-- android:theme="@style/Theme.BDayGetter" /> -->
 35        <activity
-35-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:19:9-22:42
+35-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:19:9-22:42
 36            android:name="com.example.b_daygetter.AddUsers.AddMessige"
-36-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:20:13-48
+36-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:20:13-48
 37            android:exported="false"
-37-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:21:13-37
+37-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:21:13-37
 38            android:label="AddMessige" />
-38-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:22:13-39
+38-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:22:13-39
 39        <!-- android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar" -->
 40
 41        <activity
-41-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:25:9-28:48
+41-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:25:9-28:48
 42            android:name="com.example.b_daygetter.AddUsers.AddUsersActivoty"
-42-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:26:13-54
+42-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:26:13-54
 43            android:exported="false"
-43-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:27:13-37
+43-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:27:13-37
 44            android:label="AddUsersActivoty" />
-44-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:28:13-45
+44-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:28:13-45
 45        <!-- android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar" -->
 46
 47        <activity
-47-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:31:9-34:41
+47-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:31:9-34:41
 48            android:name="com.example.b_daygetter.ListUsers.ListUsers"
-48-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:32:13-48
+48-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:32:13-48
 49            android:exported="false"
-49-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:33:13-37
+49-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:33:13-37
 50            android:label="ListUsers" />
-50-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:34:13-38
+50-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:34:13-38
 51        <!-- android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar" -->
 52
 53        <activity
-53-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:37:9-40:50
+53-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:37:9-40:50
 54            android:name="com.example.b_daygetter.SendEmailToTheUser.SendEmailToTheUser"
-54-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:38:13-66
+54-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:38:13-66
 55            android:exported="false"
-55-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:39:13-37
+55-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:39:13-37
 56            android:label="SendEmailToTheUser" />
-56-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:40:13-47
+56-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:40:13-47
 57        <!-- android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar" -->
 58        <activity
-58-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:42:9-50:20
+58-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:42:9-50:20
 59            android:name="com.example.b_daygetter.Main.MainActivity"
-59-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:43:13-46
+59-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:43:13-46
 60            android:exported="true" >
-60-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:44:13-36
+60-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:44:13-36
 61            <intent-filter>
-61-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:45:13-49:29
+61-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:45:13-49:29
 62                <action android:name="android.intent.action.MAIN" />
-62-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:46:17-69
-62-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:46:25-66
+62-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:46:17-69
+62-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:46:25-66
 63
 64                <category android:name="android.intent.category.LAUNCHER" />
-64-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:48:17-77
-64-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/app/src/main/AndroidManifest.xml:48:27-74
+64-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:48:17-77
+64-->/home/justinas/Programming/Java/BDayGetter/Andriod_b_day_getter/BDayGetter/app/src/main/AndroidManifest.xml:48:27-74
 65            </intent-filter>
 66        </activity>
 67
