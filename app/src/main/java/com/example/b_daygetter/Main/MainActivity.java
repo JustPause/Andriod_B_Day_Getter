@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.b_daygetter.AddUsers.AddUsersActivoty;
+import com.example.b_daygetter.AddUsers.AddUsersActivity;
 import com.example.b_daygetter.Dao.MainDataBase;
 import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Dao.UserDao;
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void add_users_button(View view) {
 
-        Intent intent = new Intent(this, AddUsersActivoty.class);
+        Intent intent = new Intent(this, AddUsersActivity.class);
         startActivity(intent);
     }
 

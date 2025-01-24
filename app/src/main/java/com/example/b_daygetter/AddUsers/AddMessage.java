@@ -13,7 +13,7 @@ import com.example.b_daygetter.Dao.SecondDataBase;
 import com.example.b_daygetter.Main.MainActivity;
 import com.example.b_daygetter.R;
 
-public class AddMessige extends AppCompatActivity {
+public class AddMessage extends AppCompatActivity {
 
 	MessageDao messageDao;
 

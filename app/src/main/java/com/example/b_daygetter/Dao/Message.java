@@ -6,10 +6,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "messages")
 public class Message {
-	//TODO Padaryti Email, Messige DataBase.
-	//TODO Kartu jei zomgus parasota ta paty email - messige priskiria prie to email naudotoko
-	//TODO Jei meilo nera tai ir parasyti
-	
+
 	@ColumnInfo(name = "email")
 	private final String email;
 	@ColumnInfo(name = "message")

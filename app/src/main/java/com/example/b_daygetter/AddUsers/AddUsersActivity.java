@@ -16,7 +16,7 @@ import com.example.b_daygetter.R;
 
 import java.time.LocalDate;
 
-public class AddUsersActivoty extends AppCompatActivity {
+public class AddUsersActivity extends AppCompatActivity {
     UserDao userDao;
     String userName;
     String userSureName;
@@ -42,7 +42,7 @@ public class AddUsersActivoty extends AppCompatActivity {
         if (error == null) {
             AddingUser();
 
-            Intent intent = new Intent(this, AddMessige.class);
+            Intent intent = new Intent(this, AddMessage.class);
             finishAffinity();
             startActivity(intent);
         }
