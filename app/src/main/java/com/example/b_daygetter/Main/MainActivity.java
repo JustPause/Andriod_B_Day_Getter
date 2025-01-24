@@ -1,15 +1,15 @@
 package com.example.b_daygetter.Main;
 
+import android.content.Intent;
+
 import static com.example.b_daygetter.ListUsers.GlobalVaribal.getIdGlobalVaribal;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.b_daygetter.AddUsers.AddUsersActivity;
 import com.example.b_daygetter.Dao.MainDataBase;
 import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Dao.UserDao;
@@ -56,13 +56,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
     }
-
-    public void add_users_button(View view) {
-
-        Intent intent = new Intent(this, AddUsersActivity.class);
-        startActivity(intent);
-    }
-
 
     // TODO Add an feture that lets the youser get his one color, of core the data will be collected in the data base. On craision the user can have a random color and at any time he can chage it
 
