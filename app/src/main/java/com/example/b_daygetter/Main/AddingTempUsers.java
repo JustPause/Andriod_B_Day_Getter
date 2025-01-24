@@ -18,14 +18,6 @@ public class AddingTempUsers {
         ) {
             privetDataAndUsers.PrivetDataAndUsersAsData(MainDataBase.getInstance(getMainActivity().getApplicationContext()).userDao());
         }
-//		if (SecondDataBase.getInstance(mainActivity.getApplicationContext()).messageDao().getAllMessages().isEmpty()) {
-//			SecondDataBase.getInstance(mainActivity.getApplicationContext()).messageDao().insert(
-//					new Message(
-//							"IamJustStan@hotmail.com",
-//							"Happy birthday! Wishing you a day full of love, joy, and all your favorite things."
-//					)
-//			);
-//		}
     }
 
 

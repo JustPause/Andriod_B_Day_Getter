@@ -20,28 +20,11 @@ public class AddMessage extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_add_messige);
 
 		Intent intent = new Intent(this, MainActivity.class);
 		finish();
 		startActivity(intent);
 
 		messageDao = SecondDataBase.getInstance(getApplicationContext()).messageDao();
-	}
-
-	public void submit_Button_Return_To_Main(View view) {
-		EditText personEmail = findViewById(R.id.Person_Email);
-		EditText personMessage = findViewById(R.id.Person_Message);
-
-		Message message = new Message(
-				personEmail.getText().toString(),
-				personMessage.getText().toString()
-		);
-
-		messageDao.insert(message);
-
-		Intent intent = new Intent(this, MainActivity.class);
-		finish();
-		startActivity(intent);
 	}
 }

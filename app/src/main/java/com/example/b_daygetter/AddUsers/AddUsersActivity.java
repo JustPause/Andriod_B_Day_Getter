@@ -25,27 +25,13 @@ public class AddUsersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_users_activoty);
 
         userDao = MainDataBase.getInstance(getApplicationContext()).userDao();
     }
 
     public void submit_Button_Add_Users_Adtivoty(View view) {
-        EditText personName = findViewById(R.id.Person_Name);
-        EditText personDate = findViewById(R.id.Person_Date);
 
         Exception error = null;
-
-        error = VardasPavardeSetteris(personName, error);
-        error = GimimoDataSetteris(personDate, error);
-
-        if (error == null) {
-            AddingUser();
-
-            Intent intent = new Intent(this, AddMessage.class);
-            finishAffinity();
-            startActivity(intent);
-        }
     }
 
     private Exception GimimoDataSetteris(EditText personDate, Exception error) {

@@ -11,17 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme"
         tools:targetApi="31">
-        <activity
-            android:name=".AddUsers.AddMessage"
-            android:exported="false"
-            android:label="AddMessige" />
-        <!--            android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar"-->
 
         <activity
             android:name=".AddUsers.AddUsersActivity"
             android:exported="false"
             android:label="AddUsersActivoty" />
-        <!--            android:theme="@style/Base.Themes.BDayGetter.Theme.NoActionBar"-->
 
         <activity
             android:name=".ListUsers.ListUsers"

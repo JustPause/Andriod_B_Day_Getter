@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO Dar viena funcija leidzianti nuskaityti gimtadieniis is sheet tabal
 
-        // ToDo Sutvarkyti gimtadieniu datas :)
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -51,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         date();
         countdown();
         age_will_be();
-
     }
 
     @Override
