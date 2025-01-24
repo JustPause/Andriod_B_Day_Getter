@@ -20,4 +20,5 @@
     <string name="delete">Delete</string>
     <string name="title_activity_email">Email</string>
     <string name="delete_this_user">Delete this user</string>
+    <string name="String1">Successful</string>
 </resources>

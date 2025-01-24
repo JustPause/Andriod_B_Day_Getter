@@ -97,9 +97,7 @@ public class MainActivity extends AppCompatActivity {
         MainDataBase.getInstance(getApplicationContext()).userDao().delete(getUser());
 
         view.setBackgroundColor(0xffff0000);
-        ((Button) findViewById(R.id.Delete_this_user)).setText("Successful");
-
-
+        ((Button) findViewById(R.id.Delete_this_user)).setText(R.string.String1);
     }
 
     public UserDao getUserDao() {
