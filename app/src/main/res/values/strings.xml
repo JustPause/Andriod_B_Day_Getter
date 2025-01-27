@@ -8,9 +8,7 @@
     <string name="age_will_be">Age</string>
     <string name="CountDown">DD:HH:MM:SS</string>
 
-    <!-- Strings used for fragments for navigation -->
-
-    <string name="version">Dev-PreFinal-build-3.0v</string>
+    <string name="version">Dev-Rework-Dev-4.0v</string>
     <string name="vardas_pavarde">Vardas Pavarde</string>
     <string name="give_name">Give_Name</string>
     <string name="submit">submit</string>
@@ -22,4 +20,9 @@
     <string name="delete">Delete</string>
     <string name="title_activity_email">Email</string>
     <string name="delete_this_user">Delete this user</string>
+    <string name="String1">Successful</string>
+
+    <string name="day_will_be">Bus si menesi</string>
+    <string name="day_is">Dabar yra</string>
+    <string name="day_was_be">Buvo si menesi</string>
 </resources>

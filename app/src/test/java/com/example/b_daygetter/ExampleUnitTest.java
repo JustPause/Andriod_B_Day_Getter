@@ -4,21 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.b_daygetter.AddUsers.AddMessige;
-import com.example.b_daygetter.Dao.MainDataBase;
-import com.example.b_daygetter.Dao.User;
-import com.example.b_daygetter.Dao.UserDao;
-
-import java.time.LocalDate;
-
 /**
  * Example local unit test, which will execute on the development machine (host).
  *

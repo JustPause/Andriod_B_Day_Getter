@@ -22,7 +22,6 @@ public class User {
     @ColumnInfo(name = "b_day_day")
     private Integer dateDay;
 
-
     public User(String name, String sureName, Integer dateYear, Integer dateMonth, Integer dateDay) {
         this.name = name;
         this.sureName = sureName;
@@ -44,48 +43,26 @@ public class User {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getSureName() {
         return sureName;
     }
-
-    public void setSureName(String sureName) {
-        this.sureName = sureName;
-    }
-
     public Integer getDateYear() {
         return dateYear;
     }
-
-    public void setDateYear(Integer dateYear) {
-        this.dateYear = dateYear;
-    }
-
     public Integer getDateMonth() {
         return dateMonth;
     }
-
-    public void setDateMonth(Integer dateMonth) {
-        this.dateMonth = dateMonth;
-    }
-
     public Integer getDateDay() {
         return dateDay;
-    }
-
-    public void setDateDay(Integer dateDay) {
-        this.dateDay = dateDay;
     }
 }

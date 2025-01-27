@@ -1,16 +1,37 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Gradle files
+.gradle/
+.gradle/*
+
+# Local configuration file (not to be shared)
 local.properties
+
+# IntelliJ IDEA/Android Studio files
+.idea/
+*.iml
+
+# Build output directories
+/build/
+/app/build/
+.externalNativeBuild/
+.cxx/
+captures/
+
+# macOS specific files
+.DS_Store
+
+# Exclude private data or sensitive files
 /app/src/main/java/com/example/b_daygetter/PrivetData/PrivetDataAndUsers.java
+
+# Log files
+*.log
+
+# Android Studio Crashlytics/Analytics files
+crashlytics.properties
+fabric.properties
+
+# Ignore generated directories
+/generated/
+
+# Other
+.classpath
+.project

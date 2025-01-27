@@ -64,16 +64,6 @@
 
         app:layout_constraintTop_toBottomOf="@+id/B_day_countdown" />
 
-    <Button
-        android:id="@+id/Add_User"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:onClick="add_users_button"
-        android:text="@string/add_user"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/List_Users"
@@ -106,6 +96,7 @@
         android:layout_marginBottom="24dp"
         android:onClick="delete_this_user"
         android:text="@string/delete_this_user"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
