@@ -1,10 +1,8 @@
 package com.example.b_daygetter.Main;
 
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,12 +15,6 @@ import com.example.b_daygetter.PrivetData.PrivetDataAndUsers;
 import com.example.b_daygetter.R;
 
 public class MainActivity extends AppCompatActivity {
-
-    private final Countdown countdown = new Countdown(this);
-    private final AddingTempUsers addingTempUsers = new AddingTempUsers(this);
-    private final UserNameData userNameData = new UserNameData(this);
-    private final DateData dateData = new DateData(this);
-    private final AgeWillBeData ageWillBeData = new AgeWillBeData(this);
     private final PrivetDataAndUsers privetDataAndUsers = new PrivetDataAndUsers();
     UserDao userDao;
 

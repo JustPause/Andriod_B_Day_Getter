@@ -14,9 +14,6 @@ public interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(User user);
 
-    @Delete
-    void delete(User user);
-
     @Query("SELECT * FROM users ORDER BY b_day_month, b_day_day")
     List<User> getAllUsers();
 
