@@ -133,11 +133,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-    public UserDao getUserDao() {
-        return userDao;
-    }
-
     public User getUser() {
         return user;
     }
@@ -146,9 +141,6 @@ public class MainActivity extends AppCompatActivity {
         return id;
     }
 
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
     public void setUser(User user) {
         this.user = user;
     }
