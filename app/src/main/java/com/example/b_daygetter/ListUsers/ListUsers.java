@@ -27,12 +27,9 @@ public class ListUsers extends AppCompatActivity {
         setContentView(R.layout.activity_list_users);
 
         userDao = MainDataBase.getInstance(getApplicationContext()).userDao();
-
-        List<User> allUser = userDao.getAllUsers();
-
         coursesGV = findViewById(R.id.idGVcourses);
 
-        ListUsersAdapter adapter = new ListUsersAdapter(this, allUser);
+        ListUsersAdapter adapter = new ListUsersAdapter(this, userDao.getAllUsers());
 
         coursesGV.setAdapter(adapter);
     }

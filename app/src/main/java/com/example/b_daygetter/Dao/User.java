@@ -43,31 +43,25 @@ public class User {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getSureName() {
         return sureName;
     }
-
     public Integer getDateYear() {
         return dateYear;
     }
-
     public Integer getDateMonth() {
         return dateMonth;
     }
-
     public Integer getDateDay() {
         return dateDay;
     }

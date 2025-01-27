@@ -2,6 +2,7 @@ package com.example.b_daygetter.ListUsers;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,15 +70,16 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
         if (Var.month == user.getDateMonth()) {
             if (Var.dayOfMonth < user.getDateDay()) {
                 convertView.setBackgroundColor(0xff525252);
-                return "Bus si menesi";
+                return getContext().getString(R.string.day_will_be);
+                
             }
             if (Var.dayOfMonth == user.getDateDay()) {
                 convertView.setBackgroundColor(0xffCC8F00);
-                return "Dabar yra";
+                return getContext().getString(R.string.day_is);
             }
             if (Var.dayOfMonth > user.getDateDay()) {
                 convertView.setBackgroundColor(0xff292929);
-                return "Buvo si menesi";
+                return getContext().getString(R.string.day_was_be);
             }
         }
 
@@ -140,6 +142,7 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
         SetCountDownWindow(CoundDown, user);
 
         Age.setText(AgeFing(user, listitemView));
+        getContext().getTheme().resolveAttribute(R.color.md_theme_light_primary, new TypedValue() , true);
 
         listitemView.setBackgroundColor(0x7FC5C6D0);
 

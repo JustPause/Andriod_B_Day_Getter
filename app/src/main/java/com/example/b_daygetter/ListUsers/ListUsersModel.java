@@ -1,12 +1,5 @@
 package com.example.b_daygetter.ListUsers;
 
-import android.widget.TextView;
-
-import com.example.b_daygetter.Dao.MessageDao;
-import com.example.b_daygetter.Dao.SecondDataBase;
-import com.example.b_daygetter.Main.MainActivity;
-import com.example.b_daygetter.R;
-
 public class ListUsersModel {
 	
 	// string course_name for storing course_name
