@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         id = getIdGlobalVaribal();
 
         user = userDao.getUser(id);
-        Var.GenBDayOf(user);
+        Var.make_birthday_of_the_personal(user);
 
         user_name();
         date();

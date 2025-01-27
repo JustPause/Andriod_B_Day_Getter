@@ -35,19 +35,19 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 
     @NonNull
     private static String Countdown(User user) {
-        Var.GenBDayOf(user);
+        Var.make_birthday_of_the_personal(user);
         String result;
 
-        if (Var.bDayOf - Var.todayDay < 0) {
+        if (Var.bDayOf - Var.dayOfYear < 0) {
             result =
-                    Var.bDayOf + 365 - Var.todayDay + " Days " + (24 - Var.todayTimeH) +
+                    Var.bDayOf + 365 - Var.dayOfYear + " Days " + (24 - Var.hour) +
                             " Hour\n " +
-                            (60 - Var.todayTimeM) + " Minute " + (60 - Var.todayTimeS) +
+                            (60 - Var.minute) + " Minute " + (60 - Var.second) +
                             " Second ";
         } else {
-            result = Var.bDayOf - Var.todayDay + " Days " + (24 - Var.todayTimeH) +
+            result = Var.bDayOf - Var.dayOfYear + " Days " + (24 - Var.hour) +
                     " Hour\n " +
-                    (60 - Var.todayTimeM) + " Minute " + (60 - Var.todayTimeS) +
+                    (60 - Var.minute) + " Minute " + (60 - Var.second) +
                     " Second ";
         }
 
@@ -58,7 +58,7 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
     private String AgeFing(@NonNull User user, View convertView) {
         String theReturn = "null";
 
-        if (Var.nowTimeMonth < user.getDateMonth()) {
+        if (Var.month < user.getDateMonth()) {
             convertView.setBackgroundColor(0xff7A7A7A);
 
 //			CardView cardView = (CardView) convertView;
@@ -66,22 +66,22 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
             return "Bus";
         }
 
-        if (Var.nowTimeMonth == user.getDateMonth()) {
-            if (Var.nowTimeDay < user.getDateDay()) {
+        if (Var.month == user.getDateMonth()) {
+            if (Var.dayOfMonth < user.getDateDay()) {
                 convertView.setBackgroundColor(0xff525252);
                 return "Bus si menesi";
             }
-            if (Var.nowTimeDay == user.getDateDay()) {
+            if (Var.dayOfMonth == user.getDateDay()) {
                 convertView.setBackgroundColor(0xffCC8F00);
                 return "Dabar yra";
             }
-            if (Var.nowTimeDay > user.getDateDay()) {
+            if (Var.dayOfMonth > user.getDateDay()) {
                 convertView.setBackgroundColor(0xff292929);
                 return "Buvo si menesi";
             }
         }
 
-        if (Var.nowTimeMonth > user.getDateMonth()) {
+        if (Var.month > user.getDateMonth()) {
             convertView.setBackgroundColor(0xff141414);
             return "Buvo";
         }
@@ -125,7 +125,7 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 
         User user = getItem(position);
         assert user != null;
-        Var.GenBDayOf(user);
+        Var.make_birthday_of_the_personal(user);
 
         TextView NameAndSureName = listitemView.findViewById(R.id.NameSureName);
         TextView BDayDate = listitemView.findViewById(R.id.BDayDate);
