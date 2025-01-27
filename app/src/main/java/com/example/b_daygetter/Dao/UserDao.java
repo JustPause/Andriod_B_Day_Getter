@@ -17,9 +17,6 @@ public interface UserDao {
     @Delete
     void delete(User user);
 
-    @Query("DELETE FROM users")
-    void deleteAllUsers();
-
     @Query("SELECT * FROM users ORDER BY b_day_month, b_day_day")
     List<User> getAllUsers();
 

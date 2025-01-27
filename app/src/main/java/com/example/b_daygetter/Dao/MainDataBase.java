@@ -12,8 +12,8 @@ public abstract class MainDataBase extends RoomDatabase {
 
     public static synchronized MainDataBase getInstance(Context context) {
         if (instance == null) {
-            instance = Room.databaseBuilder(context, MainDataBase.class,
-                    "database").fallbackToDestructiveMigration().allowMainThreadQueries().build();
+            instance = Room.databaseBuilder(context, MainDataBase.class, "database")
+                    .fallbackToDestructiveMigration().allowMainThreadQueries().build();
         }
         return instance;
     }

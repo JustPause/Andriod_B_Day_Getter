@@ -9,8 +9,10 @@ public class Message {
 
 	@ColumnInfo(name = "email")
 	private final String email;
+
 	@ColumnInfo(name = "message")
 	private final String message;
+
 	@PrimaryKey(autoGenerate = true)
 	@ColumnInfo(name = "id")
 	private int id;
@@ -19,19 +21,16 @@ public class Message {
 		this.email = email;
 		this.message = message;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
-	
 	public void setId(int id) {
 		this.id = id;
 	}
-	
 	public String getEmail() {
 		return email;
 	}
-	
 	public String getMessage() {
 		return message;
 	}
