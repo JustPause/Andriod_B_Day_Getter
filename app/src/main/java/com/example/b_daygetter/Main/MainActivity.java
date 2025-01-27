@@ -2,11 +2,10 @@ package com.example.b_daygetter.Main;
 
 import android.content.Intent;
 
-import static com.example.b_daygetter.ListUsers.GlobalVaribal.getIdGlobalVaribal;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +13,7 @@ import com.example.b_daygetter.Dao.MainDataBase;
 import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Dao.UserDao;
 import com.example.b_daygetter.ListUsers.ListUsers;
+import com.example.b_daygetter.PrivetData.PrivetDataAndUsers;
 import com.example.b_daygetter.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,9 +23,10 @@ public class MainActivity extends AppCompatActivity {
     private final UserNameData userNameData = new UserNameData(this);
     private final DateData dateData = new DateData(this);
     private final AgeWillBeData ageWillBeData = new AgeWillBeData(this);
+    private final PrivetDataAndUsers privetDataAndUsers = new PrivetDataAndUsers();
     UserDao userDao;
 
-    int id = 0;
+    int id = 1;
     User user;
 
     @Override
@@ -38,11 +39,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MainActivityAddingTempUser();
+        userDao = MainDataBase.getInstance(this).userDao();
 
-        id = getIdGlobalVaribal();
+        if (userDao.getAllUsers().isEmpty())
+        {
+            privetDataAndUsers.PrivetDataAndUsersAsData(MainDataBase.getInstance(this).userDao());
+        }
 
         user = userDao.getUser(id);
+
         Var.make_birthday_of_the_personal(user);
 
         user_name();
@@ -51,79 +56,113 @@ public class MainActivity extends AppCompatActivity {
         age_will_be();
     }
 
+    void user_name() {
+        TextView textView = this.findViewById(R.id.User_name);
+        String outputString =
+                this.getUser().getName() + " " + this.getUser().getSureName();
+        textView.setText(outputString);
+    }
+
+    void date() {
+        TextView textView = this.findViewById(R.id.Date);
+        String outputString =
+                this.getUser().getDateYear() + " " + this.getUser().getDateMonth() +
+                        " " + this.getUser().getDateDay();
+        textView.setText(outputString);
+    }
+
+    void countdown() {
+        TextView B_day_countdown = this.findViewById(R.id.B_day_countdown);
+
+        String result;
+
+        Var.make_birthday_of_the_personal(this.getUser());
+
+        if (Var.bDayOf - Var.dayOfYear < 0) {
+            result = String.valueOf(Var.bDayOf + 365 - Var.dayOfYear);
+
+        } else {
+            result = String.valueOf(Var.bDayOf - Var.dayOfYear);
+        }
+
+        B_day_countdown.setText(result +
+                " Days " + (24 - Var.hour) +
+                " Hour\n " + (60 - Var.minute) +
+                " Minute " + (60 - Var.second) +
+                " Second ");
+
+        Thread thread = new Thread(() -> {
+            try {
+                Thread.sleep(1000);
+                this.runOnUiThread(() -> {
+                    Var.Updater();
+                    countdown();
+                });
+            } catch (InterruptedException ignored) {
+            }
+        });
+        thread.start();
+    }
+
+    void age_will_be() {
+        TextView textView = this.findViewById(R.id.Age_will_be);
+        textView.setText(getText());
+    }
+
+    private String getText() {
+        if (Var.month < this.getUser().getDateMonth()) {
+            return Var.year - this.getUser().getDateYear() + " metai bus";
+        }
+
+        if (Var.month == this.getUser().getDateMonth()) {
+            if (Var.dayOfMonth < this.getUser().getDateMonth()) {
+                return Var.year - this.getUser().getDateYear() + " metai bus";
+            }
+            if (Var.dayOfMonth == this.getUser().getDateMonth()) {
+                return Var.year - this.getUser().getDateYear() + " metai bus";
+            }
+            if (Var.dayOfMonth > this.getUser().getDateMonth()) {
+                return Var.year - this.getUser().getDateYear() + 1 + " metai bus";
+            }
+        }
+
+        return Var.year - this.getUser().getDateYear() + 1 + " metai bus";
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
-
     }
 
     // TODO Add an feture that lets the youser get his one color, of core the data will be collected in the data base. On craision the user can have a random color and at any time he can chage it
 
-    void user_name() {
-        userNameData.user_name();
-    }
-
-    void date() {
-        dateData.date();
-    }
-
-    void age_will_be() {
-        ageWillBeData.age_will_be();
-    }
-
-    private void countdown() {
-        countdown.countdown();
-    }
-
-    public void MainActivityAddingTempUser() {
-        addingTempUsers.MainActivityAddingTempUser();
-    }
-
     public void list_users_button(View view) {
-
         Intent intent = new Intent(this, ListUsers.class);
         startActivity(intent);
     }
 
-//    public void send_email_to_the_user_button(View view) {
-//
-//        Intent intent = new Intent(this, SendEmailToTheUser.class);
-//        finish();
-//        startActivity(intent);
-//    }
-
-    public void delete_this_user(View view) {
-
-        MainDataBase.getInstance(getApplicationContext()).userDao().delete(getUser());
-
-        view.setBackgroundColor(0xffff0000);
-        ((Button) findViewById(R.id.Delete_this_user)).setText(R.string.String1);
-    }
 
     public UserDao getUserDao() {
         return userDao;
-    }
-
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
     }
 
     public User getUser() {
         return user;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public int getId() {
         return id;
     }
 
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
+    }
+    public void setUser(User user) {
+        this.user = user;
+    }
     public void setId(int id) {
         this.id = id;
     }
-
 }
 
 

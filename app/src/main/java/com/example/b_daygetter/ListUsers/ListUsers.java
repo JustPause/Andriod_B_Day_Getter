@@ -1,7 +1,5 @@
 package com.example.b_daygetter.ListUsers;
 
-import static com.example.b_daygetter.ListUsers.GlobalVaribal.setIdGlobalVaribal;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,7 +45,7 @@ public class ListUsers extends AppCompatActivity {
         Debugeris.GetId(view);
 
         TextView textview = view.findViewById(R.id.Id);
-        setIdGlobalVaribal(Integer.parseInt((String) textview.getText()));
+        new MainActivity().setId(Integer.parseInt((String) textview.getText()));
 
         Intent intent = new Intent(this, MainActivity.class);
 

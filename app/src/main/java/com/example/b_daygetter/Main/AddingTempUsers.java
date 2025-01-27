@@ -13,14 +13,12 @@ public class AddingTempUsers {
 
         mainActivity.setUserDao(MainDataBase.getInstance(mainActivity.getApplicationContext()).userDao());
 
-        if (
-                mainActivity.getUserDao().getAllUsers().isEmpty()
-        ) {
+        if (mainActivity.getUserDao().getAllUsers().isEmpty())
+        {
             privetDataAndUsers.PrivetDataAndUsersAsData(MainDataBase.getInstance(getMainActivity().getApplicationContext()).userDao());
         }
     }
-
-
+    
     public MainActivity getMainActivity() {
         return mainActivity;
     }
