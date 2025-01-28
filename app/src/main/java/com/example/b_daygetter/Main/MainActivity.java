@@ -12,11 +12,13 @@ import com.example.b_daygetter.Dao.MainDataBase;
 import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Dao.UserDao;
 import com.example.b_daygetter.ListUsers.ListUsers;
+import com.example.b_daygetter.PrivetData.FileAcces;
 import com.example.b_daygetter.PrivetData.PrivetDataAndUsers;
 import com.example.b_daygetter.R;
 
 public class MainActivity extends AppCompatActivity {
     private final PrivetDataAndUsers privetDataAndUsers = new PrivetDataAndUsers();
+    private final FileAcces fileAcces = new FileAcces();
     UserDao userDao;
 
     int id = 1;
@@ -34,9 +36,13 @@ public class MainActivity extends AppCompatActivity {
 
         userDao = MainDataBase.getInstance(this).userDao();
 
-        if (userDao.getAllUsers().isEmpty())
-        {
+        if (userDao.getAllUsers().isEmpty()) {
             privetDataAndUsers.PrivetDataAndUsersAsData(MainDataBase.getInstance(this).userDao());
+
+            fileAcces.openFile(this, null);
+            // Todo kai program pasileidia su tuscia duomenu baza, duoda naudotojui pasirinkti faila is telefona
+
+            // Todo Reikia miktuko kuis istrina resetina duomenu bazia
         }
 
         user = userDao.getUser(id);
@@ -47,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         date();
         countdown();
         age_will_be();
+
     }
 
     void user_name() {
@@ -146,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
     public void setUser(User user) {
         this.user = user;
     }
+
     public void setId(int id) {
         this.id = id;
     }
