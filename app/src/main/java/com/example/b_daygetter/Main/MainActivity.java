@@ -12,13 +12,13 @@ import com.example.b_daygetter.Dao.MainDataBase;
 import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Dao.UserDao;
 import com.example.b_daygetter.ListUsers.ListUsers;
-import com.example.b_daygetter.PrivetData.FileAcces;
+import com.example.b_daygetter.PrivetData.FileAccess;
 import com.example.b_daygetter.PrivetData.PrivetDataAndUsers;
 import com.example.b_daygetter.R;
 
 public class MainActivity extends AppCompatActivity {
     private final PrivetDataAndUsers privetDataAndUsers = new PrivetDataAndUsers();
-    private final FileAcces fileAcces = new FileAcces();
+    private final FileAccess fileAcces = new FileAccess();
     UserDao userDao;
 
     int id = 1;
@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO https://developer.android.com/develop/ui/views/graphics/palette-colors
         // TODO Pirdeti galimybe kad progrmama pasimtu spavas is telefono paletes
-
         // TODO Dar viena funcija leidzianti nuskaityti gimtadieniis is sheet tabal
 
         super.onCreate(savedInstanceState);
@@ -36,12 +35,11 @@ public class MainActivity extends AppCompatActivity {
 
         userDao = MainDataBase.getInstance(this).userDao();
 
-        if (userDao.getAllUsers().isEmpty()) {
+        if ( userDao.getAllUsers().isEmpty() ) {
             privetDataAndUsers.PrivetDataAndUsersAsData(MainDataBase.getInstance(this).userDao());
-
             fileAcces.openFile(this, null);
-            // Todo kai program pasileidia su tuscia duomenu baza, duoda naudotojui pasirinkti faila is telefona
 
+            // Todo kai program pasileidia su tuscia duomenu baza, duoda naudotojui pasirinkti faila is telefona
             // Todo Reikia miktuko kuis istrina resetina duomenu bazia
         }
 
