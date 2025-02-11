@@ -1,8 +1,11 @@
 package com.example.b_daygetter.Main;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,7 +21,9 @@ import com.example.b_daygetter.R;
 
 public class MainActivity extends AppCompatActivity {
     private final PrivetDataAndUsers privetDataAndUsers = new PrivetDataAndUsers();
-    private final FileAccess fileAcces = new FileAccess();
+    private static final int FILE = 1;
+    private final FileAccess fileAccess = new FileAccess(this,FILE);
+
     UserDao userDao;
 
     int id = 1;
@@ -35,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
         userDao = MainDataBase.getInstance(this).userDao();
 
-        if ( userDao.getAllUsers().isEmpty() ) {
+        if ( userDao.getAllUsers().isEmpty() || true) {
             privetDataAndUsers.PrivetDataAndUsersAsData(MainDataBase.getInstance(this).userDao());
-            fileAcces.openFile(this, null);
+            fileAccess.openFile(null);
 
             // Todo kai program pasileidia su tuscia duomenu baza, duoda naudotojui pasirinkti faila is telefona
             // Todo Reikia miktuko kuis istrina resetina duomenu bazia
@@ -154,6 +159,20 @@ public class MainActivity extends AppCompatActivity {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == FILE && resultCode == RESULT_OK && data != null) {
+                Uri uri = data.getData();
+
+                if (uri != null) {
+                 fileAccess.processFile(uri);
+                }
+
+        }
     }
 }
 
