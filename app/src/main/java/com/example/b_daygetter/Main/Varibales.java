@@ -5,7 +5,7 @@ import com.example.b_daygetter.Dao.User;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class Var {
+public class Varibales {
     public static int year,
             month,
             dayOfMonth,

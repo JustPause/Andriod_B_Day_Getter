@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.b_daygetter.Dao.User;
-import com.example.b_daygetter.Main.Var;
+import com.example.b_daygetter.Main.Varibales;
 import com.example.b_daygetter.R;
 
 import java.util.List;
@@ -36,19 +36,19 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 
     @NonNull
     private static String Countdown(User user) {
-        Var.make_birthday_of_the_personal(user);
+        Varibales.make_birthday_of_the_personal(user);
         String result;
 
-        if (Var.bDayOf - Var.dayOfYear < 0) {
+        if (Varibales.bDayOf - Varibales.dayOfYear < 0) {
             result =
-                    Var.bDayOf + 365 - Var.dayOfYear + " Days " + (24 - Var.hour) +
+                    Varibales.bDayOf + 365 - Varibales.dayOfYear + " Days " + (24 - Varibales.hour) +
                             " Hour\n " +
-                            (60 - Var.minute) + " Minute " + (60 - Var.second) +
+                            (60 - Varibales.minute) + " Minute " + (60 - Varibales.second) +
                             " Second ";
         } else {
-            result = Var.bDayOf - Var.dayOfYear + " Days " + (24 - Var.hour) +
+            result = Varibales.bDayOf - Varibales.dayOfYear + " Days " + (24 - Varibales.hour) +
                     " Hour\n " +
-                    (60 - Var.minute) + " Minute " + (60 - Var.second) +
+                    (60 - Varibales.minute) + " Minute " + (60 - Varibales.second) +
                     " Second ";
         }
 
@@ -59,7 +59,7 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
     private String AgeFing(@NonNull User user, View convertView) {
         String theReturn = "null";
 
-        if (Var.month < user.getDateMonth()) {
+        if (Varibales.month < user.getDateMonth()) {
             convertView.setBackgroundColor(0xff7A7A7A);
 
 //			CardView cardView = (CardView) convertView;
@@ -67,23 +67,23 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
             return "Bus";
         }
 
-        if (Var.month == user.getDateMonth()) {
-            if (Var.dayOfMonth < user.getDateDay()) {
+        if (Varibales.month == user.getDateMonth()) {
+            if (Varibales.dayOfMonth < user.getDateDay()) {
                 convertView.setBackgroundColor(0xff525252);
                 return getContext().getString(R.string.day_will_be);
                 
             }
-            if (Var.dayOfMonth == user.getDateDay()) {
+            if (Varibales.dayOfMonth == user.getDateDay()) {
                 convertView.setBackgroundColor(0xffCC8F00);
                 return getContext().getString(R.string.day_is);
             }
-            if (Var.dayOfMonth > user.getDateDay()) {
+            if (Varibales.dayOfMonth > user.getDateDay()) {
                 convertView.setBackgroundColor(0xff292929);
                 return getContext().getString(R.string.day_was_be);
             }
         }
 
-        if (Var.month > user.getDateMonth()) {
+        if (Varibales.month > user.getDateMonth()) {
             convertView.setBackgroundColor(0xff141414);
             return "Buvo";
         }
@@ -127,7 +127,7 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 
         User user = getItem(position);
         assert user != null;
-        Var.make_birthday_of_the_personal(user);
+        Varibales.make_birthday_of_the_personal(user);
 
         TextView NameAndSureName = listitemView.findViewById(R.id.NameSureName);
         TextView BDayDate = listitemView.findViewById(R.id.BDayDate);

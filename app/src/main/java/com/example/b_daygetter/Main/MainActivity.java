@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         user = userDao.getUser(id);
 
-        Var.make_birthday_of_the_personal(user);
+        Varibales.make_birthday_of_the_personal(user);
 
         user_name();
         date();
@@ -70,26 +70,26 @@ public class MainActivity extends AppCompatActivity {
 
         String result;
 
-        Var.make_birthday_of_the_personal(this.getUser());
+        Varibales.make_birthday_of_the_personal(this.getUser());
 
-        if (Var.bDayOf - Var.dayOfYear < 0) {
-            result = String.valueOf(Var.bDayOf + 365 - Var.dayOfYear);
+        if (Varibales.bDayOf - Varibales.dayOfYear < 0) {
+            result = String.valueOf(Varibales.bDayOf + 365 - Varibales.dayOfYear);
 
         } else {
-            result = String.valueOf(Var.bDayOf - Var.dayOfYear);
+            result = String.valueOf(Varibales.bDayOf - Varibales.dayOfYear);
         }
 
         B_day_countdown.setText(result +
-                " Days " + (24 - Var.hour) +
-                " Hour\n " + (60 - Var.minute) +
-                " Minute " + (60 - Var.second) +
+                " Days " + (24 - Varibales.hour) +
+                " Hour\n " + (60 - Varibales.minute) +
+                " Minute " + (60 - Varibales.second) +
                 " Second ");
 
         Thread thread = new Thread(() -> {
             try {
                 Thread.sleep(1000);
                 this.runOnUiThread(() -> {
-                    Var.Updater();
+                    Varibales.Updater();
                     countdown();
                 });
             } catch (InterruptedException ignored) {
@@ -104,23 +104,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String getText() {
-        if (Var.month < this.getUser().getDateMonth()) {
-            return Var.year - this.getUser().getDateYear() + " metai bus";
+        if (Varibales.month < this.getUser().getDateMonth()) {
+            return Varibales.year - this.getUser().getDateYear() + " metai bus";
         }
 
-        if (Var.month == this.getUser().getDateMonth()) {
-            if (Var.dayOfMonth < this.getUser().getDateMonth()) {
-                return Var.year - this.getUser().getDateYear() + " metai bus";
+        if (Varibales.month == this.getUser().getDateMonth()) {
+            if (Varibales.dayOfMonth < this.getUser().getDateMonth()) {
+                return Varibales.year - this.getUser().getDateYear() + " metai bus";
             }
-            if (Var.dayOfMonth == this.getUser().getDateMonth()) {
-                return Var.year - this.getUser().getDateYear() + " metai bus";
+            if (Varibales.dayOfMonth == this.getUser().getDateMonth()) {
+                return Varibales.year - this.getUser().getDateYear() + " metai bus";
             }
-            if (Var.dayOfMonth > this.getUser().getDateMonth()) {
-                return Var.year - this.getUser().getDateYear() + 1 + " metai bus";
+            if (Varibales.dayOfMonth > this.getUser().getDateMonth()) {
+                return Varibales.year - this.getUser().getDateYear() + 1 + " metai bus";
             }
         }
 
-        return Var.year - this.getUser().getDateYear() + 1 + " metai bus";
+        return Varibales.year - this.getUser().getDateYear() + 1 + " metai bus";
     }
 
     @Override

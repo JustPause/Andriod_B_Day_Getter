@@ -18,22 +18,22 @@ public class AgeWillBeData {
 
     @NonNull
     private String getText() {
-        if (Var.month < mainActivity.getUser().getDateMonth()) {
-            return Var.year - mainActivity.getUser().getDateYear() + " metai bus";
+        if (Varibales.month < mainActivity.getUser().getDateMonth()) {
+            return Varibales.year - mainActivity.getUser().getDateYear() + " metai bus";
         }
 
-        if (Var.month == mainActivity.getUser().getDateMonth()) {
-            if (Var.dayOfMonth < mainActivity.getUser().getDateMonth()) {
-                return Var.year - mainActivity.getUser().getDateYear() + " metai bus";
+        if (Varibales.month == mainActivity.getUser().getDateMonth()) {
+            if (Varibales.dayOfMonth < mainActivity.getUser().getDateMonth()) {
+                return Varibales.year - mainActivity.getUser().getDateYear() + " metai bus";
             }
-            if (Var.dayOfMonth == mainActivity.getUser().getDateMonth()) {
-                return Var.year - mainActivity.getUser().getDateYear() + " metai bus";
+            if (Varibales.dayOfMonth == mainActivity.getUser().getDateMonth()) {
+                return Varibales.year - mainActivity.getUser().getDateYear() + " metai bus";
             }
-            if (Var.dayOfMonth > mainActivity.getUser().getDateMonth()) {
-                return Var.year - mainActivity.getUser().getDateYear() + 1 + " metai bus";
+            if (Varibales.dayOfMonth > mainActivity.getUser().getDateMonth()) {
+                return Varibales.year - mainActivity.getUser().getDateYear() + 1 + " metai bus";
             }
         }
 
-        return Var.year - mainActivity.getUser().getDateYear() + 1 + " metai bus";
+        return Varibales.year - mainActivity.getUser().getDateYear() + 1 + " metai bus";
     }
 }

@@ -18,26 +18,26 @@ public class Countdown {
 
         String result;
 
-        Var.make_birthday_of_the_personal(mainActivity.getUser());
+        Varibales.make_birthday_of_the_personal(mainActivity.getUser());
 
-        if (Var.bDayOf - Var.dayOfYear < 0) {
-            result = String.valueOf(Var.bDayOf + 365 - Var.dayOfYear);
+        if (Varibales.bDayOf - Varibales.dayOfYear < 0) {
+            result = String.valueOf(Varibales.bDayOf + 365 - Varibales.dayOfYear);
 
         } else {
-            result = String.valueOf(Var.bDayOf - Var.dayOfYear);
+            result = String.valueOf(Varibales.bDayOf - Varibales.dayOfYear);
         }
 
         B_day_countdown.setText(result +
-                " Days " + (24 - Var.hour) +
-                " Hour\n " + (60 - Var.minute) +
-                " Minute " + (60 - Var.second) +
+                " Days " + (24 - Varibales.hour) +
+                " Hour\n " + (60 - Varibales.minute) +
+                " Minute " + (60 - Varibales.second) +
                 " Second ");
 
         Thread thread = new Thread(() -> {
             try {
                 Thread.sleep(1000);
                 mainActivity.runOnUiThread(() -> {
-                    Var.Updater();
+                    Varibales.Updater();
                     countdown();
                 });
             } catch (InterruptedException ignored) {
