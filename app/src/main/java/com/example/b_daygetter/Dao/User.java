@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "users")
 public class User {
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private int id;
@@ -30,39 +31,23 @@ public class User {
         this.dateDay = dateDay;
     }
 
-    @Ignore
-    public User(int id, String name, String sureName, Integer dateYear, Integer dateMonth, Integer dateDay) {
-        this.id = id;
-        this.name = name;
-        this.sureName = sureName;
-        this.dateYear = dateYear;
-        this.dateMonth = dateMonth;
-        this.dateDay = dateDay;
-    }
+//    @Ignore
+//    public User(int id, String name, String sureName, Integer dateYear, Integer dateMonth, Integer dateDay) {
+//        this.id = id;
+//        this.name = name;
+//        this.sureName = sureName;
+//        this.dateYear = dateYear;
+//        this.dateMonth = dateMonth;
+//        this.dateDay = dateDay;
+//    }
 
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+    public void setName(String name) { this.name = name; }
 
-    public String getName() {
-        return name;
-    }
-    public String getSureName() {
-        return sureName;
-    }
-    public Integer getDateYear() {
-        return dateYear;
-    }
-    public Integer getDateMonth() {
-        return dateMonth;
-    }
-    public Integer getDateDay() {
-        return dateDay;
-    }
+    public String getName() { return name; }
+    public String getSureName() { return sureName; }
+    public Integer getDateYear() { return dateYear; }
+    public Integer getDateMonth() { return dateMonth; }
+    public Integer getDateDay() { return dateDay; }
 }

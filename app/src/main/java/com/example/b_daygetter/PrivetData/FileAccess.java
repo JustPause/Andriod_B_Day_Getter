@@ -12,12 +12,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Objects;
 
 public class FileAccess extends AppCompatActivity {
-    private  int FILE = 0;
+    private int FILE = 0;
     private final Activity activity;
 
-    public FileAccess(Activity activity, int FILE){
+    public FileAccess(Activity activity, int FILE) {
         this.activity = activity;
         this.FILE = FILE;
     }
@@ -38,17 +39,39 @@ public class FileAccess extends AppCompatActivity {
 
             StringBuilder stringBuilder = new StringBuilder();
             String line;
+
             while ((line = reader.readLine()) != null) {
                 stringBuilder.append(line).append("\n");
             }
+
             reader.close();
 
             String fileContent = stringBuilder.toString();
 
-            Log.d("fileContent",fileContent);
-
+            putInToDatabase(fileContent);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+
+    private void putInToDatabase(String Content) {
+        String[] lines = Content.split("\n");
+
+        for (int line = 2; line < lines.length; line++) {
+            String[] words = lines[line].split("\\|");
+            String fullName = words[1].trim();
+
+            if (Objects.equals(fullName, "-")) {
+                continue;
+            }
+
+            int spaceIndex = fullName.indexOf(' ');
+            String Name = (spaceIndex != -1) ? fullName.substring(0, spaceIndex) : fullName;
+            String Surname = (spaceIndex != -1) ? fullName.substring(spaceIndex + 1) : "";
+
+            Log.d("fileContent", Name + " " + Surname);
+
         }
     }
 }

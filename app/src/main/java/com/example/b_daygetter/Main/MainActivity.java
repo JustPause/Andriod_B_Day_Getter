@@ -1,11 +1,8 @@
 package com.example.b_daygetter.Main;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -33,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO https://developer.android.com/develop/ui/views/graphics/palette-colors
         // TODO Pirdeti galimybe kad progrmama pasimtu spavas is telefono paletes
-        // TODO Dar viena funcija leidzianti nuskaityti gimtadieniis is sheet tabal
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -41,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         userDao = MainDataBase.getInstance(this).userDao();
 
         if ( userDao.getAllUsers().isEmpty() || true) {
-            privetDataAndUsers.PrivetDataAndUsersAsData(MainDataBase.getInstance(this).userDao());
+            UserDao userDao = MainDataBase.getInstance(this).userDao();
             fileAccess.openFile(null);
 
             // Todo kai program pasileidia su tuscia duomenu baza, duoda naudotojui pasirinkti faila is telefona
@@ -74,19 +70,18 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(outputString);
     }
 
-    @SuppressLint("SetTextI18n")
     void countdown() {
         TextView B_day_countdown = this.findViewById(R.id.B_day_countdown);
 
-        String result;
+        int result;
 
         Var.make_birthday_of_the_personal(this.getUser());
 
         if (Var.bDayOf - Var.dayOfYear < 0) {
-            result = String.valueOf(Var.bDayOf + 365 - Var.dayOfYear);
+            result = Var.bDayOf + 365 - Var.dayOfYear;
 
         } else {
-            result = String.valueOf(Var.bDayOf - Var.dayOfYear);
+            result = Var.bDayOf - Var.dayOfYear;
         }
 
         B_day_countdown.setText(result +
@@ -94,6 +89,13 @@ public class MainActivity extends AppCompatActivity {
                 " Hour\n " + (60 - Var.minute) +
                 " Minute " + (60 - Var.second) +
                 " Second ");
+
+        int daysLeft = result; // Assuming result is the number of days
+        int hoursLeft = 24 - Var.hour;
+        int minutesLeft = 60 - Var.minute;
+        int secondsLeft = 60 - Var.second;
+
+//        String countdownText = getString(R.string.birthday_countdown_format, daysLeft, hoursLeft, minutesLeft, secondsLeft);
 
         Thread thread = new Thread(() -> {
             try {
@@ -166,12 +168,12 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == FILE && resultCode == RESULT_OK && data != null) {
-                Uri uri = data.getData();
+            Uri uri = data.getData();
 
-                if (uri != null) {
-                 fileAccess.processFile(uri);
-                }
+            if (uri != null) {
+                fileAccess.processFile(uri);
 
+            }
         }
     }
 }
