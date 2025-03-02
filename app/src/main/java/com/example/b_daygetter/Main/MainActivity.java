@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         if ( userDao.getAllUsers().isEmpty() || true) {
             UserDao userDao = MainDataBase.getInstance(this).userDao();
-            fileAccess.openFile(null);
+            fileAccess.openFile(null, userDao);
 
             // Todo kai program pasileidia su tuscia duomenu baza, duoda naudotojui pasirinkti faila is telefona
             // Todo Reikia miktuko kuis istrina resetina duomenu bazia
