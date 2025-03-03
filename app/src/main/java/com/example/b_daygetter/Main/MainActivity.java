@@ -13,7 +13,6 @@ import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Dao.UserDao;
 import com.example.b_daygetter.ListUsers.ListUsers;
 import com.example.b_daygetter.PrivetData.FileAccess;
-import com.example.b_daygetter.PrivetData.PrivetDataAndUsers;
 import com.example.b_daygetter.R;
 
 public class MainActivity extends AppCompatActivity {
