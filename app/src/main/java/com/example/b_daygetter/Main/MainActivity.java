@@ -43,14 +43,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         user = userDao.getUser(id);
-        Log.d("TAG", "onCreate: "+id);
-//        Var.make_birthday_of_the_personal(user);
-//
-//        user_name();
-//        date();
-//        countdown();
-//        age_will_be();
 
+        // Var.make_birthday_of_the_personal(user);
+
+        // user_name();
+        // date();
+        // countdown();
+        // age_will_be();
     }
 
     void user_name() {
