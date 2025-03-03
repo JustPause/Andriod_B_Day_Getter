@@ -21,7 +21,4 @@ public interface UserDao {
 
     @Query("SELECT * FROM users WHERE id=:id")
     User getUser(int id);
-
-    @Query("SELECT COUNT(*) FROM users")
-    int getUserCount();
 }

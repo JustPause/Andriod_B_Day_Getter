@@ -25,4 +25,6 @@
     <string name="day_will_be">Bus si menesi</string>
     <string name="day_is">Dabar yra</string>
     <string name="day_was_be">Buvo si menesi</string>
+
+    <string name="birthday_countdown">%1$d Days %2$d Hours\n%3$d Minutes %4$d Seconds</string>
 </resources>

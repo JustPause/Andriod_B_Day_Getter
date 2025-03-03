@@ -3,7 +3,6 @@ package com.example.b_daygetter.Main;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -18,7 +17,6 @@ import com.example.b_daygetter.PrivetData.PrivetDataAndUsers;
 import com.example.b_daygetter.R;
 
 public class MainActivity extends AppCompatActivity {
-    private final PrivetDataAndUsers privetDataAndUsers = new PrivetDataAndUsers();
     private static final int FILE = 1;
     private final FileAccess fileAccess = new FileAccess(this,FILE);
 
@@ -81,19 +79,16 @@ public class MainActivity extends AppCompatActivity {
             result = Var.bDayOf - Var.dayOfYear;
         }
 
-        B_day_countdown.setText(result +
-                " Days " + (24 - Var.hour) +
-                " Hour\n " + (60 - Var.minute) +
-                " Minute " + (60 - Var.second) +
-                " Second ");
+        String countdownText = this.getString(
+                R.string.birthday_countdown,
+                result,
+                24 - Var.hour,
+                60 - Var.minute,
+                60 - Var.second
+        );
 
-        int daysLeft = result; // Assuming result is the number of days
-        int hoursLeft = 24 - Var.hour;
-        int minutesLeft = 60 - Var.minute;
-        int secondsLeft = 60 - Var.second;
-
-//        String countdownText = getString(R.string.birthday_countdown_format, daysLeft, hoursLeft, minutesLeft, secondsLeft);
-
+        B_day_countdown.setText(countdownText);
+        
         Thread thread = new Thread(() -> {
             try {
                 Thread.sleep(1000);
