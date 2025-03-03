@@ -13,9 +13,15 @@ public interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(User user);
 
+    @Query("DELETE FROM users")
+    void clearAllUsers();
+
     @Query("SELECT * FROM users ORDER BY b_day_month, b_day_day")
     List<User> getAllUsers();
 
     @Query("SELECT * FROM users WHERE id=:id")
     User getUser(int id);
+
+    @Query("SELECT COUNT(*) FROM users")
+    int getUserCount();
 }

@@ -3,10 +3,16 @@ package com.example.b_daygetter.Dao;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 
-@Entity(tableName = "users")
+@Entity(tableName = "users",
+        indices = {@Index(value = {
+                "name",
+                "sureName"
+        }, unique = true)
+})
 public class User {
 
     @PrimaryKey(autoGenerate = true)
@@ -23,6 +29,16 @@ public class User {
     @ColumnInfo(name = "b_day_day")
     private Integer dateDay;
 
+    public User(int id, String name, String sureName, Integer dateYear, Integer dateMonth, Integer dateDay) {
+        this.id = id;
+        this.name = name;
+        this.sureName = sureName;
+        this.dateYear = dateYear;
+        this.dateMonth = dateMonth;
+        this.dateDay = dateDay;
+    }
+    
+    @Ignore
     public User(String name, String sureName, Integer dateYear, Integer dateMonth, Integer dateDay) {
         this.name = name;
         this.sureName = sureName;
@@ -31,20 +47,7 @@ public class User {
         this.dateDay = dateDay;
     }
 
-//    @Ignore
-//    public User(int id, String name, String sureName, Integer dateYear, Integer dateMonth, Integer dateDay) {
-//        this.id = id;
-//        this.name = name;
-//        this.sureName = sureName;
-//        this.dateYear = dateYear;
-//        this.dateMonth = dateMonth;
-//        this.dateDay = dateDay;
-//    }
-
     public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-    public void setName(String name) { this.name = name; }
-
     public String getName() { return name; }
     public String getSureName() { return sureName; }
     public Integer getDateYear() { return dateYear; }

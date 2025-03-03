@@ -3,6 +3,7 @@ package com.example.b_daygetter.Main;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -36,22 +37,19 @@ public class MainActivity extends AppCompatActivity {
 
         userDao = MainDataBase.getInstance(this).userDao();
 
-        if ( userDao.getAllUsers().isEmpty() || true) {
-            UserDao userDao = MainDataBase.getInstance(this).userDao();
+        if ( userDao.getAllUsers().isEmpty() ) {
+            userDao.clearAllUsers();
             fileAccess.openFile(null, userDao);
-
-            // Todo kai program pasileidia su tuscia duomenu baza, duoda naudotojui pasirinkti faila is telefona
-            // Todo Reikia miktuko kuis istrina resetina duomenu bazia
         }
 
         user = userDao.getUser(id);
-
-        Var.make_birthday_of_the_personal(user);
-
-        user_name();
-        date();
-        countdown();
-        age_will_be();
+        Log.d("TAG", "onCreate: "+id);
+//        Var.make_birthday_of_the_personal(user);
+//
+//        user_name();
+//        date();
+//        countdown();
+//        age_will_be();
 
     }
 
