@@ -3,6 +3,7 @@ package com.example.b_daygetter.Main;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -41,26 +42,29 @@ public class MainActivity extends AppCompatActivity {
 
         user = userDao.getUser(id);
 
-        // Var.make_birthday_of_the_personal(user);
+        Log.d("User", String.valueOf(user));
 
-        // user_name();
-        // date();
-        // countdown();
-        // age_will_be();
+//        Var.make_birthday_of_the_personal(user);
+
+         user_name();
+         date();
+         countdown();
+         age_will_be();
     }
 
     void user_name() {
         TextView textView = this.findViewById(R.id.User_name);
-        String outputString =
-                this.getUser().getName() + " " + this.getUser().getSureName();
+
+        String outputString = user.getName() +
+                        " " + user.getSureName();
         textView.setText(outputString);
     }
 
     void date() {
         TextView textView = this.findViewById(R.id.Date);
-        String outputString =
-                this.getUser().getDateYear() + " " + this.getUser().getDateMonth() +
-                        " " + this.getUser().getDateDay();
+        String outputString = user.getDateYear() +
+                        " " + user.getDateMonth() +
+                        " " + user.getDateDay();
         textView.setText(outputString);
     }
 
