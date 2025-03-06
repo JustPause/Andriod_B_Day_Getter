@@ -53,4 +53,6 @@ public class User {
     public Integer getDateYear() { return dateYear; }
     public Integer getDateMonth() { return dateMonth; }
     public Integer getDateDay() { return dateDay; }
+
+    public void setDateYear(int dateYear) {this.dateYear = dateYear;}
 }

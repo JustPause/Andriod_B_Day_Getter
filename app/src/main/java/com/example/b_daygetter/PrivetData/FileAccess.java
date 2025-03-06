@@ -85,8 +85,6 @@ public class FileAccess extends AppCompatActivity {
             int Day = Integer.parseInt(date.substring(spaceIndex + 1));
             Log.d("fileContent", Name + " " + Surname + " | " + Year + " " + Month + " " + Day);
             userDao.insert(new User(Name, Surname, Year, Month, Day));
-
-
         }
     }
 }

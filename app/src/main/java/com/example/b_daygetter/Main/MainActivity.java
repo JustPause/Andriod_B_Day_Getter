@@ -16,6 +16,8 @@ import com.example.b_daygetter.ListUsers.ListUsers;
 import com.example.b_daygetter.PrivetData.FileAccess;
 import com.example.b_daygetter.R;
 
+import java.time.LocalDate;
+
 public class MainActivity extends AppCompatActivity {
     private static final int FILE = 1;
     private final FileAccess fileAccess = new FileAccess(this,FILE);
@@ -40,9 +42,10 @@ public class MainActivity extends AppCompatActivity {
             fileAccess.openFile(null, userDao);
         }
 
-        user = userDao.getUser(id);
+        if((user = userDao.getUser(id)) == null){
+            user = new User("Justinas","Stankūnas", 2003, 6, 6);
+        }
 
-        Log.d("User", String.valueOf(user));
 
 //        Var.make_birthday_of_the_personal(user);
 
@@ -75,11 +78,17 @@ public class MainActivity extends AppCompatActivity {
 
         Var.make_birthday_of_the_personal(this.getUser());
 
-        if (Var.bDayOf - Var.dayOfYear < 0) {
-            result = Var.bDayOf + 365 - Var.dayOfYear;
+        int bDayOfLocalUser = LocalDate.of(
+                user.getDateYear(),
+                user.getDateMonth(),
+                user.getDateDay()
+        ).getDayOfYear();
+
+        if (bDayOfLocalUser- Var.dayOfYear < 0) {
+            result = bDayOfLocalUser  + 365 - Var.dayOfYear;
 
         } else {
-            result = Var.bDayOf - Var.dayOfYear;
+            result = bDayOfLocalUser - Var.dayOfYear;
         }
 
         String countdownText = this.getString(
