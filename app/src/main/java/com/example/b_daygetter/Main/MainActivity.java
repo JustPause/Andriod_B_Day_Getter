@@ -74,22 +74,25 @@ public class MainActivity extends AppCompatActivity {
     void countdown() {
         TextView B_day_countdown = this.findViewById(R.id.B_day_countdown);
 
-        int result;
-
-        Var.make_birthday_of_the_personal(this.getUser());
-
         int bDayOfLocalUser = LocalDate.of(
                 user.getDateYear(),
                 user.getDateMonth(),
                 user.getDateDay()
         ).getDayOfYear();
+        LocalDate localTime =  LocalDate.now();;
+        int DayOfYear = LocalDate.now().getDayOfYear();
 
-        if (bDayOfLocalUser- Var.dayOfYear < 0) {
-            result = bDayOfLocalUser  + 365 - Var.dayOfYear;
+        Var.make_birthday_of_the_personal(this.getUser());
+
+        int result;
+        if (bDayOfLocalUser - DayOfYear < 0) {
+            result = bDayOfLocalUser  + 365 - DayOfYear;
 
         } else {
-            result = bDayOfLocalUser - Var.dayOfYear;
+            result = bDayOfLocalUser - DayOfYear;
         }
+
+        Log.d(" Var.dayOfYear", bDayOfLocalUser+" "+ DayOfYear + " " +(bDayOfLocalUser - localTime.getDayOfYear()) );
 
         String countdownText = this.getString(
                 R.string.birthday_countdown,
