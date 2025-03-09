@@ -3,6 +3,8 @@ package com.example.b_daygetter.Main;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -17,6 +19,7 @@ import com.example.b_daygetter.PrivetData.FileAccess;
 import com.example.b_daygetter.R;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class MainActivity extends AppCompatActivity {
     private static final int FILE = 1;
@@ -51,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
          user_name();
          date();
-         countdown();
+         countdown(user);
          age_will_be();
     }
 
@@ -71,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(outputString);
     }
 
-    void countdown() {
+    void countdown(User user) {
         TextView B_day_countdown = this.findViewById(R.id.B_day_countdown);
 
         int bDayOfLocalUser = LocalDate.of(
@@ -79,7 +82,9 @@ public class MainActivity extends AppCompatActivity {
                 user.getDateMonth(),
                 user.getDateDay()
         ).getDayOfYear();
-        LocalDate localTime =  LocalDate.now();;
+
+        LocalDate localTime =  LocalDate.now();
+
         int DayOfYear = LocalDate.now().getDayOfYear();
 
         Var.make_birthday_of_the_personal(this.getUser());
@@ -91,9 +96,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             result = bDayOfLocalUser - DayOfYear;
         }
-
-        Log.d(" Var.dayOfYear", bDayOfLocalUser+" "+ DayOfYear + " " +(bDayOfLocalUser - localTime.getDayOfYear()) );
-
+        
         String countdownText = this.getString(
                 R.string.birthday_countdown,
                 result,
@@ -103,18 +106,11 @@ public class MainActivity extends AppCompatActivity {
         );
 
         B_day_countdown.setText(countdownText);
-        
-        Thread thread = new Thread(() -> {
-            try {
-                Thread.sleep(1000);
-                this.runOnUiThread(() -> {
-                    Var.Updater();
-                    countdown();
-                });
-            } catch (InterruptedException ignored) {
-            }
-        });
-        thread.start();
+
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            Var.Updater();
+            countdown(user);
+        }, 1000);
     }
 
     void age_will_be() {
@@ -123,23 +119,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String getText() {
-        if (Var.month < this.getUser().getDateMonth()) {
-            return Var.year - this.getUser().getDateYear() + " metai bus";
+        LocalDate localTime = LocalDate.now();
+
+        int year = localTime.getYear();
+        int month = localTime.getMonthValue();
+        int dayOfMonth = localTime.getDayOfMonth();
+
+        if (month < this.getUser().getDateMonth()) {
+            return year - this.getUser().getDateYear() + " metai bus";
         }
 
-        if (Var.month == this.getUser().getDateMonth()) {
-            if (Var.dayOfMonth < this.getUser().getDateMonth()) {
-                return Var.year - this.getUser().getDateYear() + " metai bus";
+        if (month == this.getUser().getDateMonth()) {
+            if (dayOfMonth< this.getUser().getDateMonth()) {
+                return year - this.getUser().getDateYear() + " metai bus";
             }
-            if (Var.dayOfMonth == this.getUser().getDateMonth()) {
-                return Var.year - this.getUser().getDateYear() + " metai bus";
+            if (dayOfMonth == this.getUser().getDateMonth()) {
+                return year - this.getUser().getDateYear() + " metai bus";
             }
-            if (Var.dayOfMonth > this.getUser().getDateMonth()) {
-                return Var.year - this.getUser().getDateYear() + 1 + " metai bus";
+            if (dayOfMonth > this.getUser().getDateMonth()) {
+                return year - this.getUser().getDateYear() + 1 + " metai bus";
             }
         }
 
-        return Var.year - this.getUser().getDateYear() + 1 + " metai bus";
+        return year - this.getUser().getDateYear() + 1 + " metai bus";
     }
 
     @Override
@@ -147,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
 
-    // TODO Add an feture that lets the youser get his one color, of core the data will be collected in the data base. On craision the user can have a random color and at any time he can chage it
+    // TODO Add an feature that lets the you get his one color, of core the data will be collected in the data base. On craision the user can have a random color and at any time he can change it
 
     public void list_users_button(View view) {
         Intent intent = new Intent(this, ListUsers.class);
@@ -179,7 +181,6 @@ public class MainActivity extends AppCompatActivity {
 
             if (uri != null) {
                 fileAccess.processFile(uri);
-
             }
         }
     }
