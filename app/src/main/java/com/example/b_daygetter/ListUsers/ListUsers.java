@@ -35,12 +35,13 @@ public class ListUsers extends AppCompatActivity {
     }
 
     public void runOnClick(View view) {
-        TextView textview = view.findViewById(R.id.Id);
-        new MainActivity().setId(Integer.parseInt((String) textview.getText()));
+        TextView textView = view.findViewById(R.id.Id);
+        int id = Integer.parseInt(textView.getText().toString());
 
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("USER_ID", id); // Pass the value
 
-        finishAffinity();
+        finishAffinity();  // Close all previous activities
         startActivity(intent);
     }
 

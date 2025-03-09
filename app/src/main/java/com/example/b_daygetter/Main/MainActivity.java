@@ -19,7 +19,6 @@ import com.example.b_daygetter.PrivetData.FileAccess;
 import com.example.b_daygetter.R;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class MainActivity extends AppCompatActivity {
     private static final int FILE = 1;
@@ -29,6 +28,20 @@ public class MainActivity extends AppCompatActivity {
 
     int id = 1;
     User user;
+    
+    private final Handler handler = new Handler(Looper.getMainLooper());
+    private final Runnable countdownRunnable = new Runnable() {
+        @Override
+        public void run() {
+            updateCountdown(user);  // Calls a single function to handle updates
+            handler.postDelayed(this, 1000);  // Schedule next update
+        }
+    };
+
+    private void countdown_runnable() {
+        handler.removeCallbacks(countdownRunnable);  // Prevent multiple threads
+        handler.postDelayed(countdownRunnable, 1000);  // Start loop
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        id = getIntent().getIntExtra("USER_ID", -1);
+
         userDao = MainDataBase.getInstance(this).userDao();
 
         if ( userDao.getAllUsers().isEmpty() ) {
@@ -45,16 +60,15 @@ public class MainActivity extends AppCompatActivity {
             fileAccess.openFile(null, userDao);
         }
 
-        if((user = userDao.getUser(id)) == null){
+        if( (user = userDao.getUser(id)) == null){
             user = new User("Justinas","Stankūnas", 2003, 6, 6);
         }
-
 
 //        Var.make_birthday_of_the_personal(user);
 
          user_name();
          date();
-         countdown(user);
+         countdown_runnable();
          age_will_be();
     }
 
@@ -96,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             result = bDayOfLocalUser - DayOfYear;
         }
-        
+
         String countdownText = this.getString(
                 R.string.birthday_countdown,
                 result,
@@ -111,6 +125,38 @@ public class MainActivity extends AppCompatActivity {
             Var.Updater();
             countdown(user);
         }, 1000);
+    }
+
+    private void updateCountdown(User user) {
+        TextView B_day_countdown = this.findViewById(R.id.B_day_countdown);
+
+        int bDayOfLocalUser = LocalDate.of(
+                user.getDateYear(),
+                user.getDateMonth(),
+                user.getDateDay()
+        ).getDayOfYear();
+
+        int DayOfYear = LocalDate.now().getDayOfYear();
+
+        Var.make_birthday_of_the_personal(this.getUser());
+
+        int result;
+        if (bDayOfLocalUser - DayOfYear < 0) {
+            result = bDayOfLocalUser  + 365 - DayOfYear;
+
+        } else {
+            result = bDayOfLocalUser - DayOfYear;
+        }
+
+        String countdownText = this.getString(
+                R.string.birthday_countdown,
+                result,
+                24 - Var.hour,
+                60 - Var.minute,
+                60 - Var.second
+        );
+
+        B_day_countdown.setText(countdownText);
     }
 
     void age_will_be() {
