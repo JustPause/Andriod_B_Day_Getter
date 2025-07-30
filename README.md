@@ -30,6 +30,7 @@
 - [x] Markdown formato failų išsaugojimas, eksportavimas ir importavimas
 
 ## Story
+
 Šis projektas buvo sukurtas kaip **VCS mokymų** užduotis ir buvo skirtas pasiekti praktišką žinių taikymą kuriant realią mobiliąją aplikaciją. Pradėjau nuo idėjos sukurti paprastą gimtadienių sekimo aplikaciją, tačiau laikui bėgant projektas išsiplėtė ir gavo papildomų funkcijų, tokių kaip Facebook ir Google Calendar integracijos.
 
 Tikslas buvo sukurti **Android** aplikaciją, kuri būtų patogi naudoti ir padėtų vartotojui nepamiršti artėjančių gimtadienių. Svarbiausi aspektai buvo integracija su socialine media (Facebook), duomenų bazės valdymas, laikmačio ir pranešimų sistemos kūrimas. Tai buvo pirmas kartas, kai dirbau su šiuo tipo integracijomis, ir tai suteikė didelį įgūdžių augimą.
