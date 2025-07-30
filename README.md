@@ -7,9 +7,7 @@
 
 ## Aprašymas
 
-Šis projektas buvo sukurtas siekiant sėkmingai užbaigti VCS mokymus ir buvo orientuotas į mobiliąją aplikaciją, kuri padeda sekti artėjančius gimtadienius. Pagrindinė funkcionalumas apima susijungimą su **Facebook** ir iš ten pasiimti gimtadienius, kad būtų galima juos sutvarkyti ir įrašyti į vietinę duomenų bazę. Aplikacija taip pat turi rodyti laikmatį, kuris informuoja vartotoją, kada artėja gimtadienis, ir siųsti pranešimus, kai gimtadienio data pasieks atitinkamą dieną.
-
-Svarbiausia, kad ši aplikacija būtų lengvai naudojama, intuitivi ir integruota su kalendoriumi, kad būtų galima lengvai ir patogiai valdyti savo gimtadienių informaciją. Be to, ji turi atitikti pagrindinius reikalavimus ir būti naudinga vartotojui tiek kasdieniniame gyvenime, tiek svarbiais atvejais.
+Šis projektas buvo sukurtas, kad užbaigčiau VCS mokymus ir buvo orientuotas į mobiliąją aplikaciją, kuri padeda sekti artėjančius gimtadienius. Pagrindinė funkcija - sujungimas su duomenų baze, kurioje saugomi visi gimtadieniai. Aplikacija taip pat rodo laikmatį, kad vartotojas žinotų, kiek laiko liko iki artėjančio gimtadienio
 
 ### Pagrindinės funkcijos
 
