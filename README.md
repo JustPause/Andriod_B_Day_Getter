@@ -22,7 +22,7 @@
 - [x] Sukurti ir integruoti duomenų bazę, kurioje būtų saugomi gimtadieniai ir vartotojo duomenys
 - [x] Implementuoti laikmačio sistemą, kuri rodo likusį laiką iki gimtadienio
 - [x] Apjungti visas funkcijas į vieną veikiančią aplikaciją
-- [ ] Integruoti aplikaciją su **Facebook API**, kad būtų galima gauti gimtadienius iš socialinės medijos
+- [ ] Integruoti aplikaciją su **Facebook**, kad būtų galima gauti gimtadienius iš socialinės medijos
 - [ ] Integruoti aplikaciją su kalendoriaus sistema **Google Calendar**, kad gimtadieniai būtų automatiškai pridedami į kalendorių
 - [ ] Sukurti ir pridėti spalvų temas vartotojo profiliui ir užtikrinti jų lengvą keitimą
 - [ ] Sukurti ir integruoti **Android Widget**, kad vartotojai galėtų matyti gimtadienius tiesiai iš pagrindinio ekrano
