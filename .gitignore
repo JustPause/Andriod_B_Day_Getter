@@ -35,3 +35,4 @@ fabric.properties
 # Other
 .classpath
 .project
+/app/release/
