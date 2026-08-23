@@ -9,12 +9,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.b_daygetter.Dao.MainDataBase;
-import com.example.b_daygetter.Dao.User;
 import com.example.b_daygetter.Dao.UserDao;
 import com.example.b_daygetter.Main.MainActivity;
 import com.example.b_daygetter.R;
 
-import java.util.List;
 
 public class ListUsers extends AppCompatActivity {
 

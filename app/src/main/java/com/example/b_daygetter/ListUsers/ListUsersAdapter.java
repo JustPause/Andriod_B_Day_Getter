@@ -2,6 +2,7 @@ package com.example.b_daygetter.ListUsers;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -91,25 +92,32 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
         return theReturn;
     }
 
-    private void SetCountDownWindow(TextView textView, User user) {
+    private void SetCountDownWindow(TextView textView, User user,View parent) {
+        Activity currentActivity = (Activity) super.getContext();
 
-        Activity curentActivity = (Activity) super.getContext();
+        Thread oldThread = (Thread) parent.getTag();
+        if (oldThread != null && oldThread.isAlive()) {
+            oldThread.interrupt();
+        }
 
-        Thread thread = new Thread(() ->
-        {
+        Thread thread = new Thread(() -> {
             try {
-                while (true) {
-                    // ToDo Nesutrvrkiau, galimai problerma yra per Thread moduli kuris sikuiria dublikata Thread kai pakeiti vieta
-                    curentActivity.runOnUiThread(() -> textView.setText(Countdown(user)));
-
+                while (!currentActivity.isDestroyed() &&
+                        !Thread.currentThread().isInterrupted()) {
+                    currentActivity.runOnUiThread(
+                            () -> textView.setText(Countdown(user))
+                    );
                     Thread.sleep(1000);
                 }
-            } catch (InterruptedException ignored) {
-            }
-        }
-        );
+            } catch (InterruptedException ignored) {}
+        });
 
+        thread.setDaemon(true);
+        parent.setTag(thread);
         thread.start();
+
+        int threadCount = Thread.activeCount();
+        Log.d("Threads", "Active threads: " + threadCount);
     }
 
     @NonNull
@@ -138,12 +146,10 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
 
         BDayDate.setText(BbayDate(user));
 
-        SetCountDownWindow(CoundDown, user);
+        SetCountDownWindow(CoundDown, user,listitemView);
 
         Age.setText(AgeFing(user, listitemView));
         getContext().getTheme().resolveAttribute(R.color.md_theme_light_primary, new TypedValue() , true);
-
-        listitemView.setBackgroundColor(0x7FC5C6D0);
 
         Id.setText(String.valueOf(user.getId()));
 

@@ -19,15 +19,15 @@ public class User {
     @ColumnInfo(name = "id")
     private int id;
     @ColumnInfo(name = "name")
-    private String name;
+    private final String name;
     @ColumnInfo(name = "sureName")
-    private String sureName;
+    private final String sureName;
     @ColumnInfo(name = "b_day_year")
     private Integer dateYear;
     @ColumnInfo(name = "b_day_month")
-    private Integer dateMonth;
+    private final Integer dateMonth;
     @ColumnInfo(name = "b_day_day")
-    private Integer dateDay;
+    private final Integer dateDay;
 
     public User(int id, String name, String sureName, Integer dateYear, Integer dateMonth, Integer dateDay) {
         this.id = id;

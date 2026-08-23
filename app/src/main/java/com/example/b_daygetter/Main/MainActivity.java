@@ -195,6 +195,18 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        handler.removeCallbacks(countdownRunnable);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacks(countdownRunnable);
+    }
+
     // TODO Add an feature that lets the you get his one color, of core the data will be collected in the data base. On craision the user can have a random color and at any time he can change it
 
     public void list_users_button(View view) {
