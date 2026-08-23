@@ -4,7 +4,6 @@ plugins {
 
 android {
     namespace 'com.example.b_daygetter'
-    compileSdk 36
 
     defaultConfig {
         applicationId 'lt.justinas.b_daygetter'
