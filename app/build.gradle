@@ -10,7 +10,7 @@ android {
         applicationId = 'lt.justinas.b_daygetter'
         minSdk = 27
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
