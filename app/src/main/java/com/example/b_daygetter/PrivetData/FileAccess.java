@@ -18,7 +18,7 @@ import java.io.InputStreamReader;
 import java.util.Objects;
 
 public class FileAccess extends AppCompatActivity {
-    private int FILE = 0;
+    private final int FILE;
     private final Activity activity;
     private UserDao userDao;
 

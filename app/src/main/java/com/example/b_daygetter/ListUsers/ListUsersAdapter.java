@@ -2,7 +2,8 @@ package com.example.b_daygetter.ListUsers;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -95,29 +96,26 @@ public class ListUsersAdapter extends ArrayAdapter<User> {
     private void SetCountDownWindow(TextView textView, User user,View parent) {
         Activity currentActivity = (Activity) super.getContext();
 
-        Thread oldThread = (Thread) parent.getTag();
-        if (oldThread != null && oldThread.isAlive()) {
-            oldThread.interrupt();
+        // Stop old handler
+        Handler oldHandler = (Handler) parent.getTag();
+        if (oldHandler != null) {
+            oldHandler.removeCallbacksAndMessages(null);
         }
 
-        Thread thread = new Thread(() -> {
-            try {
-                while (!currentActivity.isDestroyed() &&
-                        !Thread.currentThread().isInterrupted()) {
-                    currentActivity.runOnUiThread(
-                            () -> textView.setText(Countdown(user))
-                    );
-                    Thread.sleep(1000);
+        Handler handler = new Handler(Looper.getMainLooper());
+        parent.setTag(handler);
+
+        Runnable countdown = new Runnable() {
+            @Override
+            public void run() {
+                if (!currentActivity.isDestroyed()) {
+                    textView.setText(Countdown(user));
+                    handler.postDelayed(this, 1000);
                 }
-            } catch (InterruptedException ignored) {}
-        });
+            }
+        };
 
-        thread.setDaemon(true);
-        parent.setTag(thread);
-        thread.start();
-
-        int threadCount = Thread.activeCount();
-        Log.d("Threads", "Active threads: " + threadCount);
+        handler.post(countdown);
     }
 
     @NonNull

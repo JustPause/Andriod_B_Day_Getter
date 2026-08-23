@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -88,44 +87,6 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(outputString);
     }
 
-    void countdown(User user) {
-        TextView B_day_countdown = this.findViewById(R.id.B_day_countdown);
-
-        int bDayOfLocalUser = LocalDate.of(
-                user.getDateYear(),
-                user.getDateMonth(),
-                user.getDateDay()
-        ).getDayOfYear();
-
-        LocalDate localTime =  LocalDate.now();
-
-        int DayOfYear = LocalDate.now().getDayOfYear();
-
-        Var.make_birthday_of_the_personal(this.getUser());
-
-        int result;
-        if (bDayOfLocalUser - DayOfYear < 0) {
-            result = bDayOfLocalUser  + 365 - DayOfYear;
-
-        } else {
-            result = bDayOfLocalUser - DayOfYear;
-        }
-
-        String countdownText = this.getString(
-                R.string.birthday_countdown,
-                result,
-                24 - Var.hour,
-                60 - Var.minute,
-                60 - Var.second
-        );
-
-        B_day_countdown.setText(countdownText);
-
-        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            Var.Updater();
-            countdown(user);
-        }, 1000);
-    }
 
     private void updateCountdown(User user) {
         TextView B_day_countdown = this.findViewById(R.id.B_day_countdown);
